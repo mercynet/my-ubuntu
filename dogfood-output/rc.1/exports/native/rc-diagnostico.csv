@@ -1,0 +1,49 @@
+﻿Secção;Registo;Campo;Valor
+Relatório;Informações;Aplicação;Meu Ubuntu 1.0.0-rc.1
+Relatório;Informações;Recolhido em;2026-10-12T16:40:13Z
+Relatório;Informações;Sistema;Ubuntu 26.04 LTS (simulado)
+Relatório;Informações;Arquitetura;amd64
+Relatório;Informações;Sessão;wayland
+Relatório;Informações;Modo;simulação
+Relatório;Informações;Bateria detetada;true
+Sistema;1;CPU;AMD Ryzen 7 (simulado, 16 threads)
+Sistema;2;RAM;31.3 GiB
+Sistema;3;Swap;8.0 GiB
+Sistema;4;zram;não ativo
+Sistema;5;GPU;AMD Radeon (simulado)
+Sistema;6;Sessão;wayland
+Sistema;7;Ecrãs;eDP-1 2560x1600
+Sistema;8;Gestor de energia;power-profiles-daemon (perfil: balanced)
+Sistema;9;Bateria;84% (Discharging)
+Sistema;10;fstrim.timer;enabled
+Sistema;11;Journal (visível ao utilizador);Archived and active journals take up 1.4G in the file system.
+Discos;1 · nvme0n1;Nome;nvme0n1
+Discos;1 · nvme0n1;Modelo;Samsung SSD (simulado)
+Discos;1 · nvme0n1;Capacidade;953.9 GB
+Discos;1 · nvme0n1;SSD;true
+Discos;1 · nvme0n1;Suporta TRIM;true
+Discos;1 · nvme0n1;Montagem;/
+Discos;1 · nvme0n1;Livre (%);62
+Discos;1 · nvme0n1;Espaço livre;580.2 GB
+Arranque;1 · Solaar;Nome;Solaar
+Arranque;1 · Solaar;Âmbito;utilizador
+Arranque;1 · Solaar;Estado;available
+Arranque;1 · Solaar;Detalhe;Comando localizado. O arranque efetivo depende da sessão.
+Arranque;1 · Solaar;Origem;/sim/config/autostart/solaar.desktop
+Arranque;1 · Solaar;Executável;solaar
+Arranque;2 · Rastreador de ficheiros;Nome;Rastreador de ficheiros
+Arranque;2 · Rastreador de ficheiros;Âmbito;sistema
+Arranque;2 · Rastreador de ficheiros;Estado;available
+Arranque;2 · Rastreador de ficheiros;Detalhe;Comando localizado. O arranque efetivo depende da sessão.
+Arranque;2 · Rastreador de ficheiros;Origem;/etc/xdg/autostart/tracker.desktop
+Arranque;2 · Rastreador de ficheiros;Executável;tracker
+Sugestões;1;Título;Portátil detetado
+Sugestões;1;Detalhe;Considere o perfil «Portátil equilibrado».
+Sugestões;1;Evidência;84% (Discharging)
+Sugestões;1;Item do catálogo;power-balanced
+Sugestões;1;Nível;suggest
+Sugestões;2;Título;Journal grande
+Sugestões;2;Detalhe;Limitar a retenção liberta espaço sem desligar os logs.
+Sugestões;2;Evidência;1.4G
+Sugestões;2;Item do catálogo;journald-limit
+Sugestões;2;Nível;suggest

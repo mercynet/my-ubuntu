@@ -1,0 +1,10 @@
+{
+  "nativeSaveDialog": true,
+  "mode": "simulação",
+  "csvRows": 49,
+  "xlsxRows": 49,
+  "csvMatchesXlsx": true,
+  "xlsxContainsFormulas": false,
+  "permissions": "0600",
+  "pdfVersionAndMode": true
+}

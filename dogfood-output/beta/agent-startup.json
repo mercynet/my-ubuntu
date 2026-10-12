@@ -1,0 +1,40 @@
+{
+  "environment": {
+    "os": "Ubuntu 26.04",
+    "uid": 1000,
+    "node": "v22.22.1",
+    "date": "2026-10-12"
+  },
+  "agents": {
+    "claude": {
+      "exit_code": 0,
+      "version": "2.1.296 (Claude Code)",
+      "stderr": ""
+    },
+    "codex": {
+      "exit_code": 0,
+      "version": "codex-cli 0.162.1",
+      "stderr": "WARNING: proceeding, even though we could not create PATH aliases: Refusing to create helper binaries under temporary dir \"/tmp\" (codex_home: AbsolutePathBuf(\"/tmp/ux-agent-home/.codex\"))"
+    },
+    "gemini": {
+      "exit_code": 0,
+      "version": "0.63.0",
+      "stderr": ""
+    },
+    "opencode": {
+      "exit_code": 0,
+      "version": "1.19.0",
+      "stderr": ""
+    },
+    "pi": {
+      "exit_code": 0,
+      "version": "1.1.0",
+      "stderr": ""
+    },
+    "copilot": {
+      "exit_code": 0,
+      "version": "GitHub Copilot CLI 1.0.95.\nRun 'copilot update' to check for updates.",
+      "stderr": ""
+    }
+  }
+}

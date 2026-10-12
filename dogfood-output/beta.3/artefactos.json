@@ -1,0 +1,7 @@
+{
+  "version": "0.6.0-beta.3",
+  "target": "Ubuntu 26.04 LTS, GNOME, amd64",
+  "checksums": "cb31588fb50c16c17e0e9719144cefd41e522dcb4acfebfa5628a752ac5f7ec5  meu-ubuntu-0.6.0-beta.3-linux-amd64\ne5a27d387946bf1cfdad2e5b9a64713d15e0a07782cb585a85a6b0f4ca36134f  meu-ubuntu_0.6.0-beta.3_amd64.deb\n",
+  "bundle": "meu-ubuntu-0.6.0-beta.3-ubuntu26-amd64.zip",
+  "bundle_sha256": "788da466f948b7ed2aeecb2c1e3269eb23027e7a26e1b23630c2e85e603d1f52"
+}

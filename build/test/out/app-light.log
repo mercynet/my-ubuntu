@@ -1,0 +1,12 @@
+
+(process:17): Gtk-WARNING **: 17:03:01.338: Locale not supported by C library.
+	Using the fallback 'C' locale.
+Overriding existing handler for signal 10. Set JSC_SIGNAL_FOR_GC if you want WebKit to use a different signal
+libEGL warning: DRI3 error: Could not get DRI3 device
+libEGL warning: Ensure your X server supports DRI3 to get accelerated rendering
+WARNING: Glycin running without sandbox.
+
+** (process:92): WARNING **: 17:03:01.560: Locale not supported by C library.
+	Using the fallback 'C' locale.
+
+Ctrl+C detected. Shutting down...

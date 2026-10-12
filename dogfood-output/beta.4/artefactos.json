@@ -1,0 +1,9 @@
+{
+  "version": "0.6.0-beta.4",
+  "target": "Ubuntu 26.04 LTS amd64",
+  "sha256": {
+    "meu-ubuntu-0.6.0-beta.4-linux-amd64": "5ac7389d2abe2871dbfa93e85f974f11f3319507791f2da53ea2b8aa9af92f81",
+    "meu-ubuntu_0.6.0-beta.4_amd64.deb": "af1ceef2cd88c60a894b14fabaea176e6d4dc3ebd83d0325454fadb90a5c697b",
+    "meu-ubuntu-0.6.0-beta.4-ubuntu26-amd64.zip": "b48e03d9bf0aac45c1fda6e75c88a723747438811a2a980219cf5bd4af897003"
+  }
+}

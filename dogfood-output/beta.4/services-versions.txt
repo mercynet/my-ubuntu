@@ -1,0 +1,6 @@
+apache2	2.4.66-2ubuntu2.5
+memcached	1.6.40-1ubuntu0.3
+nginx	1.28.3-2ubuntu1.11
+postgresql	18+290ubuntu1
+rabbitmq-server	4.0.5-10ubuntu5.1
+redis-server	5:8.0.5-1ubuntu0.1

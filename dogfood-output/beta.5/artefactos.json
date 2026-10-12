@@ -1,0 +1,20 @@
+{
+  "version": "0.6.0-beta.5",
+  "files": [
+    {
+      "name": "meu-ubuntu-0.6.0-beta.5-linux-amd64",
+      "bytes": 11658312,
+      "sha256": "155b0bd7e970221a167d55e6e7bab7bdb7b76167e76e4992648c55a9ee1caf8d"
+    },
+    {
+      "name": "meu-ubuntu_0.6.0-beta.5_amd64.deb",
+      "bytes": 3711696,
+      "sha256": "28957641ed75d90a6bb838f5cfc4990b113bc6ad5fe18967c36ff24139370d35"
+    }
+  ],
+  "zip": {
+    "name": "meu-ubuntu-0.6.0-beta.5-ubuntu26-amd64.zip",
+    "bytes": 8410670,
+    "sha256": "40523a030471f06e8133e9056039da3df07d2284c111e8f4bc159382223dab84"
+  }
+}

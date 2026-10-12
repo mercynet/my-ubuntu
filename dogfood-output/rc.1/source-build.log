@@ -1,0 +1,62 @@
+
+added 26 packages in 2s
+
+> meu-ubuntu-frontend@1.0.0-rc.1 build
+> tsc --noEmit && vite build
+
+vite v8.3.2 building client environment for production...
+transforming...
+✓ 1958 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/assets/si-warp-KTEeBS-S.svg              0.32 kB │ gzip:   0.23 kB
+dist/assets/si-yubico-5-lcRTfa.svg            0.36 kB │ gzip:   0.25 kB
+dist/assets/dev-ansible-D988RQ44.svg          0.37 kB │ gzip:   0.26 kB
+dist/assets/si-tmux-D1XPugcL.svg              0.38 kB │ gzip:   0.25 kB
+dist/index.html                               0.39 kB │ gzip:   0.26 kB
+dist/assets/dev-erlang-DhczegIq.svg           0.40 kB │ gzip:   0.27 kB
+dist/assets/si-libreoffice-BrcY6lU5.svg       0.44 kB │ gzip:   0.28 kB
+dist/assets/si-torbrowser-hIuRoGQn.svg        0.46 kB │ gzip:   0.27 kB
+dist/assets/si-openvpn-Cx3tslz7.svg           0.54 kB │ gzip:   0.35 kB
+dist/assets/si-virtualbox-D5dlPbUh.svg        0.60 kB │ gzip:   0.39 kB
+dist/assets/si-stripe-BRQuxOCV.svg            0.60 kB │ gzip:   0.38 kB
+dist/assets/si-flathub-IaINLhrF.svg           0.67 kB │ gzip:   0.35 kB
+dist/assets/si-wireshark-D1rsRWnM.svg         0.68 kB │ gzip:   0.39 kB
+dist/assets/si-bitwarden-0IYqAw-0.svg         0.72 kB │ gzip:   0.44 kB
+dist/assets/si-keepassxc-B7ctxJJa.svg         0.72 kB │ gzip:   0.39 kB
+dist/assets/dev-git-MuB8pIFs.svg              0.77 kB │ gzip:   0.43 kB
+dist/assets/si-zsh-CUxhGf3Z.svg               0.85 kB │ gzip:   0.36 kB
+dist/assets/si-vlcmediaplayer-VTwyeuBK.svg    1.02 kB │ gzip:   0.58 kB
+dist/assets/si-hoppscotch-DvqHZf7q.svg        1.06 kB │ gzip:   0.61 kB
+dist/assets/si-rclone-9gxVoi3m.svg            1.13 kB │ gzip:   0.62 kB
+dist/assets/si-thunderbird-DxlfqmzE.svg       1.21 kB │ gzip:   0.68 kB
+dist/assets/dev-java-B9Whfg8T.svg             1.54 kB │ gzip:   0.80 kB
+dist/assets/si-filezilla-4Ij4-UbT.svg         1.57 kB │ gzip:   0.59 kB
+dist/assets/si-qbittorrent-CfSyEj4j.svg       1.69 kB │ gzip:   0.91 kB
+dist/assets/si-ente-h37fPX2M.svg              1.74 kB │ gzip:   0.92 kB
+dist/assets/dev-nodejs-BlWSJngX.svg           1.80 kB │ gzip:   0.72 kB
+dist/assets/dev-mariadb-Dw2zLPqU.svg          1.83 kB │ gzip:   0.94 kB
+dist/assets/dev-github-eDjly-o6.svg           1.86 kB │ gzip:   0.94 kB
+dist/assets/si-curl-Dx0Hj9O5.svg              1.93 kB │ gzip:   0.71 kB
+dist/assets/si-brave-DvGdLr10.svg             2.12 kB │ gzip:   1.06 kB
+dist/assets/dev-python-HT_z5JOp.svg           2.30 kB │ gzip:   1.01 kB
+dist/assets/dev-sqlite-C_NQ6DGk.svg           2.42 kB │ gzip:   1.22 kB
+dist/assets/si-wireguard-Du1aBpzl.svg         2.44 kB │ gzip:   1.24 kB
+dist/assets/dev-phpstorm-CAYWtgyb.svg         2.70 kB │ gzip:   0.98 kB
+dist/assets/si-bruno--i-Gu5IH.svg             2.92 kB │ gzip:   1.44 kB
+dist/assets/si-cryptomator-CIWdvzUE.svg       3.22 kB │ gzip:   1.41 kB
+dist/assets/dev-vscode-CJLxpqI9.svg           3.40 kB │ gzip:   1.22 kB
+dist/assets/dev-android-DXoFy_5I.svg          3.82 kB │ gzip:   1.48 kB
+dist/assets/dev-dbeaver-DslyYsVX.svg          4.29 kB │ gzip:   1.91 kB
+dist/assets/dev-docker-DLqjD3tf.svg           4.45 kB │ gzip:   1.14 kB
+dist/assets/dev-php-DSCXF1OA.svg              4.62 kB │ gzip:   1.79 kB
+dist/assets/dev-bun-Z3hP0k28.svg              5.55 kB │ gzip:   2.24 kB
+dist/assets/dev-go-CPdnxH1I.svg               8.96 kB │ gzip:   3.06 kB
+dist/assets/icon-q-tMDVNz.png                21.36 kB
+dist/assets/dev-firefox-B8Bz3Pw-.svg         38.09 kB │ gzip:  10.69 kB
+dist/assets/dev-composer-BlobirsM.svg        45.95 kB │ gzip:  19.22 kB
+dist/assets/index-Dd8nXvsr.css               29.66 kB │ gzip:   6.58 kB
+dist/assets/index-xtMtH0l6.js               416.27 kB │ gzip: 126.47 kB
+
+✓ built in 360ms
+Candidate successfully rebuilt from extracted source archive.
