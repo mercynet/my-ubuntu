@@ -40,6 +40,9 @@ export interface StepRecord { id: string; title: string; item: string; status: s
 export interface Run { id: string; started: string; finished?: string; status: string; selections: Selections; reverts?: string[] | null; steps: StepRecord[]; logFile: string; simulated: boolean }
 export interface InitData { version: string; system: System; prefs: Prefs; profiles: Profile[]; interrupted: Run | null; repos: Repo[]; groups: Group[] | null; items: Item[]; paths: Record<string, string>; pendingImport: ProfileReview | null; pendingError: string }
 export interface AboutInfo { version: string; author: string; goVersion: string; wailsVersion: string; attributions: { name: string; license: string; url: string; text: string }[] }
+export interface IntegrationPackage { format: number; id: string; name: string; version: string; description: string; publisher: string; checks: { type: string; title: string; path?: string }[]; guide: { title: string; text: string; command?: string }[]; project?: string }
+export interface IntegrationReview { manifest: IntegrationPackage; token: string; existing: string }
+export interface IntegrationReport { collectedAt: string; simulated: boolean; results: { title: string; status: string; detail: string }[] }
 export interface PlanStep { id: string; item: string; title: string; kind: string; op: string; detail: string[]; changes?: SettingState[]; category: string; options?: Record<string, string[]>; confirm?: string; expect?: string }
 export interface Plan {
 	 reviewToken: string;
@@ -73,6 +76,11 @@ function call<T>(name: string, ...args: unknown[]): Promise<T> {
 }
 
 export const api = {
+  integrations: () => call<IntegrationPackage[]>("Integrations"),
+  previewIntegration: () => call<IntegrationReview | null>("PreviewIntegrationImport"),
+  installIntegration: (token: string) => call<void>("InstallIntegration", token),
+  integrationProject: (id: string) => call<string>("IntegrationChooseProject", id),
+  integrationDiagnostics: (id: string) => call<IntegrationReport>("IntegrationDiagnostics", id),
   init: () => call<InitData>("Init"),
   about: () => call<AboutInfo>("About"),
   states: (s: Selections) => call<Record<string, ItemState>>("States", s),

@@ -32,16 +32,17 @@ import (
 
 // App is the API exposed to the React UI through Wails bindings.
 type App struct {
-	ctx         context.Context
-	pendingPath string // profile JSON given on the command line (review only)
-	cat         *catalog.Catalog
-	det         *detect.Detector
-	r           sys.Runner
-	st          *store.Store
-	eng         *engine.Engine
-	home        string
-	simulated   bool
-	diagCache   diagnosticsCache
+	ctx                context.Context
+	pendingPath        string // profile JSON given on the command line (review only)
+	cat                *catalog.Catalog
+	det                *detect.Detector
+	r                  sys.Runner
+	st                 *store.Store
+	eng                *engine.Engine
+	home               string
+	simulated          bool
+	diagCache          diagnosticsCache
+	integrationPending integrationPending
 }
 
 func NewApp(simulated bool) (*App, error) {

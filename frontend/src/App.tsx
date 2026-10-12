@@ -3,7 +3,7 @@ import {
   AppWindow, Code2, Palette, Puzzle, BatteryCharging, Stethoscope, FolderInput, Bookmark, ListChecks, History, Home,
   Search, Moon, Sun, Monitor, X, AlertTriangle, Brush, Server, ShieldCheck, Info, BookOpen, ChevronDown, Undo2, Sparkles,
 } from "lucide-react";
-import { api, on, errText, InitData, ItemState, Selections, Plan, StepEvent, LogEvent, Item, Origins, ProfileReview, MergeConflict, Profile } from "./api";
+import { api, on, errText, InitData, ItemState, Selections, Plan, StepEvent, LogEvent, Item, Origins, ProfileReview, MergeConflict, Profile, IntegrationPackage } from "./api";
 import { ItemsPage } from "./Catalog";
 import { PlanPage, RunState } from "./PlanRun";
 import { HomePage, ProfilesPage, DiagnosticsPage, MigrationPage, HistoryPage } from "./Pages";
@@ -13,6 +13,7 @@ import { profileKey, profileScope } from "./profileScope";
 import { includeInstalled, matchingStates, optionSignature } from "./installedSelection";
 import { PluginsPage } from "./Plugins";
 import { AboutPage, HelpPage } from "./HelpAbout";
+import { IntegrationsPage } from "./Integrations";
 import icon from "./icon.png";
 
 export const AREAS: Record<string, { title: string; desc: string }> = {
@@ -102,6 +103,7 @@ export default function App() {
   const [onboarded, setOnboarded] = useState(true);
   const [page, setPage] = useState("home");
   const [pluginTool, setPluginTool] = useState("all");
+  const [integrations, setIntegrations] = useState<IntegrationPackage[]>([]);
   const [query, setQuery] = useState("");
   const [theme, setTheme] = useState<Theme>("system");
   const [showAdv, setShowAdv] = useState(false);
@@ -171,6 +173,7 @@ export default function App() {
   useEffect(() => {
     api.init().then((d) => {
       setData(d);
+      api.integrations().then(setIntegrations).catch((e) => toast("Não foi possível ler os pacotes: " + errText(e), true));
       stateItems.current = Object.fromEntries(d.items.map((it) => [it.id, it]));
       const s = d.prefs.selections || {};
       setSelState(s);
@@ -471,6 +474,7 @@ export default function App() {
     ["migration", "Migração", <FolderInput size={17} />],
     ["history", "Histórico e reversão", <History size={17} />],
     ["help", "Ajuda e manual", <BookOpen size={17} />],
+    ["integrations", "Pacotes de integração", <Puzzle size={17} />],
   ];
   const cycleTheme = () => setTheme(theme === "system" ? "light" : theme === "light" ? "dark" : "system");
   const themeName = { system: "sistema", light: "claro", dark: "escuro" }[theme];
@@ -504,6 +508,8 @@ export default function App() {
             {ic}{label}{id === "plan" && running ? <span className="count">a correr</span> : null}
           </button>
         ))}
+        {integrations.length > 0 && <div className="nav-sec">Equipa</div>}
+        {integrations.map(p => <button key={p.id} className={"nav" + (page === "integration:" + p.id ? " on" : "")} onClick={() => go("integration:" + p.id)} aria-current={page === "integration:" + p.id ? "page" : undefined}><Server size={17} /> {p.name}</button>)}
         </nav>
         <div className="side-foot">
           <button className={"nav side-about" + (page === "about" ? " on" : "")} onClick={() => go("about")} aria-current={page === "about" ? "page" : undefined} title={"Sobre o Meu Ubuntu · versão em execução " + data.version}><Info size={17} /><span>Sobre</span><span className="side-version">{data.version}</span></button>
@@ -580,6 +586,7 @@ export default function App() {
           {page === "history" && <HistoryPage ctx={ctx} />}
           {page === "help" && <HelpPage ctx={ctx} topic={helpTopic} onTopic={setHelpTopic} />}
           {page === "about" && <AboutPage ctx={ctx} />}
+          {(page === "integrations" || page.startsWith("integration:")) && <IntegrationsPage selected={page.startsWith("integration:") ? page.slice(12) : ""} packages={integrations} onPackages={setIntegrations} onSelect={id => go("integration:" + id)} toast={toast} />}
         </main>
       </div>
       {review && <ReviewDialog ctx={ctx} review={review} onClose={() => setReview(null)} />}
