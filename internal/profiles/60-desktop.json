@@ -1,0 +1,37 @@
+{
+ "schema": "meu-ubuntu/profile",
+ "version": 2,
+ "id": "desktop-confortavel",
+ "name": "Desktop confortável",
+ "description": "Dock, janelas, ficheiros, notificações e algumas extensões úteis.",
+ "audience": "Complemento de aparência e produtividade do GNOME.",
+ "author": "Meu Ubuntu",
+ "kind": "complement",
+ "requires": {
+  "minRelease": "26.04",
+  "arch": [
+   "amd64"
+  ]
+ },
+ "selections": {
+  "color-scheme": {},
+  "accent-color": {},
+  "dock-position": {},
+  "dock-size": {},
+  "dock-autohide": {},
+  "dock-click": {},
+  "dock-multimonitor": {},
+  "center-windows": {},
+  "workspaces-all": {},
+  "super-e": {},
+  "nautilus-list": {},
+  "folders-first": {},
+  "notif-lock": {},
+  "night-light": {},
+  "clock-weekday": {},
+  "tpl-txt": {},
+  "tpl-md": {},
+  "ext-caffeine": {},
+  "ext-clipboard": {}
+ }
+}

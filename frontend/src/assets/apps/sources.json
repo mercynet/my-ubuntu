@@ -1,0 +1,520 @@
+[
+  {
+    "file": "dev-git.svg",
+    "items": [
+      "git",
+      "git-flow",
+      "git-defaults",
+      "git-identity"
+    ],
+    "download": "https://raw.githubusercontent.com/devicons/devicon/v2.16.0/icons/git/git-original.svg",
+    "upstream": {},
+    "sha256": "717a57ea97bf7e86de721dab3e68afac66332a10676d5c9abce4ae6a5a9c9983"
+  },
+  {
+    "file": "dev-github.svg",
+    "items": [
+      "gh"
+    ],
+    "download": "https://raw.githubusercontent.com/devicons/devicon/v2.16.0/icons/github/github-original.svg",
+    "upstream": {},
+    "sha256": "45262793de6292206a895ed63593cdb1eaed82074173f7f4b5bdb3e427ca805a"
+  },
+  {
+    "file": "dev-python.svg",
+    "items": [
+      "python-dev"
+    ],
+    "download": "https://raw.githubusercontent.com/devicons/devicon/v2.16.0/icons/python/python-original.svg",
+    "upstream": {},
+    "sha256": "71493b4a732f0532b3a03a7a95da3ee11a65766367c8303b901ffbe7bf91a3a2"
+  },
+  {
+    "file": "dev-go.svg",
+    "items": [
+      "golang"
+    ],
+    "download": "https://raw.githubusercontent.com/devicons/devicon/v2.16.0/icons/go/go-original.svg",
+    "upstream": {},
+    "sha256": "2d4558b96d3ec71d0d922a62668cb2ea5a5d83ed7d4caf6b0479b3266f795a2f"
+  },
+  {
+    "file": "dev-android.svg",
+    "items": [
+      "android-tools"
+    ],
+    "download": "https://raw.githubusercontent.com/devicons/devicon/v2.16.0/icons/android/android-original.svg",
+    "upstream": {},
+    "sha256": "d6c8aa6c2b94c90ff02c1b7e89f9cf863d54db59b459b8b287c19bfb8e664c41"
+  },
+  {
+    "file": "dev-sqlite.svg",
+    "items": [
+      "sqlite"
+    ],
+    "download": "https://raw.githubusercontent.com/devicons/devicon/v2.16.0/icons/sqlite/sqlite-original.svg",
+    "upstream": {},
+    "sha256": "2b91c30887d3602479ba845cc012ef6ae577fba71eb96705a05b12e35d2c5e7e"
+  },
+  {
+    "file": "dev-mariadb.svg",
+    "items": [
+      "mariadb-client",
+      "mariadb-server"
+    ],
+    "download": "https://raw.githubusercontent.com/devicons/devicon/v2.16.0/icons/mariadb/mariadb-original.svg",
+    "upstream": {},
+    "sha256": "90f14c26b478447171ad800791535f5f5ab0f9abf80387edefb410b6fc85cbdc"
+  },
+  {
+    "file": "dev-dbeaver.svg",
+    "items": [
+      "dbeaver"
+    ],
+    "download": "https://raw.githubusercontent.com/devicons/devicon/v2.16.0/icons/dbeaver/dbeaver-original.svg",
+    "upstream": {},
+    "sha256": "018524d7da97118afe2e46c6d6c93b25b8218f2aa423ece0959b5a692a14cd79"
+  },
+  {
+    "file": "dev-php.svg",
+    "items": [
+      "php",
+      "php-ppa",
+      "php-herd-lite"
+    ],
+    "download": "https://raw.githubusercontent.com/devicons/devicon/v2.16.0/icons/php/php-original.svg",
+    "upstream": {},
+    "sha256": "f22619a19c99a123e4678d71826f65f223721a739631dff46de39827c9ee0633"
+  },
+  {
+    "file": "dev-composer.svg",
+    "items": [
+      "composer"
+    ],
+    "download": "https://raw.githubusercontent.com/devicons/devicon/v2.16.0/icons/composer/composer-original.svg",
+    "upstream": {},
+    "sha256": "146892e50267d38ca99b406d70b7ad5bd0da8a968763116bbc4d610ade115e92"
+  },
+  {
+    "file": "dev-erlang.svg",
+    "items": [
+      "erlang"
+    ],
+    "download": "https://raw.githubusercontent.com/devicons/devicon/v2.16.0/icons/erlang/erlang-original.svg",
+    "upstream": {},
+    "sha256": "b605010afdc6ac75a2c53ebbf079bbcc47948133fcb1765f8b5eec8494a6d9c0"
+  },
+  {
+    "file": "dev-java.svg",
+    "items": [
+      "java8"
+    ],
+    "download": "https://raw.githubusercontent.com/devicons/devicon/v2.16.0/icons/java/java-original.svg",
+    "upstream": {},
+    "sha256": "7582e518a9c02425f97155e5a3bd39d1a3a7d421b78caf9c8df7443dad3edc5d"
+  },
+  {
+    "file": "dev-nodejs.svg",
+    "items": [
+      "nodejs",
+      "nvm"
+    ],
+    "download": "https://raw.githubusercontent.com/devicons/devicon/v2.16.0/icons/nodejs/nodejs-original.svg",
+    "upstream": {},
+    "sha256": "3218687c5ea24a4d4c0a33dc5c287da38c33a72dcfe9382469d7ce4e0bf661fb"
+  },
+  {
+    "file": "dev-bun.svg",
+    "items": [
+      "bun"
+    ],
+    "download": "https://raw.githubusercontent.com/devicons/devicon/v2.16.0/icons/bun/bun-original.svg",
+    "upstream": {},
+    "sha256": "54664655dec93da013d1fe8f8e1bf3311054708a17b445fdde319e0d7011f93c"
+  },
+  {
+    "file": "dev-docker.svg",
+    "items": [
+      "docker-engine",
+      "docker-ubuntu",
+      "docker-desktop"
+    ],
+    "download": "https://raw.githubusercontent.com/devicons/devicon/v2.16.0/icons/docker/docker-original.svg",
+    "upstream": {},
+    "sha256": "3fd830ea69431ed7a0b8d068cd5b34ad3f00a1a78195d50f13ff56713f2462e1"
+  },
+  {
+    "file": "dev-vscode.svg",
+    "items": [
+      "vscode"
+    ],
+    "download": "https://raw.githubusercontent.com/devicons/devicon/v2.16.0/icons/vscode/vscode-original.svg",
+    "upstream": {},
+    "sha256": "503d580c442a7071aae180d9b4766e312e4600bf0e9d842b30f56d0e614eceb8"
+  },
+  {
+    "file": "dev-phpstorm.svg",
+    "items": [
+      "phpstorm"
+    ],
+    "download": "https://raw.githubusercontent.com/devicons/devicon/v2.16.0/icons/phpstorm/phpstorm-original.svg",
+    "upstream": {},
+    "sha256": "72fd3e316ef3436a24c722a8802cccbb72dc42b1dd924e071233f136148b614d"
+  },
+  {
+    "file": "dev-ansible.svg",
+    "items": [
+      "ansible"
+    ],
+    "download": "https://raw.githubusercontent.com/devicons/devicon/v2.16.0/icons/ansible/ansible-original.svg",
+    "upstream": {},
+    "sha256": "6e318caf2d49685f921a72231816106859e0bf93e440a70d0445a3f7f030fc9f"
+  },
+  {
+    "file": "dev-firefox.svg",
+    "items": [
+      "firefox-flatpak"
+    ],
+    "download": "https://raw.githubusercontent.com/devicons/devicon/v2.16.0/icons/firefox/firefox-original.svg",
+    "upstream": {},
+    "sha256": "029a7e6f1163f76de4c5d488216524264c25154bc659d7a7d3ea26e1d5181b1f"
+  },
+  {
+    "file": "si-curl.svg",
+    "items": [
+      "curl"
+    ],
+    "download": "https://raw.githubusercontent.com/simple-icons/simple-icons/16.13.0/icons/curl.svg",
+    "upstream": {
+      "title": "curl",
+      "hex": "073551",
+      "source": "https://curl.haxx.se/logo/"
+    },
+    "sha256": "be09f002424be9ea5e9f1d63b6bd98a03c1bfdd6d7d79f4c4b6833bd40682787"
+  },
+  {
+    "file": "si-rclone.svg",
+    "items": [
+      "rclone"
+    ],
+    "download": "https://raw.githubusercontent.com/simple-icons/simple-icons/16.13.0/icons/rclone.svg",
+    "upstream": {
+      "title": "Rclone",
+      "hex": "3F79AD",
+      "source": "https://github.com/rclone/rclone/blob/8f1c309c8149a734ccc3a0d2ce185b936dbe783a/graphics/logo/svg/logo_symbol_color.svg"
+    },
+    "sha256": "24659fc242ddf48c00a716ade6dd28ff4e92563dc95ada2cbaae2d22bfece100"
+  },
+  {
+    "file": "si-openvpn.svg",
+    "items": [
+      "openvpn"
+    ],
+    "download": "https://raw.githubusercontent.com/simple-icons/simple-icons/16.13.0/icons/openvpn.svg",
+    "upstream": {
+      "title": "OpenVPN",
+      "hex": "EA7E20",
+      "source": "https://openvpn.net",
+      "guidelines": "https://openvpn.net/legal"
+    },
+    "sha256": "87fb4be3671b0bf5c9f97cc2693a8b4c01a2355ef06760f4620464d9aa40923d"
+  },
+  {
+    "file": "si-filezilla.svg",
+    "items": [
+      "filezilla"
+    ],
+    "download": "https://raw.githubusercontent.com/simple-icons/simple-icons/16.13.0/icons/filezilla.svg",
+    "upstream": {
+      "title": "FileZilla",
+      "hex": "BF0000",
+      "source": "https://commons.wikimedia.org/wiki/File:FileZilla_logo.svg"
+    },
+    "sha256": "d7041c564a9c84cbb288bf0a8e5f2adbf737c01ccbe877526443b5e03a856b8a"
+  },
+  {
+    "file": "si-brave.svg",
+    "items": [
+      "brave"
+    ],
+    "download": "https://raw.githubusercontent.com/simple-icons/simple-icons/16.13.0/icons/brave.svg",
+    "upstream": {
+      "title": "Brave",
+      "hex": "FB542B",
+      "source": "https://brave.com/brave-branding-assets",
+      "guidelines": "https://brave.com/brave-branding-assets"
+    },
+    "sha256": "ab03dbd270ceb53def63a0587f41d74b286056fdbe523cfcb8e3bfe88763b02b"
+  },
+  {
+    "file": "si-vlcmediaplayer.svg",
+    "items": [
+      "vlc"
+    ],
+    "download": "https://raw.githubusercontent.com/simple-icons/simple-icons/16.13.0/icons/vlcmediaplayer.svg",
+    "upstream": {
+      "title": "VLC media player",
+      "hex": "FF8800",
+      "source": "https://code.videolan.org/videolan/vlc/-/blob/1ce7f686ee17a028d2d79627ae69f22d905f2e23/extras/package/macosx/asset_sources/vlc_app_icon.svg"
+    },
+    "sha256": "6f92fef19c8a9f9d9adcefc55629ff5bc4854dafb0df77b4753ca98d817acf17"
+  },
+  {
+    "file": "si-qbittorrent.svg",
+    "items": [
+      "qbittorrent"
+    ],
+    "download": "https://raw.githubusercontent.com/simple-icons/simple-icons/16.13.0/icons/qbittorrent.svg",
+    "upstream": {
+      "title": "qbittorrent",
+      "hex": "2F67BA",
+      "source": "https://github.com/qbittorrent/qBittorrent/blob/73028f9930d9ab9d89edb60ed4aedb66d75669d9/src/icons/qbittorrent-tray-light.svg"
+    },
+    "sha256": "e71d9f6635ee2fda27b6d59a33ee788979ec946516a7b3c77fb9b72fc01b7dd6"
+  },
+  {
+    "file": "si-flathub.svg",
+    "items": [
+      "flathub"
+    ],
+    "download": "https://raw.githubusercontent.com/simple-icons/simple-icons/16.13.0/icons/flathub.svg",
+    "upstream": {
+      "title": "Flathub",
+      "hex": "000000",
+      "source": "https://flathub.org"
+    },
+    "sha256": "41a4fd9549f940ceaa079f3d81b6c09fe7ebaa5404cbdb00dbe0221603c65926"
+  },
+  {
+    "file": "si-zsh.svg",
+    "items": [
+      "zsh"
+    ],
+    "download": "https://raw.githubusercontent.com/simple-icons/simple-icons/16.13.0/icons/zsh.svg",
+    "upstream": {
+      "title": "Zsh",
+      "hex": "F15A24",
+      "source": "https://github.com/Zsh-art/logo/blob/17617f2f6c70c65943a48745c91d997e7561f19d/svg/white_logomark.svg"
+    },
+    "sha256": "ad57b0dd943d4f5f718af1c0f94abcc3ef6e93fcea43429230c07dd982701495"
+  },
+  {
+    "file": "si-stripe.svg",
+    "items": [
+      "stripe-cli"
+    ],
+    "download": "https://raw.githubusercontent.com/simple-icons/simple-icons/16.13.0/icons/stripe.svg",
+    "upstream": {
+      "title": "Stripe",
+      "hex": "635BFF",
+      "source": "https://stripe.com/newsroom/information"
+    },
+    "sha256": "7576775bf9915b696bbb9162268f5c56147d2b4221a76ac6a9ca92835239b7e9"
+  },
+  {
+    "file": "si-bruno.svg",
+    "items": [
+      "bruno"
+    ],
+    "download": "https://raw.githubusercontent.com/simple-icons/simple-icons/16.13.0/icons/bruno.svg",
+    "upstream": {
+      "title": "Bruno",
+      "hex": "F4AA41",
+      "source": "https://www.usebruno.com"
+    },
+    "sha256": "166000d8a053169b7e3f338343a42870ce60cd7e2429d4dd0aab09d44624a1e4"
+  },
+  {
+    "file": "si-hoppscotch.svg",
+    "items": [
+      "hoppscotch"
+    ],
+    "download": "https://raw.githubusercontent.com/simple-icons/simple-icons/16.13.0/icons/hoppscotch.svg",
+    "upstream": {
+      "title": "Hoppscotch",
+      "hex": "09090B",
+      "source": "https://hoppscotch.com"
+    },
+    "sha256": "119f2a8df5cc3cb6f4522eb315838ee983fa76c409318fc1ea4026837293b386"
+  },
+  {
+    "file": "si-warp.svg",
+    "items": [
+      "warp",
+      "warp-style"
+    ],
+    "download": "https://raw.githubusercontent.com/simple-icons/simple-icons/16.13.0/icons/warp.svg",
+    "upstream": {
+      "title": "Warp",
+      "hex": "01A4FF",
+      "source": "https://warp.dev"
+    },
+    "sha256": "2b41e8b8d249aeeed69132f9b884f8a52c874e09f9731df4b39e8ae4e28c8f85"
+  },
+  {
+    "file": "si-libreoffice.svg",
+    "items": [
+      "libreoffice"
+    ],
+    "download": "https://raw.githubusercontent.com/simple-icons/simple-icons/16.13.0/icons/libreoffice.svg",
+    "upstream": {
+      "title": "LibreOffice",
+      "hex": "18A303",
+      "source": "https://wiki.documentfoundation.org/Marketing/Branding",
+      "guidelines": "https://wiki.documentfoundation.org/Marketing/Branding"
+    },
+    "sha256": "a58639710515d13390049d2b81bd130bae5519e798302f50ef371fc105ff2f8a"
+  },
+  {
+    "file": "si-thunderbird.svg",
+    "items": [
+      "thunderbird"
+    ],
+    "download": "https://raw.githubusercontent.com/simple-icons/simple-icons/16.13.0/icons/thunderbird.svg",
+    "upstream": {
+      "title": "Thunderbird",
+      "hex": "0A84FF",
+      "source": "https://design.thunderbird.net/resources/logo"
+    },
+    "sha256": "e6db9c69ed7e9a121a8f439a9c981d1bedc8852eed4ca0da38f91a7acdde240e"
+  },
+  {
+    "file": "si-ente.svg",
+    "items": [
+      "ente-photos",
+      "ente-auth"
+    ],
+    "download": "https://raw.githubusercontent.com/simple-icons/simple-icons/16.13.0/icons/ente.svg",
+    "upstream": {
+      "title": "Ente",
+      "hex": "00BC45",
+      "source": "https://ente.io"
+    },
+    "sha256": "9e8c0301c79406457d3061c0937e3881968abb452911feccc8f0f2a127470659"
+  },
+  {
+    "file": "si-bitwarden.svg",
+    "items": [
+      "bitwarden"
+    ],
+    "download": "https://raw.githubusercontent.com/simple-icons/simple-icons/16.13.0/icons/bitwarden.svg",
+    "upstream": {
+      "title": "Bitwarden",
+      "hex": "175DDC",
+      "source": "https://bitwarden.com/brand",
+      "guidelines": "https://bitwarden.com/brand"
+    },
+    "sha256": "d73cb5396a741e758eff06a28c57ded6ce154d6a5e8a5cdfb8f66abd05027d2c"
+  },
+  {
+    "file": "si-keepassxc.svg",
+    "items": [
+      "keepassxc"
+    ],
+    "download": "https://raw.githubusercontent.com/simple-icons/simple-icons/16.13.0/icons/keepassxc.svg",
+    "upstream": {
+      "title": "KeePassXC",
+      "hex": "6CAC4D",
+      "source": "https://github.com/keepassxreboot/keepassxc/tree/3fdafc6d25e85050976e0cc645db579086db3f45"
+    },
+    "sha256": "4f6da2447148518b4445d087513d959fb012304eede847a585cdc6d09db4aec2"
+  },
+  {
+    "file": "si-yubico.svg",
+    "items": [
+      "yubico-authenticator",
+      "yubikey-manager"
+    ],
+    "download": "https://raw.githubusercontent.com/simple-icons/simple-icons/16.13.0/icons/yubico.svg",
+    "upstream": {
+      "title": "Yubico",
+      "hex": "84BD00",
+      "source": "https://www.yubico.com/wp-content/themes/coronado/img/icon.svg"
+    },
+    "sha256": "8f6a140c41e04d1bf35b81142c8096ddfb18d15eec28d03525c71176ccf29f9e"
+  },
+  {
+    "file": "si-cryptomator.svg",
+    "items": [
+      "cryptomator"
+    ],
+    "download": "https://raw.githubusercontent.com/simple-icons/simple-icons/16.13.0/icons/cryptomator.svg",
+    "upstream": {
+      "title": "Cryptomator",
+      "hex": "49B04A",
+      "source": "https://github.com/cryptomator/docs/blob/795a5a414b7e848cbfd4502a4ff63cfdb3adfb15/source/img/logo-mono-white.svg"
+    },
+    "sha256": "4de245ca3b791219ab6ace5409fb4d9748707b4841c2f429b252695715e101e0"
+  },
+  {
+    "file": "si-torbrowser.svg",
+    "items": [
+      "torbrowser-launcher"
+    ],
+    "download": "https://raw.githubusercontent.com/simple-icons/simple-icons/16.13.0/icons/torbrowser.svg",
+    "upstream": {
+      "title": "Tor Browser",
+      "hex": "7D4698",
+      "source": "https://styleguide.torproject.org/brand-assets"
+    },
+    "sha256": "9fa4d86623c271d2eecf97ec92c50c08815cfee74e16251baa777937dabbe737"
+  },
+  {
+    "file": "si-wireshark.svg",
+    "items": [
+      "wireshark"
+    ],
+    "download": "https://raw.githubusercontent.com/simple-icons/simple-icons/16.13.0/icons/wireshark.svg",
+    "upstream": {
+      "title": "Wireshark",
+      "hex": "1679A7",
+      "source": "https://gitlab.com/wanduow/wireshark/-/blob/cd5539b0f76975474869984a9d2f0fce29d5c21e/image/wsicon.svg"
+    },
+    "sha256": "f2df09aa8ebce190841e0721b8b12777295362aad57cacabe497260a0aa3ec1c"
+  },
+  {
+    "file": "si-wireguard.svg",
+    "items": [
+      "wireguard-tools"
+    ],
+    "download": "https://raw.githubusercontent.com/simple-icons/simple-icons/16.13.0/icons/wireguard.svg",
+    "upstream": {
+      "title": "WireGuard",
+      "hex": "88171A",
+      "source": "https://www.wireguard.com",
+      "guidelines": "https://www.wireguard.com/trademark-policy"
+    },
+    "sha256": "2d834510d17264fe90e3c0c117f874be0c8163f7d06254a0e4c1dda37600c89f"
+  },
+  {
+    "file": "si-tmux.svg",
+    "items": [
+      "tmux"
+    ],
+    "download": "https://raw.githubusercontent.com/simple-icons/simple-icons/16.13.0/icons/tmux.svg",
+    "upstream": {
+      "title": "tmux",
+      "hex": "1BB91F",
+      "source": "https://github.com/tmux/tmux/blob/e26356607e38cbb4676a7c91815ae2d5734443c3/logo/tmux-logo-1-color.svg"
+    },
+    "sha256": "c1816ea5bba0aeca37ba2c6a51e6ae72a67b482ce5884c11314ebc8a03cd42e9"
+  },
+  {
+    "file": "si-virtualbox.svg",
+    "items": [
+      "virtualbox"
+    ],
+    "download": "https://raw.githubusercontent.com/simple-icons/simple-icons/16.13.0/icons/virtualbox.svg",
+    "upstream": {
+      "title": "VirtualBox",
+      "hex": "2F61B4",
+      "source": "https://www.virtualbox.org/svn/vbox/trunk/src/VBox/Artwork/OSE",
+      "aliases": {
+        "aka": [
+          "Oracle VirtualBox"
+        ]
+      }
+    },
+    "sha256": "75c307bc103c6c61e73a4fa62ab1c2cea5ee3ff2b44b79ecbfffe2d891d3e5af"
+  }
+]

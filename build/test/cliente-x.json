@@ -1,0 +1,19 @@
+{
+  "schema": "meu-ubuntu/profile",
+  "version": 2,
+  "id": "cliente-x-posto",
+  "name": "Cliente X — posto técnico",
+  "description": "Posto de suporte para a equipa do cliente X.",
+  "audience": "Técnicos do cliente X",
+  "author": "Amigo da infraestrutura",
+  "kind": "usage",
+  "requires": { "minRelease": "26.04", "arch": ["amd64"] },
+  "selections": {
+    "remmina": {},
+    "nmap": {},
+    "docker-group": {},
+    "dock-position": { "options": { "pos": ["'BOTTOM'"] } },
+    "power-performance": {},
+    "item-de-versao-futura": {}
+  }
+}

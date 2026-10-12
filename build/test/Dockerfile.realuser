@@ -1,0 +1,2 @@
+FROM meu-ubuntu-build:26.04
+RUN apt-get update && apt-get install -y --no-install-recommends flatpak gsettings-desktop-schemas gnome-shell-common libglib2.0-bin dconf-gsettings-backend dbus-x11 git && rm -rf /var/lib/apt/lists/*

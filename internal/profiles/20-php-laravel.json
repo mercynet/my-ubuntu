@@ -1,0 +1,45 @@
+{
+ "schema": "meu-ubuntu/profile",
+ "version": 2,
+ "id": "dev-php-laravel",
+ "name": "Desenvolvimento PHP/Laravel",
+ "description": "Docker oficial, PHP 8.5 do sistema com Xdebug desligado, Composer, Node, VS Code, Git e clientes de bases de dados.",
+ "audience": "Para quem desenvolve em PHP/Laravel com Docker, Node e Git.",
+ "author": "Meu Ubuntu",
+ "kind": "usage",
+ "requires": {
+  "minRelease": "26.04",
+  "arch": [
+   "amd64"
+  ]
+ },
+ "selections": {
+  "curl": {},
+  "flathub": {},
+  "lang-pt": {},
+  "deja-dup": {},
+  "gnome-tweaks": {},
+  "git": {},
+  "git-flow": {},
+  "gh": {},
+  "build-essential": {},
+  "ssh-client": {},
+  "htop": {},
+  "ncdu": {},
+  "rsync": {},
+  "docker-engine": {},
+  "php": {},
+  "composer": {},
+  "xdebug": {},
+  "nodejs": {},
+  "sqlite": {},
+  "mariadb-client": {},
+  "vscode": {},
+  "dbeaver": {},
+  "git-defaults": {},
+  "tpl-php": {},
+  "tpl-sh": {},
+  "python-dev": {},
+  "keepassxc": {}
+ }
+}

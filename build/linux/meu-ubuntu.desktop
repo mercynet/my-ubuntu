@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Meu Ubuntu
+Comment=Pós-instalação e configuração do Ubuntu
+Exec=meu-ubuntu
+Icon=meu-ubuntu
+Terminal=false
+Categories=System;Settings;
+Keywords=instalar;configurar;perfil;gnome;

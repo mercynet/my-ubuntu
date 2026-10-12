@@ -1,0 +1,24 @@
+{
+ "schema": "meu-ubuntu/profile",
+ "version": 2,
+ "id": "portatil-equilibrado",
+ "name": "Portátil equilibrado",
+ "description": "Perfil equilibrado, suspensão em bateria e indicadores úteis.",
+ "audience": "Complemento de energia para portáteis (alternativo ao Desempenho).",
+ "author": "Meu Ubuntu",
+ "kind": "complement",
+ "requires": {
+  "minRelease": "26.04",
+  "arch": [
+   "amd64"
+  ]
+ },
+ "selections": {
+  "power-balanced": {},
+  "suspend-battery": {},
+  "screen-blank": {},
+  "battery-pct": {},
+  "tap-click": {},
+  "fstrim-timer": {}
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "schema": "meu-ubuntu/profile",
+ "version": 2,
+ "id": "uso-pessoal",
+ "name": "Uso pessoal / escritório",
+ "description": "Escritório, email, navegadores, multimédia, backups e um gestor de senhas.",
+ "audience": "Para quem usa o PC para documentos, email, navegação, fotos e chamadas.",
+ "author": "Meu Ubuntu",
+ "kind": "usage",
+ "requires": {
+  "minRelease": "26.04",
+  "arch": [
+   "amd64"
+  ]
+ },
+ "selections": {
+  "curl": {},
+  "flathub": {},
+  "lang-pt": {},
+  "deja-dup": {},
+  "gnome-tweaks": {},
+  "libreoffice": {},
+  "thunderbird": {},
+  "firefox-flatpak": {},
+  "vlc": {},
+  "flameshot": {},
+  "bitwarden": {},
+  "ente-auth": {},
+  "smb": {},
+  "color-scheme": {},
+  "night-light": {},
+  "clock-weekday": {},
+  "tpl-txt": {}
+ }
+}

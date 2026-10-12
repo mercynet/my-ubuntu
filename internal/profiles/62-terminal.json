@@ -1,0 +1,25 @@
+{
+ "schema": "meu-ubuntu/profile",
+ "version": 2,
+ "id": "terminal-produtivo",
+ "name": "Terminal produtivo",
+ "description": "Nala, Zsh/Oh My Zsh com sugestões e destaque de sintaxe, pesquisa com fzf, navegação com zoxide e exemplos com tldr. A instalação dos pacotes é automática; a integração com a configuração pessoal tem passos guiados.",
+ "audience": "Para quem usa o terminal e quer reduzir tarefas repetitivas.",
+ "author": "Meu Ubuntu",
+ "kind": "complement",
+ "requires": {
+  "minRelease": "26.04",
+  "arch": [
+   "amd64"
+  ]
+ },
+ "selections": {
+  "nala": {},
+  "zsh-autosuggestions": {},
+  "zsh-syntax-highlighting": {},
+  "fzf": {},
+  "zoxide": {},
+  "tealdeer": {},
+  "oh-my-zsh": {}
+ }
+}

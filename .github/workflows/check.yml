@@ -1,0 +1,40 @@
+name: Check and build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: check-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ubuntu:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Validate the frontend and Go app, including race detection
+        run: make check
+      - name: Audit Go and npm dependencies
+        run: make audit
+      - name: Build the binary and Debian package
+        run: make build
+      - name: Verify package integrity
+        run: make verify
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: meu-ubuntu-linux-amd64
+          path: |
+            dist/meu-ubuntu-*-linux-amd64
+            dist/meu-ubuntu_*_amd64.deb
+            dist/meu-ubuntu-*-source.tar.gz
+            dist/SHA256SUMS
+          if-no-files-found: error
+          retention-days: 14

@@ -1,0 +1,20 @@
+{
+ "schema": "meu-ubuntu/profile",
+ "version": 2,
+ "id": "desempenho-corrente",
+ "name": "Desempenho ligado à corrente",
+ "description": "Perfil de desempenho e sem suspensão com carregador. Ganho não medido.",
+ "audience": "Complemento de energia para desktops sempre ligados (alternativo ao Portátil).",
+ "author": "Meu Ubuntu",
+ "kind": "complement",
+ "requires": {
+  "minRelease": "26.04",
+  "arch": [
+   "amd64"
+  ]
+ },
+ "selections": {
+  "power-performance": {},
+  "suspend-ac": {}
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "schema": "meu-ubuntu/profile",
+ "version": 2,
+ "id": "infra-estacao",
+ "name": "Infraestrutura — estação de trabalho",
+ "description": "Ferramentas de cliente apenas: não configura servidores, firewall, DNS, VPN nem serviços. Validado em simulação/container; não validado ainda em máquinas de clientes.",
+ "audience": "Para técnicos de infraestrutura: acesso remoto, rede, diagnóstico e virtualização num Ubuntu Desktop.",
+ "author": "Meu Ubuntu",
+ "kind": "usage",
+ "requires": {
+  "minRelease": "26.04",
+  "arch": [
+   "amd64"
+  ]
+ },
+ "selections": {
+  "curl": {},
+  "flathub": {},
+  "lang-pt": {},
+  "deja-dup": {},
+  "gnome-tweaks": {},
+  "git": {},
+  "ssh-client": {},
+  "htop": {},
+  "ncdu": {},
+  "rsync": {},
+  "rclone": {},
+  "remmina": {},
+  "putty-tools": {},
+  "sshfs": {},
+  "tmux": {},
+  "net-diag": {},
+  "nmap": {},
+  "iperf3": {},
+  "traffic-monitor": {},
+  "tcpdump": {},
+  "wireshark": {},
+  "virt-manager": {},
+  "ansible": {},
+  "wireguard-tools": {},
+  "disk-tools": {},
+  "lnav": {},
+  "keepassxc": {},
+  "openvpn": {},
+  "filezilla": {}
+ }
+}

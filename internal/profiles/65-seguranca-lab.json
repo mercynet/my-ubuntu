@@ -1,0 +1,25 @@
+{
+ "schema": "meu-ubuntu/profile",
+ "version": 2,
+ "id": "seguranca-laboratorio",
+ "name": "Segurança — laboratório e auditoria",
+ "description": "Ferramentas open source para análise de rede, auditoria web, TLS e verificação local. A aplicação apenas instala as ferramentas; os testes são executados manualmente.",
+ "audience": "Para quem desenvolve aplicações, estuda segurança ou audita sistemas e redes.",
+ "author": "Meu Ubuntu",
+ "kind": "complement",
+ "requires": {
+  "minRelease": "26.04",
+  "arch": ["amd64"]
+ },
+ "selections": {
+  "nmap": {},
+  "wireshark": {},
+  "tcpdump": {},
+  "lynis": {},
+  "gobuster": {},
+  "sqlmap": {},
+  "sslscan": {},
+  "testssl": {},
+  "arp-scan": {}
+ }
+}

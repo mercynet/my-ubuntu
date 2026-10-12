@@ -1,0 +1,17 @@
+{
+ "schema": "meu-ubuntu/profile",
+ "version": 2,
+ "id": "personalizado",
+ "name": "Personalizado (começar vazio)",
+ "description": "Sem itens: escolha tudo nas áreas.",
+ "audience": "Para quem quer escolher item a item.",
+ "author": "Meu Ubuntu",
+ "kind": "usage",
+ "requires": {
+  "minRelease": "26.04",
+  "arch": [
+   "amd64"
+  ]
+ },
+ "selections": {}
+}

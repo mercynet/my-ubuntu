@@ -1,0 +1,31 @@
+{
+ "schema": "meu-ubuntu/profile",
+ "version": 2,
+ "id": "essencial",
+ "name": "Base essencial",
+ "description": "Ferramentas base, Flathub, idiomas e backups.",
+ "audience": "Complemento útil para qualquer uso.",
+ "author": "Meu Ubuntu",
+ "kind": "complement",
+ "requires": {
+  "minRelease": "26.04",
+  "arch": [
+   "amd64"
+  ]
+ },
+ "selections": {
+  "curl": {},
+  "flathub": {},
+  "lang-pt": {},
+  "deja-dup": {},
+  "gnome-tweaks": {},
+  "git": {},
+  "build-essential": {},
+  "ssh-client": {},
+  "htop": {},
+  "ncdu": {},
+  "rsync": {},
+  "extension-manager": {},
+  "lang-en": {}
+ }
+}

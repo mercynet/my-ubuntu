@@ -1,0 +1,7 @@
+dist/
+frontend/dist/
+frontend/node_modules/
+build/test/out/
+
+# Internal integration assessments and packages
+/private/
