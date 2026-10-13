@@ -18,6 +18,7 @@ type Sim struct {
 	mu             sync.Mutex
 	Packages       map[string]bool
 	Flatpaks       map[string]bool
+	FlatpakRemotes map[string]string
 	Snaps          map[string]bool
 	Settings       map[string]string // "schema key" -> value
 	Defaults       map[string]string
@@ -46,6 +47,7 @@ func NewSim() *Sim {
 			"gnome-shell-extension-ubuntu-dock": true, "gnome-shell-extension-appindicator": true,
 			"gnome-shell-extension-ubuntu-tiling-assistant": true, "power-profiles-daemon": true},
 		Flatpaks: map[string]bool{}, Snaps: map[string]bool{"firefox": true, "snapd": true},
+		FlatpakRemotes: map[string]string{},
 		Settings: map[string]string{
 			"org.gnome.desktop.interface color-scheme":                                                      "'default'",
 			"org.gnome.desktop.interface text-scaling-factor":                                               "1.0",
@@ -193,6 +195,20 @@ func (s *Sim) Stream(ctx context.Context, onLine func(string), name string, args
 		s.mu.Lock()
 		defer s.mu.Unlock()
 		switch {
+		case len(args) > 0 && args[0] == "--version":
+			onLine("Flatpak 1.16.5 (simulado)")
+		case len(args) > 0 && args[0] == "remote-add":
+			if s.FlatpakRemotes == nil {
+				s.FlatpakRemotes = map[string]string{}
+			}
+			s.FlatpakRemotes["flathub"] = "https://dl.flathub.org/repo/"
+			onLine("Flathub configurado (simulado)")
+		case len(args) > 0 && args[0] == "remote-info":
+			id := args[len(args)-1]
+			if s.FailPkgs[id] {
+				return ExitStatus(1)
+			}
+			onLine("app/" + id + "/x86_64/stable")
 		case len(args) > 0 && args[0] == "list":
 			for k, v := range s.Flatpaks {
 				if v {
@@ -201,6 +217,18 @@ func (s *Sim) Stream(ctx context.Context, onLine func(string), name string, args
 			}
 		case len(args) > 0 && args[0] == "install":
 			id := args[len(args)-1]
+			if strings.Contains(a, "--from") {
+				ref, err := os.ReadFile(id)
+				if err != nil {
+					return err
+				}
+				for _, line := range strings.Split(string(ref), "\n") {
+					fields := strings.SplitN(line, "=", 2)
+					if len(fields) == 2 && strings.TrimSpace(fields[0]) == "Name" {
+						id = strings.TrimSpace(fields[1])
+					}
+				}
+			}
 			time.Sleep(s.Delay)
 			if s.FailPkgs[id] {
 				onLine("error: simulado")
@@ -209,7 +237,9 @@ func (s *Sim) Stream(ctx context.Context, onLine func(string), name string, args
 			s.Flatpaks[id] = true
 			onLine("Installing " + id + " (simulado)")
 		case len(args) > 0 && args[0] == "remotes":
-			onLine("flathub\tuser")
+			for name, remote := range s.FlatpakRemotes {
+				onLine(name + "\t" + remote + "\t")
+			}
 		default:
 			onLine("ok (simulado)")
 		}

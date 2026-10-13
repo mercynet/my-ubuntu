@@ -47,10 +47,14 @@ type Engine struct {
 	Fetch     func(string) ([]byte, error)
 	Simulated bool
 
-	mu      sync.Mutex
-	running bool
-	closing bool
-	cancel  atomic.Bool
+	mu           sync.Mutex
+	running      bool
+	closing      bool
+	cancel       atomic.Bool
+	pause        atomic.Bool
+	runID        string
+	runState     string
+	stateVersion uint64
 }
 
 type StepEvent struct {
@@ -86,7 +90,14 @@ func (e *Engine) PreventClose() bool {
 
 // Cancel requests a stop at the next safe boundary. A running APT/dpkg
 // operation is never killed; it finishes first.
-func (e *Engine) Cancel() { e.cancel.Store(true) }
+func (e *Engine) Cancel() {
+	e.mu.Lock()
+	defer e.mu.Unlock()
+	e.cancel.Store(true)
+	if e.running {
+		e.stateLocked("cancelling")
+	}
+}
 
 // Start runs the plan asynchronously and returns the run ID.
 // confirmed maps item -> the value the user confirmed in the reviewed plan
@@ -140,6 +151,10 @@ func (e *Engine) Start(p *plan.Plan, confirmed map[string]string) (string, error
 		return "", fmt.Errorf("não foi possível guardar a execução; nada alterado: %w", err)
 	}
 	e.running = true
+	e.runID = run.ID
+	e.runState = "running"
+	e.stateVersion = 0
+	e.pause.Store(false)
 	e.cancel.Store(false)
 	go e.exec(p, run, logf)
 	return run.ID, nil
@@ -175,6 +190,39 @@ func (e *Engine) exec(p *plan.Plan, run store.Run, logf *os.File) {
 		return true
 	}
 	for i, s := range p.Steps {
+		e.mu.Lock()
+		shouldPause := e.pause.Load() && !e.cancel.Load()
+		if shouldPause {
+			e.stateLocked("paused")
+		}
+		e.mu.Unlock()
+		if shouldPause {
+			run.Status = "paused"
+			if !persist() {
+				break
+			}
+			for e.pause.Load() && !e.cancel.Load() {
+				time.Sleep(50 * time.Millisecond)
+			}
+			run.Status = "running"
+			if !e.cancel.Load() {
+				if err := e.validateRemainingAfterPause(ctx, p, i); err != nil {
+					for j := i; j < len(p.Steps); j++ {
+						run.Steps[j].Status = StCancelled
+						run.Steps[j].Note = err.Error()
+						e.emitStep(run.ID, p.Steps[j].ID, StCancelled, "", err.Error())
+					}
+					run.Status = StIntervention
+					break
+				}
+			}
+			if !persist() {
+				break
+			}
+			e.mu.Lock()
+			e.stateLocked("running")
+			e.mu.Unlock()
+		}
 		if e.cancel.Load() {
 			for j := i; j < len(p.Steps); j++ {
 				run.Steps[j].Status = StCancelled
@@ -463,8 +511,59 @@ func (e *Engine) userOp(ctx context.Context, runID string, s plan.Step, log func
 	case "verify":
 		return nil // verify() performs the read-only check after this step.
 	case "flatpak-remote":
-		return e.R.Stream(ctx, log, "flatpak", "remote-add", "--user", "--if-not-exists", "flathub", "https://dl.flathub.org/repo/flathub.flatpakrepo")
+		if err := e.requireFlatpak(ctx); err != nil {
+			return err
+		}
+		if err := e.checkFlatpakRemote(ctx, "flathub", flathubRepo, false); err != nil {
+			return err
+		}
+		if err := e.R.Stream(ctx, log, "flatpak", "remote-add", "--user", "--if-not-exists", "flathub", "https://dl.flathub.org/repo/flathub.flatpakrepo"); err != nil {
+			return err
+		}
+		return e.checkFlatpakRemote(ctx, "flathub", flathubRepo, true)
 	case "flatpak-install":
+		if err := e.requireFlatpak(ctx); err != nil {
+			return err
+		}
+		if err := e.checkFlatpakRemote(ctx, "flathub", flathubRepo, true); err != nil {
+			return err
+		}
+		if it.FlatpakUnavailable != "" {
+			return errors.New(it.FlatpakUnavailable)
+		}
+		log("Flatpak e remoto do utilizador validados; a conferir a origem da aplicação…")
+		if it.FlatpakRef != "" {
+			ref, err := catalog.FlatpakReference(it)
+			if err != nil || fmt.Sprintf("%x", sha256.Sum256(ref)) != s.Expect {
+				return errors.New("referência Flatpak não corresponde à revisão")
+			}
+			fields := map[string]string{}
+			for _, line := range strings.Split(string(ref), "\n") {
+				parts := strings.SplitN(line, "=", 2)
+				if len(parts) == 2 {
+					fields[strings.TrimSpace(parts[0])] = strings.TrimSpace(parts[1])
+				}
+			}
+			if err := e.checkFlatpakRemote(ctx, fields["SuggestRemoteName"], fields["Url"], false); err != nil {
+				return err
+			}
+			f, err := os.CreateTemp(e.Store.Data, "vendor-*.flatpakref")
+			if err != nil {
+				return err
+			}
+			defer os.Remove(f.Name())
+			if _, err = f.Write(ref); err != nil {
+				f.Close()
+				return err
+			}
+			if err = f.Close(); err != nil {
+				return err
+			}
+			return e.R.Stream(ctx, log, "flatpak", "install", "--user", "-y", "--noninteractive", "--from", f.Name())
+		}
+		if err := e.checkFlatpakApp(ctx, it.Flatpak); err != nil {
+			return err
+		}
 		return e.R.Stream(ctx, log, "flatpak", "install", "--user", "-y", "--noninteractive", "flathub", it.Flatpak)
 	case catalog.MethodGSettings:
 		for _, st := range it.Settings {

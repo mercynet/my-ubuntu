@@ -2,13 +2,13 @@
 
 ## Versões e âmbito
 
-A 1.0.0-rc.1 é uma candidata para Ubuntu 26.04 LTS, GNOME e amd64. Ainda não existe uma versão estável nem um compromisso de manutenção de versões anteriores. A aplicação corre como utilizador; operações administrativas passam por um helper com operações permitidas e plano revisto.
+A 1.0.0-rc.4 é uma candidata para Ubuntu 26.04 LTS, GNOME e amd64. Ainda não existe uma versão estável nem um compromisso de manutenção de versões anteriores. A aplicação corre como utilizador; operações administrativas passam por um helper com operações permitidas e plano revisto.
 
 ## Relatar uma vulnerabilidade
 
-Não publique segredos, dados pessoais, configurações de tenants ou instruções exploráveis num issue público. Contacte o responsável do projeto por um canal privado já acordado e inclua versão, passos mínimos, impacto e logs expurgados. Não invente nem use um endereço de segurança não anunciado.
+Use [Report a vulnerability](https://github.com/mercynet/my-ubuntu/security/advisories/new), no separador Security do repositório, para comunicar uma vulnerabilidade em privado. O canal foi ativado em 2026-10-13. Inclua versão, passos mínimos, impacto e logs expurgados.
 
-Antes da publicação pública, o mantenedor deve anunciar um canal privado de segurança no repositório e atualizar este documento. Esse canal ainda está pendente; esta candidata é distribuída diretamente para testes.
+Não publique segredos, dados pessoais, configurações de tenants ou instruções exploráveis num issue público. Problemas sem impacto de segurança podem ser comunicados nos [issues](https://github.com/mercynet/my-ubuntu/issues).
 
 ## Limites
 

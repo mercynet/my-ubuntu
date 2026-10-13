@@ -1,6 +1,6 @@
 # Clean Ubuntu 26.04 with NO dev tools: only the .deb (deps resolved by APT) + Xvfb tooling for screenshots.
 FROM ubuntu:26.04
-ARG VERSION=1.0.0-rc.1
+ARG VERSION
 ENV DEBIAN_FRONTEND=noninteractive
 COPY dist/meu-ubuntu_${VERSION}_amd64.deb /tmp/meu-ubuntu.deb
 RUN apt-get update && apt-get install -y --no-install-recommends /tmp/meu-ubuntu.deb \

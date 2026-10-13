@@ -9,7 +9,7 @@ export interface Option { key: string; label: string; multi?: boolean; values: O
 export interface Conflict { id: string; hard: boolean; reason: string }
 export interface Item {
   id: string; name: string; area: string; category: string; summary: string; why: string; notes?: string;
-  source: string; method: string; packages?: string[]; repo?: string; flatpak?: string; extension?: string;
+  source: string; method: string; packages?: string[]; repo?: string; flatpak?: string; flatpakRef?: string; legacyPackages?: string[]; legacyFlatpaks?: string[]; flatpakUnavailable?: string; extension?: string;
   providedBy?: string[]; requires?: string[]; conflicts?: Conflict[]; group?: string; addonsFor?: string[]; options?: Option[];
   advanced?: boolean; service?: boolean; relogin?: boolean; reboot?: boolean; verified?: string;
   manual?: { steps: string[]; url?: string }; compat?: { arch?: string[]; notes?: string };
@@ -40,7 +40,9 @@ export interface StepRecord { id: string; title: string; item: string; status: s
 export interface Run { id: string; started: string; finished?: string; status: string; selections: Selections; reverts?: string[] | null; steps: StepRecord[]; logFile: string; simulated: boolean }
 export interface InitData { version: string; system: System; prefs: Prefs; profiles: Profile[]; interrupted: Run | null; repos: Repo[]; groups: Group[] | null; items: Item[]; paths: Record<string, string>; pendingImport: ProfileReview | null; pendingError: string }
 export interface AboutInfo { version: string; author: string; goVersion: string; wailsVersion: string; attributions: { name: string; license: string; url: string; text: string }[] }
-export interface IntegrationPackage { format: number; id: string; name: string; version: string; description: string; publisher: string; checks: { type: string; title: string; path?: string }[]; guide: { title: string; text: string; command?: string }[]; project?: string }
+export interface IntegrationPackage { format: number; id: string; name: string; version: string; description: string; publisher: string; checks: { type: string; title: string; path?: string }[]; guide: { title: string; text: string; command?: string }[]; project?: string; setup?: { tools: string[] } }
+export interface SetupReview { token: string; project: string; namespace: string; services: string[]; databases: { service: string; schemas: string[] }[]; steps: string[]; manual: string[]; ports: Record<string, number>; address: string; simulated: boolean }
+export interface SetupJob { id: string; package: string; started: string; updated: string; state: string; finished: boolean; simulated: boolean; steps: { title: string; status: string; message?: string }[]; manual: string[]; address: string; terminal: string; message?: string }
 export interface IntegrationReview { manifest: IntegrationPackage; token: string; existing: string }
 export interface IntegrationReport { collectedAt: string; simulated: boolean; results: { title: string; status: string; detail: string }[] }
 export interface PlanStep { id: string; item: string; title: string; kind: string; op: string; detail: string[]; changes?: SettingState[]; category: string; options?: Record<string, string[]>; confirm?: string; expect?: string }
@@ -81,6 +83,9 @@ export const api = {
   installIntegration: (token: string) => call<void>("InstallIntegration", token),
   integrationProject: (id: string) => call<string>("IntegrationChooseProject", id),
   integrationDiagnostics: (id: string) => call<IntegrationReport>("IntegrationDiagnostics", id),
+  integrationSetupReview: (id: string) => call<SetupReview>("IntegrationSetupReview", id),
+  integrationSetupStart: (id: string, token: string) => call<SetupJob>("IntegrationSetupStart", id, token),
+  integrationSetupStatus: () => call<SetupJob | null>("IntegrationSetupStatus"),
   init: () => call<InitData>("Init"),
   about: () => call<AboutInfo>("About"),
   states: (s: Selections) => call<Record<string, ItemState>>("States", s),
@@ -91,6 +96,8 @@ export const api = {
   scriptPreview: (item: string, options: Record<string, string[]> | undefined, expected: string) => call<string>("ScriptPreview", item, options || {}, expected),
   endSession: (action: "logout" | "reboot") => call<void>("EndSession", action),
   cancel: () => call<void>("Cancel"),
+  pause: () => call<void>("Pause"),
+  resume: () => call<void>("Resume"),
   running: () => call<boolean>("Running"),
   runs: () => call<Run[] | null>("Runs"),
   runLog: (id: string) => call<string>("RunLog", id),

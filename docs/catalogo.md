@@ -2,7 +2,7 @@
 
 # Referência do catálogo e dos perfis
 
-191 itens e 10 perfis incluídos. Esta referência descreve as receitas embutidas; o estado e a compatibilidade efetivos são detetados no computador. Os comandos de verificação são evidência usada pelo software, não instruções para aplicar a receita manualmente.
+193 itens e 10 perfis incluídos. Esta referência descreve as receitas embutidas; o estado e a compatibilidade efetivos são detetados no computador. Os comandos de verificação são evidência usada pelo software, não instruções para aplicar a receita manualmente.
 
 ## Índice por área
 
@@ -23,25 +23,25 @@
 | [rclone](#item-rclone) | Rede e ficheiros | apt | Não |
 | [Partilhas Windows (SMB)](#item-smb) | Rede e ficheiros | apt | Não |
 | [OpenVPN no NetworkManager](#item-openvpn) | Rede e ficheiros | apt | Não |
-| [Déjà Dup (Cópias de segurança)](#item-deja-dup) | Rede e ficheiros | apt | Não |
-| [FileZilla](#item-filezilla) | Rede e ficheiros | apt | Não |
+| [Déjà Dup (Cópias de segurança)](#item-deja-dup) | Rede e ficheiros | flatpak | Não |
+| [FileZilla](#item-filezilla) | Rede e ficheiros | flatpak | Não |
 | [FreeFileSync](#item-freefilesync) | Rede e ficheiros | flatpak | Não |
 | [Firefox (Flatpak)](#item-firefox-flatpak) | Navegadores | flatpak | Não |
-| [Brave](#item-brave) | Navegadores | apt-repo | Não |
+| [Brave](#item-brave) | Navegadores | flatpak | Não |
 | [Remover Firefox Snap](#item-firefox-snap-remove) | Navegadores | admin | Sim |
-| [VLC](#item-vlc) | Multimédia | apt | Não |
-| [qBittorrent](#item-qbittorrent) | Multimédia | apt | Não |
-| [Flameshot](#item-flameshot) | Utilitários | apt | Não |
-| [Solaar](#item-solaar) | Utilitários | apt | Não |
+| [VLC](#item-vlc) | Multimédia | flatpak | Não |
+| [qBittorrent](#item-qbittorrent) | Multimédia | flatpak | Não |
+| [Flameshot](#item-flameshot) | Utilitários | flatpak | Não |
+| [Solaar](#item-solaar) | Utilitários | flatpak | Não |
 | [Pandoc + LaTeX](#item-pandoc) | Documentos | apt | Não |
 | [Português (PT/BR)](#item-lang-pt) | Idiomas | apt | Não |
 | [Inglês](#item-lang-en) | Idiomas | apt | Não |
 | [Nala](#item-nala) | Sistema | apt | Não |
 | [Flatpak + Flathub](#item-flathub) | Sistema | apt | Não |
 | [GNOME Tweaks (Ajustes)](#item-gnome-tweaks) | Sistema | apt | Não |
-| [Extension Manager](#item-extension-manager) | Sistema | apt | Não |
-| [dconf Editor](#item-dconf-editor) | Sistema | apt | Sim |
-| [LibreOffice](#item-libreoffice) | Escritório | apt | Não |
+| [Extension Manager](#item-extension-manager) | Sistema | flatpak | Não |
+| [dconf Editor](#item-dconf-editor) | Sistema | flatpak | Sim |
+| [LibreOffice](#item-libreoffice) | Escritório | flatpak | Não |
 | [Thunderbird (Flatpak)](#item-thunderbird) | Escritório | flatpak | Não |
 | [Ente Photos](#item-ente-photos) | Multimédia | flatpak | Não |
 
@@ -57,6 +57,7 @@
 | [Servidor MariaDB (local)](#item-mariadb-server) | Serviços locais · Dados e cache | apt | Não |
 | [Supervisor](#item-supervisor) | Bases de dados | apt | Sim |
 | [DBeaver Community](#item-dbeaver) | Bases de dados | flatpak | Não |
+| [Navicat Premium Lite](#item-navicat-premium-lite) | Bases de dados | flatpak | Não |
 | [Zsh](#item-zsh) | Terminal | apt | Não |
 | [Zsh: sugestões pelo histórico](#item-zsh-autosuggestions) | Plugins e complementos | apt | Não |
 | [Zsh: destaque de sintaxe](#item-zsh-syntax-highlighting) | Plugins e complementos | apt | Não |
@@ -81,8 +82,8 @@
 | [Docker (pacotes Ubuntu)](#item-docker-ubuntu) | Contentores | apt | Sim |
 | [Docker Desktop](#item-docker-desktop) | Contentores | manual | Não |
 | [Docker sem sudo (grupo docker)](#item-docker-group) | Contentores | admin | Não |
-| [Visual Studio Code](#item-vscode) | Editores e APIs | apt-repo | Não |
-| [PhpStorm](#item-phpstorm) | Editores e APIs | manual | Não |
+| [Visual Studio Code](#item-vscode) | Editores e APIs | flatpak | Não |
+| [PhpStorm](#item-phpstorm) | Editores e APIs | flatpak | Não |
 | [Stripe CLI](#item-stripe-cli) | Editores e APIs | apt-repo | Não |
 | [Bruno](#item-bruno) | Editores e APIs | flatpak | Não |
 | [Hoppscotch Desktop](#item-hoppscotch) | Editores e APIs | manual | Não |
@@ -114,7 +115,7 @@
 
 | Item | Categoria | Método | Avançado |
 | --- | --- | --- | --- |
-| [Remmina (RDP/VNC)](#item-remmina) | Acesso remoto | apt | Não |
+| [Remmina (RDP/VNC)](#item-remmina) | Acesso remoto | flatpak | Não |
 | [PuTTY tools](#item-putty-tools) | Acesso remoto | apt | Não |
 | [SSHFS](#item-sshfs) | Acesso remoto | apt | Não |
 | [tmux](#item-tmux) | Acesso remoto | apt | Não |
@@ -123,9 +124,9 @@
 | [iperf3](#item-iperf3) | Rede e diagnóstico | apt | Não |
 | [Monitores de tráfego](#item-traffic-monitor) | Rede e diagnóstico | apt | Não |
 | [tcpdump](#item-tcpdump) | Rede e diagnóstico | apt | Não |
-| [Wireshark](#item-wireshark) | Rede e diagnóstico | apt | Não |
-| [Virtualização (virt-manager/KVM)](#item-virt-manager) | Virtualização | apt | Não |
-| [GNOME Boxes](#item-gnome-boxes) | Virtualização | apt | Não |
+| [Wireshark](#item-wireshark) | Rede e diagnóstico | flatpak | Não |
+| [Virtualização (virt-manager)](#item-virt-manager) | Virtualização | flatpak | Não |
+| [GNOME Boxes](#item-gnome-boxes) | Virtualização | flatpak | Não |
 | [Ansible](#item-ansible) | Automação | apt | Não |
 | [WireGuard (ferramentas)](#item-wireguard-tools) | Automação | apt | Não |
 | [Discos e recuperação](#item-disk-tools) | Discos | apt | Não |
@@ -134,13 +135,14 @@
 | [VirtualBox](#item-virtualbox) | Virtualização | manual | Não |
 | [Terraform / kubectl / Helm](#item-terraform-kubectl) | Automação | manual | Não |
 | [AnyDesk / TeamViewer / RustDesk](#item-remote-support) | Acesso remoto | manual | Não |
+| [QEMU + libvirt (KVM local)](#item-kvm-libvirt) | Virtualização | apt | Não |
 
 ### Segurança
 
 | Item | Categoria | Método | Avançado |
 | --- | --- | --- | --- |
 | [Bitwarden](#item-bitwarden) | Gestores de senhas | flatpak | Não |
-| [KeePassXC](#item-keepassxc) | Gestores de senhas | apt | Não |
+| [KeePassXC](#item-keepassxc) | Gestores de senhas | flatpak | Não |
 | [Secrets (GNOME)](#item-gnome-secrets) | Gestores de senhas | flatpak | Não |
 | [Senhas e chaves](#item-seahorse) | Gestores de senhas | apt | Não |
 | [Ente Auth](#item-ente-auth) | Autenticação 2FA | flatpak | Não |
@@ -150,7 +152,7 @@
 | [Cryptomator](#item-cryptomator) | Cifragem | flatpak | Não |
 | [Metadata Cleaner](#item-metadata-cleaner) | Privacidade | flatpak | Não |
 | [Flatseal](#item-flatseal) | Privacidade | flatpak | Não |
-| [Tor Browser (launcher)](#item-torbrowser-launcher) | Privacidade | apt | Não |
+| [Tor Browser (launcher)](#item-torbrowser-launcher) | Privacidade | flatpak | Não |
 | [Gufw (interface da firewall)](#item-gufw) | Firewall e auditoria | apt | Não |
 | [Lynis](#item-lynis) | Firewall e auditoria | apt | Não |
 | [ClamAV + ClamTk](#item-clamtk) | Firewall e auditoria | apt | Sim |
@@ -336,7 +338,7 @@ Requisitos: {"minRelease": "26.04", "arch": ["amd64"]}
 | [Monitores de tráfego](#item-traffic-monitor) | {} |
 | [tcpdump](#item-tcpdump) | {} |
 | [Wireshark](#item-wireshark) | {} |
-| [Virtualização (virt-manager/KVM)](#item-virt-manager) | {} |
+| [Virtualização (virt-manager)](#item-virt-manager) | {} |
 | [Ansible](#item-ansible) | {} |
 | [WireGuard (ferramentas)](#item-wireguard-tools) | {} |
 | [Discos e recuperação](#item-disk-tools) | {} |
@@ -658,7 +660,7 @@ CPU, memória, rede e temperaturas no painel superior. System Monitor é o ofici
 
 Controlo de versões distribuído.
 
-Base de qualquer projeto; necessário para Composer, NVM e clonagem de repositórios.
+Guarda versões do código e permite comparar alterações ou voltar a uma versão anterior. Use ao trabalhar sozinho ou partilhar um projeto com a equipa.
 
 | Campo | Valor |
 | --- | --- |
@@ -679,7 +681,7 @@ Base de qualquer projeto; necessário para Composer, NVM e clonagem de repositó
   "area": "apps",
   "category": "Essenciais",
   "summary": "Controlo de versões distribuído.",
-  "why": "Base de qualquer projeto; necessário para Composer, NVM e clonagem de repositórios.",
+  "why": "Guarda versões do código e permite comparar alterações ou voltar a uma versão anterior. Use ao trabalhar sozinho ou partilhar um projeto com a equipa.",
   "method": "apt",
   "verify": {
     "cmd": [
@@ -703,7 +705,7 @@ Base de qualquer projeto; necessário para Composer, NVM e clonagem de repositó
 
 Extensão Git para o modelo de ramos git-flow.
 
-Útil se os seus projetos usam feature/release/hotfix branches.
+Organiza funcionalidades, correções urgentes e versões em ramos Git separados. Útil apenas se a equipa segue esse fluxo; não muda o processo do projeto por si.
 
 | Campo | Valor |
 | --- | --- |
@@ -725,7 +727,7 @@ Extensão Git para o modelo de ramos git-flow.
   "area": "apps",
   "category": "Essenciais",
   "summary": "Extensão Git para o modelo de ramos git-flow.",
-  "why": "Útil se os seus projetos usam feature/release/hotfix branches.",
+  "why": "Organiza funcionalidades, correções urgentes e versões em ramos Git separados. Útil apenas se a equipa segue esse fluxo; não muda o processo do projeto por si.",
   "method": "apt",
   "packages": [
     "git-flow"
@@ -746,7 +748,7 @@ Extensão Git para o modelo de ramos git-flow.
 
 Cliente oficial do GitHub na linha de comandos.
 
-PRs, issues e autenticação Git sem sair do terminal. O repositório oficial tem versões recentes (o arquivo tem 2.46, antiga).
+Permite criar e rever pedidos de alteração, acompanhar tarefas e consultar o GitHub pelo terminal. A autenticação na sua conta é feita depois de instalar.
 
 | Campo | Valor |
 | --- | --- |
@@ -768,7 +770,7 @@ PRs, issues e autenticação Git sem sair do terminal. O repositório oficial te
   "area": "apps",
   "category": "Essenciais",
   "summary": "Cliente oficial do GitHub na linha de comandos.",
-  "why": "PRs, issues e autenticação Git sem sair do terminal. O repositório oficial tem versões recentes (o arquivo tem 2.46, antiga).",
+  "why": "Permite criar e rever pedidos de alteração, acompanhar tarefas e consultar o GitHub pelo terminal. A autenticação na sua conta é feita depois de instalar.",
   "method": "apt-repo",
   "verify": {
     "cmd": [
@@ -798,7 +800,7 @@ PRs, issues e autenticação Git sem sair do terminal. O repositório oficial te
 
 Compiladores GCC, make e cabeçalhos.
 
-Necessário para compilar extensões nativas (npm, PECL, pip).
+Fornece compilador e ferramentas para transformar código em programas. Útil quando uma dependência Node, PHP ou Python precisa de compilar uma extensão local.
 
 | Campo | Valor |
 | --- | --- |
@@ -819,7 +821,7 @@ Necessário para compilar extensões nativas (npm, PECL, pip).
   "area": "apps",
   "category": "Essenciais",
   "summary": "Compiladores GCC, make e cabeçalhos.",
-  "why": "Necessário para compilar extensões nativas (npm, PECL, pip).",
+  "why": "Fornece compilador e ferramentas para transformar código em programas. Útil quando uma dependência Node, PHP ou Python precisa de compilar uma extensão local.",
   "method": "apt",
   "packages": [
     "build-essential"
@@ -837,7 +839,7 @@ Necessário para compilar extensões nativas (npm, PECL, pip).
 
 Transferências HTTP na linha de comandos.
 
-Testar APIs e transferir ficheiros.
+Faz pedidos a um endereço e mostra a resposta no terminal. Use para testar uma API, conferir um servidor ou transferir um ficheiro.
 
 | Campo | Valor |
 | --- | --- |
@@ -858,7 +860,7 @@ Testar APIs e transferir ficheiros.
   "area": "apps",
   "category": "Essenciais",
   "summary": "Transferências HTTP na linha de comandos.",
-  "why": "Testar APIs e transferir ficheiros.",
+  "why": "Faz pedidos a um endereço e mostra a resposta no terminal. Use para testar uma API, conferir um servidor ou transferir um ficheiro.",
   "method": "apt",
   "packages": [
     "curl"
@@ -1038,7 +1040,7 @@ Descobrir o que ocupa espaço antes de apagar algo.
 
 Cópia/sincronização incremental de ficheiros.
 
-Backups e deploys eficientes.
+Copia apenas ficheiros novos ou alterados entre pastas e máquinas. Útil para backups ou enviar alterações para um servidor; reveja as opções antes de sincronizar.
 
 | Campo | Valor |
 | --- | --- |
@@ -1059,7 +1061,7 @@ Backups e deploys eficientes.
   "area": "apps",
   "category": "Rede e ficheiros",
   "summary": "Cópia/sincronização incremental de ficheiros.",
-  "why": "Backups e deploys eficientes.",
+  "why": "Copia apenas ficheiros novos ou alterados entre pastas e máquinas. Útil para backups ou enviar alterações para um servidor; reveja as opções antes de sincronizar.",
   "method": "apt",
   "packages": [
     "rsync"
@@ -1077,7 +1079,7 @@ Backups e deploys eficientes.
 
 Sincronização com armazenamento cloud (S3, Drive…).
 
-Copiar backups para cloud sem clientes proprietários.
+Copia e sincroniza ficheiros com serviços como S3 e Google Drive. Útil para backups fora do PC; a conta e o destino são configurados por si.
 
 | Campo | Valor |
 | --- | --- |
@@ -1098,7 +1100,7 @@ Copiar backups para cloud sem clientes proprietários.
   "area": "apps",
   "category": "Rede e ficheiros",
   "summary": "Sincronização com armazenamento cloud (S3, Drive…).",
-  "why": "Copiar backups para cloud sem clientes proprietários.",
+  "why": "Copia e sincroniza ficheiros com serviços como S3 e Google Drive. Útil para backups fora do PC; a conta e o destino são configurados por si.",
   "method": "apt",
   "packages": [
     "rclone"
@@ -1116,7 +1118,7 @@ Copiar backups para cloud sem clientes proprietários.
 
 Montar e aceder a partilhas SMB/CIFS.
 
-NAS e partilhas de rede da empresa.
+Permite abrir pastas partilhadas de um NAS ou computador Windows. Use para aceder a documentos da rede da empresa; endereço e acesso são configurados depois.
 
 | Campo | Valor |
 | --- | --- |
@@ -1137,7 +1139,7 @@ NAS e partilhas de rede da empresa.
   "area": "apps",
   "category": "Rede e ficheiros",
   "summary": "Montar e aceder a partilhas SMB/CIFS.",
-  "why": "NAS e partilhas de rede da empresa.",
+  "why": "Permite abrir pastas partilhadas de um NAS ou computador Windows. Use para aceder a documentos da rede da empresa; endereço e acesso são configurados depois.",
   "method": "apt",
   "packages": [
     "cifs-utils",
@@ -1201,10 +1203,13 @@ Ferramenta oficial do GNOME para backups regulares e restauro de ficheiros.
 | --- | --- |
 | ID | deja-dup |
 | Área / categoria | Aplicações / Rede e ficheiros |
-| Método | apt |
-| Fonte | Arquivo Ubuntu |
-| Pacotes | deja-dup |
-| Evidência da receita | Verificado: arquivo Ubuntu 26.04 (apt-cache policy, 2026-10-04) |
+| Método | flatpak |
+| Fonte | Flathub (editor verificado) |
+| Flatpak | org.gnome.DejaDup |
+| Evidência da receita | API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação |
+| Dependências | [Flatpak + Flathub](#item-flathub) |
+
+Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas.
 
 <details>
 <summary>Receita JSON integral</summary>
@@ -1217,12 +1222,17 @@ Ferramenta oficial do GNOME para backups regulares e restauro de ficheiros.
   "category": "Rede e ficheiros",
   "summary": "Backups agendados e simples da pasta pessoal.",
   "why": "Ferramenta oficial do GNOME para backups regulares e restauro de ficheiros.",
-  "method": "apt",
-  "packages": [
+  "method": "flatpak",
+  "source": "Flathub (editor verificado)",
+  "verified": "API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação",
+  "legacyPackages": [
     "deja-dup"
   ],
-  "source": "Arquivo Ubuntu",
-  "verified": "Verificado: arquivo Ubuntu 26.04 (apt-cache policy, 2026-10-04)"
+  "flatpak": "org.gnome.DejaDup",
+  "requires": [
+    "flathub"
+  ],
+  "notes": "Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas."
 }
 ```
 
@@ -1240,10 +1250,13 @@ Transferências para alojamentos que só oferecem FTP/SFTP.
 | --- | --- |
 | ID | filezilla |
 | Área / categoria | Aplicações / Rede e ficheiros |
-| Método | apt |
-| Fonte | Arquivo Ubuntu |
-| Pacotes | filezilla |
-| Evidência da receita | Verificado: arquivo Ubuntu 26.04 (apt-cache policy, 2026-10-04) |
+| Método | flatpak |
+| Fonte | Flathub (editor não verificado) |
+| Flatpak | org.filezillaproject.Filezilla |
+| Evidência da receita | API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação |
+| Dependências | [Flatpak + Flathub](#item-flathub) |
+
+Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas.
 
 <details>
 <summary>Receita JSON integral</summary>
@@ -1256,12 +1269,17 @@ Transferências para alojamentos que só oferecem FTP/SFTP.
   "category": "Rede e ficheiros",
   "summary": "Cliente FTP/SFTP gráfico.",
   "why": "Transferências para alojamentos que só oferecem FTP/SFTP.",
-  "method": "apt",
-  "packages": [
+  "method": "flatpak",
+  "source": "Flathub (editor não verificado)",
+  "verified": "API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação",
+  "legacyPackages": [
     "filezilla"
   ],
-  "source": "Arquivo Ubuntu",
-  "verified": "Verificado: arquivo Ubuntu 26.04 (apt-cache policy, 2026-10-04)"
+  "flatpak": "org.filezillaproject.Filezilla",
+  "requires": [
+    "flathub"
+  ],
+  "notes": "Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas."
 }
 ```
 
@@ -1282,7 +1300,7 @@ Espelhar pastas/discos com pré-visualização das diferenças.
 | Método | flatpak |
 | Fonte | Flathub (editor não verificado) |
 | Flatpak | org.freefilesync.FreeFileSync |
-| Evidência da receita | Flathub API 200 em 2026-10-04 |
+| Evidência da receita | API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação |
 | Dependências | [Flatpak + Flathub](#item-flathub) |
 
 <details>
@@ -1302,7 +1320,7 @@ Espelhar pastas/discos com pré-visualização das diferenças.
     "flathub"
   ],
   "source": "Flathub (editor não verificado)",
-  "verified": "Flathub API 200 em 2026-10-04",
+  "verified": "API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação",
   "compat": {
     "arch": [
       "amd64"
@@ -1328,7 +1346,7 @@ Atualizações diretas da Mozilla. Pode coexistir com o Snap até validar o novo
 | Método | flatpak |
 | Fonte | Flathub (editor verificado) |
 | Flatpak | org.mozilla.firefox |
-| Evidência da receita | Flathub API 200 em 2026-10-04 |
+| Evidência da receita | API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação |
 | Dependências | [Flatpak + Flathub](#item-flathub) |
 
 <details>
@@ -1348,7 +1366,7 @@ Atualizações diretas da Mozilla. Pode coexistir com o Snap até validar o novo
     "flathub"
   ],
   "source": "Flathub (editor verificado)",
-  "verified": "Flathub API 200 em 2026-10-04",
+  "verified": "API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação",
   "tags": [
     "snap:firefox"
   ],
@@ -1368,17 +1386,19 @@ Atualizações diretas da Mozilla. Pode coexistir com o Snap até validar o novo
 
 Navegador Chromium com bloqueio de anúncios.
 
-Repositório oficial Brave. Não importa automaticamente perfis do Firefox Flatpak/Snap.
+Navegador Chromium com bloqueio integrado de anúncios. Não importa automaticamente perfis de outros navegadores.
 
 | Campo | Valor |
 | --- | --- |
 | ID | brave |
 | Área / categoria | Aplicações / Navegadores |
-| Método | apt-repo |
-| Fonte | Repositório oficial Brave |
-| Pacotes | brave-browser |
-| Repositório | brave |
-| Evidência da receita | Chave/fingerprint e dists verificados em 2026-10-04 |
+| Método | flatpak |
+| Fonte | Flathub (editor verificado) |
+| Flatpak | com.brave.Browser |
+| Evidência da receita | API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação |
+| Dependências | [Flatpak + Flathub](#item-flathub) |
+
+Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas.
 
 <details>
 <summary>Receita JSON integral</summary>
@@ -1390,20 +1410,10 @@ Repositório oficial Brave. Não importa automaticamente perfis do Firefox Flatp
   "area": "apps",
   "category": "Navegadores",
   "summary": "Navegador Chromium com bloqueio de anúncios.",
-  "why": "Repositório oficial Brave. Não importa automaticamente perfis do Firefox Flatpak/Snap.",
-  "method": "apt-repo",
-  "verify": {
-    "cmd": [
-      "brave-browser",
-      "--version"
-    ]
-  },
-  "packages": [
-    "brave-browser"
-  ],
-  "repo": "brave",
-  "source": "Repositório oficial Brave",
-  "verified": "Chave/fingerprint e dists verificados em 2026-10-04",
+  "why": "Navegador Chromium com bloqueio integrado de anúncios. Não importa automaticamente perfis de outros navegadores.",
+  "method": "flatpak",
+  "source": "Flathub (editor verificado)",
+  "verified": "API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação",
   "tags": [
     "snap:brave"
   ],
@@ -1411,7 +1421,15 @@ Repositório oficial Brave. Não importa automaticamente perfis do Firefox Flatp
     "arch": [
       "amd64"
     ]
-  }
+  },
+  "legacyPackages": [
+    "brave-browser"
+  ],
+  "flatpak": "com.brave.Browser",
+  "requires": [
+    "flathub"
+  ],
+  "notes": "Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas."
 }
 ```
 
@@ -1470,10 +1488,13 @@ Vídeos e áudio em qualquer formato.
 | --- | --- |
 | ID | vlc |
 | Área / categoria | Aplicações / Multimédia |
-| Método | apt |
-| Fonte | Arquivo Ubuntu |
-| Pacotes | vlc |
-| Evidência da receita | Verificado: arquivo Ubuntu 26.04 (apt-cache policy, 2026-10-04) |
+| Método | flatpak |
+| Fonte | Flathub (editor não verificado) |
+| Flatpak | org.videolan.VLC |
+| Evidência da receita | API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação |
+| Dependências | [Flatpak + Flathub](#item-flathub) |
+
+Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas.
 
 <details>
 <summary>Receita JSON integral</summary>
@@ -1486,12 +1507,17 @@ Vídeos e áudio em qualquer formato.
   "category": "Multimédia",
   "summary": "Leitor multimédia que lê quase tudo.",
   "why": "Vídeos e áudio em qualquer formato.",
-  "method": "apt",
-  "packages": [
+  "method": "flatpak",
+  "source": "Flathub (editor não verificado)",
+  "verified": "API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação",
+  "legacyPackages": [
     "vlc"
   ],
-  "source": "Arquivo Ubuntu",
-  "verified": "Verificado: arquivo Ubuntu 26.04 (apt-cache policy, 2026-10-04)"
+  "flatpak": "org.videolan.VLC",
+  "requires": [
+    "flathub"
+  ],
+  "notes": "Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas."
 }
 ```
 
@@ -1509,10 +1535,13 @@ ISOs e ficheiros grandes distribuídos por torrent.
 | --- | --- |
 | ID | qbittorrent |
 | Área / categoria | Aplicações / Multimédia |
-| Método | apt |
-| Fonte | Arquivo Ubuntu |
-| Pacotes | qbittorrent |
-| Evidência da receita | Verificado: arquivo Ubuntu 26.04 (apt-cache policy, 2026-10-04) |
+| Método | flatpak |
+| Fonte | Flathub (editor verificado) |
+| Flatpak | org.qbittorrent.qBittorrent |
+| Evidência da receita | API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação |
+| Dependências | [Flatpak + Flathub](#item-flathub) |
+
+Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas.
 
 <details>
 <summary>Receita JSON integral</summary>
@@ -1525,12 +1554,17 @@ ISOs e ficheiros grandes distribuídos por torrent.
   "category": "Multimédia",
   "summary": "Cliente BitTorrent sem publicidade.",
   "why": "ISOs e ficheiros grandes distribuídos por torrent.",
-  "method": "apt",
-  "packages": [
+  "method": "flatpak",
+  "source": "Flathub (editor verificado)",
+  "verified": "API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação",
+  "legacyPackages": [
     "qbittorrent"
   ],
-  "source": "Arquivo Ubuntu",
-  "verified": "Verificado: arquivo Ubuntu 26.04 (apt-cache policy, 2026-10-04)"
+  "flatpak": "org.qbittorrent.qBittorrent",
+  "requires": [
+    "flathub"
+  ],
+  "notes": "Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas."
 }
 ```
 
@@ -1548,10 +1582,13 @@ Anotar screenshots para tickets e documentação. Em Wayland usa o portal de cap
 | --- | --- |
 | ID | flameshot |
 | Área / categoria | Aplicações / Utilitários |
-| Método | apt |
-| Fonte | Arquivo Ubuntu |
-| Pacotes | flameshot |
-| Evidência da receita | Verificado: arquivo Ubuntu 26.04 (apt-cache policy, 2026-10-04) |
+| Método | flatpak |
+| Fonte | Flathub (editor verificado) |
+| Flatpak | org.flameshot.Flameshot |
+| Evidência da receita | API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação |
+| Dependências | [Flatpak + Flathub](#item-flathub) |
+
+Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas.
 
 <details>
 <summary>Receita JSON integral</summary>
@@ -1564,12 +1601,17 @@ Anotar screenshots para tickets e documentação. Em Wayland usa o portal de cap
   "category": "Utilitários",
   "summary": "Capturas de ecrã com anotações.",
   "why": "Anotar screenshots para tickets e documentação. Em Wayland usa o portal de captura.",
-  "method": "apt",
-  "packages": [
+  "method": "flatpak",
+  "source": "Flathub (editor verificado)",
+  "verified": "API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação",
+  "legacyPackages": [
     "flameshot"
   ],
-  "source": "Arquivo Ubuntu",
-  "verified": "Verificado: arquivo Ubuntu 26.04 (apt-cache policy, 2026-10-04)"
+  "flatpak": "org.flameshot.Flameshot",
+  "requires": [
+    "flathub"
+  ],
+  "notes": "Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas."
 }
 ```
 
@@ -1587,10 +1629,25 @@ Emparelhar ratos/teclados Logitech e ver bateria.
 | --- | --- |
 | ID | solaar |
 | Área / categoria | Aplicações / Utilitários |
-| Método | apt |
-| Fonte | Arquivo Ubuntu |
-| Pacotes | solaar |
-| Evidência da receita | Verificado: arquivo Ubuntu 26.04 (apt-cache policy, 2026-10-04) |
+| Método | flatpak |
+| Fonte | Flathub (editor não verificado) |
+| Flatpak | io.github.pwr_solaar.solaar |
+| Evidência da receita | API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação |
+| Dependências | [Flatpak + Flathub](#item-flathub) |
+
+Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas. O Flatpak não instala regras udev no host; essas permissões são necessárias para aceder aos dispositivos.
+
+#### Guia manual
+
+1. Confira no guia do empacotador a regra udev adequada à sessão Wayland ou X11.
+2. Reveja a regra oficial Solaar e copie-a manualmente, com autorização administrativa, para /etc/udev/rules.d/.
+3. Depois de instalar a regra, recarregue-a:
+```sh
+sudo udevadm control --reload-rules
+```
+Volte a ligar o recetor ou reinicie conforme o guia.
+
+[Documentação do fornecedor](https://github.com/flathub/io.github.pwr_solaar.solaar#udev-rule)
 
 <details>
 <summary>Receita JSON integral</summary>
@@ -1603,12 +1660,25 @@ Emparelhar ratos/teclados Logitech e ver bateria.
   "category": "Utilitários",
   "summary": "Gestão de dispositivos Logitech Unifying/Bolt.",
   "why": "Emparelhar ratos/teclados Logitech e ver bateria.",
-  "method": "apt",
-  "packages": [
+  "method": "flatpak",
+  "source": "Flathub (editor não verificado)",
+  "verified": "API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação",
+  "legacyPackages": [
     "solaar"
   ],
-  "source": "Arquivo Ubuntu",
-  "verified": "Verificado: arquivo Ubuntu 26.04 (apt-cache policy, 2026-10-04)"
+  "flatpak": "io.github.pwr_solaar.solaar",
+  "requires": [
+    "flathub"
+  ],
+  "notes": "Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas. O Flatpak não instala regras udev no host; essas permissões são necessárias para aceder aos dispositivos.",
+  "manual": {
+    "url": "https://github.com/flathub/io.github.pwr_solaar.solaar#udev-rule",
+    "steps": [
+      "Confira no guia do empacotador a regra udev adequada à sessão Wayland ou X11.",
+      "Reveja a regra oficial Solaar e copie-a manualmente, com autorização administrativa, para /etc/udev/rules.d/.",
+      "Depois de instalar a regra, recarregue-a:\n```sh\nsudo udevadm control --reload-rules\n```\nVolte a ligar o recetor ou reinicie conforme o guia."
+    ]
+  }
 }
 ```
 
@@ -1620,7 +1690,7 @@ Emparelhar ratos/teclados Logitech e ver bateria.
 
 Conversão de documentos (Markdown→PDF/DOCX).
 
-Gerar PDFs a partir de Markdown. O LaTeX ocupa ~500 MB.
+Transforma texto Markdown noutros formatos, como Word ou PDF. Útil para documentação e relatórios; gerar PDF com LaTeX requer pacotes adicionais.
 
 | Campo | Valor |
 | --- | --- |
@@ -1641,7 +1711,7 @@ Gerar PDFs a partir de Markdown. O LaTeX ocupa ~500 MB.
   "area": "apps",
   "category": "Documentos",
   "summary": "Conversão de documentos (Markdown→PDF/DOCX).",
-  "why": "Gerar PDFs a partir de Markdown. O LaTeX ocupa ~500 MB.",
+  "why": "Transforma texto Markdown noutros formatos, como Word ou PDF. Útil para documentação e relatórios; gerar PDF com LaTeX requer pacotes adicionais.",
   "method": "apt",
   "packages": [
     "pandoc",
@@ -1792,7 +1862,7 @@ Exemplos: sudo nala update; sudo nala install nome-do-pacote; nala history. O na
 
 Suporte a aplicações Flatpak (o remoto Flathub é adicionado por utilizador).
 
-Necessário para Firefox Flatpak, FreeFileSync, DBeaver, etc.
+Acrescenta uma fonte de aplicações Flatpak, instaladas para o seu utilizador. É necessário para várias aplicações deste catálogo, como DBeaver e Firefox Flatpak.
 
 | Campo | Valor |
 | --- | --- |
@@ -1800,8 +1870,10 @@ Necessário para Firefox Flatpak, FreeFileSync, DBeaver, etc.
 | Área / categoria | Aplicações / Sistema |
 | Método | apt |
 | Fonte | Arquivo Ubuntu |
-| Pacotes | flatpak, gnome-software-plugin-flatpak |
+| Pacotes | flatpak |
 | Evidência da receita | Verificado: arquivo Ubuntu 26.04 (apt-cache policy, 2026-10-04) |
+
+Requer ligação à rede. O remoto Flathub é configurado para o utilizador e validado antes de instalar aplicações. Não instala GNOME Software.
 
 <details>
 <summary>Receita JSON integral</summary>
@@ -1813,14 +1885,14 @@ Necessário para Firefox Flatpak, FreeFileSync, DBeaver, etc.
   "area": "apps",
   "category": "Sistema",
   "summary": "Suporte a aplicações Flatpak (o remoto Flathub é adicionado por utilizador).",
-  "why": "Necessário para Firefox Flatpak, FreeFileSync, DBeaver, etc.",
+  "why": "Acrescenta uma fonte de aplicações Flatpak, instaladas para o seu utilizador. É necessário para várias aplicações deste catálogo, como DBeaver e Firefox Flatpak.",
   "method": "apt",
   "packages": [
-    "flatpak",
-    "gnome-software-plugin-flatpak"
+    "flatpak"
   ],
   "source": "Arquivo Ubuntu",
-  "verified": "Verificado: arquivo Ubuntu 26.04 (apt-cache policy, 2026-10-04)"
+  "verified": "Verificado: arquivo Ubuntu 26.04 (apt-cache policy, 2026-10-04)",
+  "notes": "Requer ligação à rede. O remoto Flathub é configurado para o utilizador e validado antes de instalar aplicações. Não instala GNOME Software."
 }
 ```
 
@@ -1877,10 +1949,13 @@ Forma segura e gráfica de gerir extensões e as suas preferências.
 | --- | --- |
 | ID | extension-manager |
 | Área / categoria | Aplicações / Sistema |
-| Método | apt |
-| Fonte | Arquivo Ubuntu |
-| Pacotes | gnome-shell-extension-manager |
-| Evidência da receita | Verificado: arquivo Ubuntu 26.04 (apt-cache policy, 2026-10-04) |
+| Método | flatpak |
+| Fonte | Flathub (editor verificado) |
+| Flatpak | com.mattjakeman.ExtensionManager |
+| Evidência da receita | API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação |
+| Dependências | [Flatpak + Flathub](#item-flathub) |
+
+Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas.
 
 <details>
 <summary>Receita JSON integral</summary>
@@ -1893,12 +1968,17 @@ Forma segura e gráfica de gerir extensões e as suas preferências.
   "category": "Sistema",
   "summary": "Procura, instala e configura extensões GNOME.",
   "why": "Forma segura e gráfica de gerir extensões e as suas preferências.",
-  "method": "apt",
-  "packages": [
+  "method": "flatpak",
+  "source": "Flathub (editor verificado)",
+  "verified": "API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação",
+  "legacyPackages": [
     "gnome-shell-extension-manager"
   ],
-  "source": "Arquivo Ubuntu",
-  "verified": "Verificado: arquivo Ubuntu 26.04 (apt-cache policy, 2026-10-04)"
+  "flatpak": "com.mattjakeman.ExtensionManager",
+  "requires": [
+    "flathub"
+  ],
+  "notes": "Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas."
 }
 ```
 
@@ -1916,11 +1996,14 @@ Para inspecionar/alterar chaves avançadas. Use com cuidado.
 | --- | --- |
 | ID | dconf-editor |
 | Área / categoria | Aplicações / Sistema |
-| Método | apt |
-| Fonte | Arquivo Ubuntu |
-| Pacotes | dconf-editor |
-| Evidência da receita | Verificado: arquivo Ubuntu 26.04 (apt-cache policy, 2026-10-04) |
+| Método | flatpak |
+| Fonte | Flathub (editor verificado) |
+| Flatpak | ca.desrt.dconf-editor |
+| Evidência da receita | API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação |
+| Dependências | [Flatpak + Flathub](#item-flathub) |
 | Avançado | Sim |
+
+Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas.
 
 <details>
 <summary>Receita JSON integral</summary>
@@ -1933,13 +2016,18 @@ Para inspecionar/alterar chaves avançadas. Use com cuidado.
   "category": "Sistema",
   "summary": "Editor gráfico de todas as preferências GNOME.",
   "why": "Para inspecionar/alterar chaves avançadas. Use com cuidado.",
-  "method": "apt",
-  "packages": [
+  "method": "flatpak",
+  "advanced": true,
+  "source": "Flathub (editor verificado)",
+  "verified": "API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação",
+  "legacyPackages": [
     "dconf-editor"
   ],
-  "advanced": true,
-  "source": "Arquivo Ubuntu",
-  "verified": "Verificado: arquivo Ubuntu 26.04 (apt-cache policy, 2026-10-04)"
+  "flatpak": "ca.desrt.dconf-editor",
+  "requires": [
+    "flathub"
+  ],
+  "notes": "Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas."
 }
 ```
 
@@ -1951,7 +2039,7 @@ Para inspecionar/alterar chaves avançadas. Use com cuidado.
 
 Ferramentas Python para ambientes isolados.
 
-pipx instala CLIs Python sem tocar no Python do sistema.
+Cria ambientes Python separados para cada projeto; pipx instala ferramentas de terminal em ambientes próprios. Útil para scripts e ferramentas sem alterar os pacotes Python do sistema.
 
 | Campo | Valor |
 | --- | --- |
@@ -1972,7 +2060,7 @@ pipx instala CLIs Python sem tocar no Python do sistema.
   "area": "dev",
   "category": "Linguagens",
   "summary": "Ferramentas Python para ambientes isolados.",
-  "why": "pipx instala CLIs Python sem tocar no Python do sistema.",
+  "why": "Cria ambientes Python separados para cada projeto; pipx instala ferramentas de terminal em ambientes próprios. Útil para scripts e ferramentas sem alterar os pacotes Python do sistema.",
   "method": "apt",
   "packages": [
     "python3-pip",
@@ -1992,7 +2080,7 @@ pipx instala CLIs Python sem tocar no Python do sistema.
 
 Compilador e ferramentas Go do arquivo (1.26).
 
-Ferramentas CLI modernas e projetos Go.
+Compila programas escritos em Go. Use para desenvolver projetos Go ou construir ferramentas distribuídas como código-fonte.
 
 | Campo | Valor |
 | --- | --- |
@@ -2013,7 +2101,7 @@ Ferramentas CLI modernas e projetos Go.
   "area": "dev",
   "category": "Linguagens",
   "summary": "Compilador e ferramentas Go do arquivo (1.26).",
-  "why": "Ferramentas CLI modernas e projetos Go.",
+  "why": "Compila programas escritos em Go. Use para desenvolver projetos Go ou construir ferramentas distribuídas como código-fonte.",
   "method": "apt",
   "verify": {
     "cmd": [
@@ -2077,7 +2165,7 @@ Testar apps/PWAs no telemóvel e controlá-lo a partir do PC.
 
 Cliente SQLite.
 
-Testes Laravel com SQLite e inspeção de ficheiros .sqlite.
+Abre bases de dados guardadas num único ficheiro. Útil para consultar dados de testes ou projetos pequenos sem instalar um servidor de bases de dados.
 
 | Campo | Valor |
 | --- | --- |
@@ -2098,7 +2186,7 @@ Testes Laravel com SQLite e inspeção de ficheiros .sqlite.
   "area": "dev",
   "category": "Bases de dados",
   "summary": "Cliente SQLite.",
-  "why": "Testes Laravel com SQLite e inspeção de ficheiros .sqlite.",
+  "why": "Abre bases de dados guardadas num único ficheiro. Útil para consultar dados de testes ou projetos pequenos sem instalar um servidor de bases de dados.",
   "method": "apt",
   "packages": [
     "sqlite3"
@@ -2116,7 +2204,7 @@ Testes Laravel com SQLite e inspeção de ficheiros .sqlite.
 
 Cliente mysql/mariadb na linha de comandos.
 
-Ligar a bases de dados em Docker ou remotas, dumps e imports.
+Liga a servidores MariaDB/MySQL pelo terminal, consulta dados e importa ou exporta dumps. Pode usar bases em Docker ou remotas; não instala um servidor local.
 
 | Campo | Valor |
 | --- | --- |
@@ -2137,7 +2225,7 @@ Ligar a bases de dados em Docker ou remotas, dumps e imports.
   "area": "dev",
   "category": "Bases de dados",
   "summary": "Cliente mysql/mariadb na linha de comandos.",
-  "why": "Ligar a bases de dados em Docker ou remotas, dumps e imports.",
+  "why": "Liga a servidores MariaDB/MySQL pelo terminal, consulta dados e importa ou exporta dumps. Pode usar bases em Docker ou remotas; não instala um servidor local.",
   "method": "apt",
   "packages": [
     "mariadb-client"
@@ -2155,7 +2243,7 @@ Ligar a bases de dados em Docker ou remotas, dumps e imports.
 
 Servidor de base de dados a correr como serviço.
 
-Só se não usar Docker para bases de dados. Fica a arrancar com o sistema.
+Guarda e serve bases de dados neste computador. Use quando precisa de um servidor local fora do Docker; arranca como serviço e exige configuração de acessos.
 
 | Campo | Valor |
 | --- | --- |
@@ -2177,7 +2265,7 @@ Só se não usar Docker para bases de dados. Fica a arrancar com o sistema.
   "area": "dev",
   "category": "Serviços locais · Dados e cache",
   "summary": "Servidor de base de dados a correr como serviço.",
-  "why": "Só se não usar Docker para bases de dados. Fica a arrancar com o sistema.",
+  "why": "Guarda e serve bases de dados neste computador. Use quando precisa de um servidor local fora do Docker; arranca como serviço e exige configuração de acessos.",
   "method": "apt",
   "packages": [
     "mariadb-server"
@@ -2197,7 +2285,7 @@ Só se não usar Docker para bases de dados. Fica a arrancar com o sistema.
 
 Gestor de processos (queues/workers).
 
-Só para workers locais fora do Docker. Arranca como serviço.
+Mantém processos de longa duração ativos e reinicia-os se terminarem. Útil para filas de trabalho fora do Docker; os processos geridos são configurados por si.
 
 | Campo | Valor |
 | --- | --- |
@@ -2220,7 +2308,7 @@ Só para workers locais fora do Docker. Arranca como serviço.
   "area": "dev",
   "category": "Bases de dados",
   "summary": "Gestor de processos (queues/workers).",
-  "why": "Só para workers locais fora do Docker. Arranca como serviço.",
+  "why": "Mantém processos de longa duração ativos e reinicia-os se terminarem. Útil para filas de trabalho fora do Docker; os processos geridos são configurados por si.",
   "method": "apt",
   "packages": [
     "supervisor"
@@ -2240,7 +2328,7 @@ Só para workers locais fora do Docker. Arranca como serviço.
 
 Cliente gráfico universal de bases de dados.
 
-Explorar MySQL/MariaDB/Postgres/SQLite com uma só ferramenta.
+Permite abrir tabelas, consultar dados e escrever SQL numa janela para várias bases de dados. Útil para explorar MariaDB, PostgreSQL ou SQLite sem usar só o terminal.
 
 | Campo | Valor |
 | --- | --- |
@@ -2249,7 +2337,7 @@ Explorar MySQL/MariaDB/Postgres/SQLite com uma só ferramenta.
 | Método | flatpak |
 | Fonte | Flathub (editor não verificado) |
 | Flatpak | io.dbeaver.DBeaverCommunity |
-| Evidência da receita | Flathub API 200 em 2026-10-04 |
+| Evidência da receita | API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação |
 | Dependências | [Flatpak + Flathub](#item-flathub) |
 
 <details>
@@ -2262,19 +2350,73 @@ Explorar MySQL/MariaDB/Postgres/SQLite com uma só ferramenta.
   "area": "dev",
   "category": "Bases de dados",
   "summary": "Cliente gráfico universal de bases de dados.",
-  "why": "Explorar MySQL/MariaDB/Postgres/SQLite com uma só ferramenta.",
+  "why": "Permite abrir tabelas, consultar dados e escrever SQL numa janela para várias bases de dados. Útil para explorar MariaDB, PostgreSQL ou SQLite sem usar só o terminal.",
   "method": "flatpak",
   "flatpak": "io.dbeaver.DBeaverCommunity",
   "requires": [
     "flathub"
   ],
   "source": "Flathub (editor não verificado)",
-  "verified": "Flathub API 200 em 2026-10-04",
+  "verified": "API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação",
   "compat": {
     "arch": [
       "amd64"
     ]
   }
+}
+```
+
+</details>
+
+<a id="item-navicat-premium-lite"></a>
+
+### Navicat Premium Lite
+
+Cliente gratuito para MariaDB/MySQL, PostgreSQL e Redis.
+
+Permite consultar tabelas, editar dados e executar SQL numa janela. Complementa DBeaver para tarefas básicas de MariaDB/MySQL, PostgreSQL e Redis; recursos avançados dependem da edição.
+
+| Campo | Valor |
+| --- | --- |
+| ID | navicat-premium-lite |
+| Área / categoria | Desenvolvimento / Bases de dados |
+| Método | flatpak |
+| Fonte | Navicat oficial (Premium Lite 18) |
+| Flatpak | com.navicat.premiumlite.en |
+| Evidência da receita | Página oficial e referência Flatpak conferidas em 2026-10-13 |
+| Atenção | Aceitar os termos Navicat Premium Lite; máximo de cinco utilizadores por organização. |
+| Confirmação | Li e aceito os termos Navicat Premium Lite, incluindo o limite de cinco utilizadores por organização. |
+| Dependências | [Flatpak + Flathub](#item-flathub) |
+
+Edição gratuita Premium Lite: até cinco utilizadores por organização. Instalação por referência Flatpak oficial do fabricante; exige aceitar os termos da Navicat.
+
+<details>
+<summary>Receita JSON integral</summary>
+
+```json
+{
+  "id": "navicat-premium-lite",
+  "name": "Navicat Premium Lite",
+  "area": "dev",
+  "category": "Bases de dados",
+  "summary": "Cliente gratuito para MariaDB/MySQL, PostgreSQL e Redis.",
+  "why": "Permite consultar tabelas, editar dados e executar SQL numa janela. Complementa DBeaver para tarefas básicas de MariaDB/MySQL, PostgreSQL e Redis; recursos avançados dependem da edição.",
+  "notes": "Edição gratuita Premium Lite: até cinco utilizadores por organização. Instalação por referência Flatpak oficial do fabricante; exige aceitar os termos da Navicat.",
+  "method": "flatpak",
+  "flatpak": "com.navicat.premiumlite.en",
+  "flatpakRef": "navicat-premium-lite",
+  "requires": [
+    "flathub"
+  ],
+  "source": "Navicat oficial (Premium Lite 18)",
+  "verified": "Página oficial e referência Flatpak conferidas em 2026-10-13",
+  "compat": {
+    "arch": [
+      "amd64"
+    ]
+  },
+  "sensitive": "Aceitar os termos Navicat Premium Lite; máximo de cinco utilizadores por organização.",
+  "confirm": "Li e aceito os termos Navicat Premium Lite, incluindo o limite de cinco utilizadores por organização."
 }
 ```
 
@@ -2286,7 +2428,7 @@ Explorar MySQL/MariaDB/Postgres/SQLite com uma só ferramenta.
 
 Shell alternativa ao Bash.
 
-Melhor completação; a shell padrão NÃO é alterada automaticamente (chsh pede a sua senha; ver notas).
+É o programa que interpreta comandos no terminal, com completação e plugins. Útil para personalizar o terminal; instalar não muda automaticamente a sua shell padrão.
 
 | Campo | Valor |
 | --- | --- |
@@ -2309,7 +2451,7 @@ Para tornar padrão: chsh -s /usr/bin/zsh e termine sessão. Os seus ~/.bashrc/~
   "area": "dev",
   "category": "Terminal",
   "summary": "Shell alternativa ao Bash.",
-  "why": "Melhor completação; a shell padrão NÃO é alterada automaticamente (chsh pede a sua senha; ver notas).",
+  "why": "É o programa que interpreta comandos no terminal, com completação e plugins. Útil para personalizar o terminal; instalar não muda automaticamente a sua shell padrão.",
   "method": "apt",
   "packages": [
     "zsh"
@@ -3019,7 +3161,7 @@ O instalador acrescenta o PATH ao .bashrc/.zshrc (backup feito antes) e não ver
 
 Gestor de dependências PHP (arquivo, 2.9).
 
-Obrigatório para Laravel. O php.new já inclui Composer próprio.
+Instala as bibliotecas PHP declaradas pelo projeto e usa composer.lock para repetir as versões. Necessário para preparar muitos projetos Laravel; o PHP Herd Lite já inclui um Composer próprio.
 
 | Campo | Valor |
 | --- | --- |
@@ -3041,7 +3183,7 @@ Obrigatório para Laravel. O php.new já inclui Composer próprio.
   "area": "dev",
   "category": "PHP",
   "summary": "Gestor de dependências PHP (arquivo, 2.9).",
-  "why": "Obrigatório para Laravel. O php.new já inclui Composer próprio.",
+  "why": "Instala as bibliotecas PHP declaradas pelo projeto e usa composer.lock para repetir as versões. Necessário para preparar muitos projetos Laravel; o PHP Herd Lite já inclui um Composer próprio.",
   "method": "apt",
   "verify": {
     "cmd": [
@@ -3068,7 +3210,7 @@ Obrigatório para Laravel. O php.new já inclui Composer próprio.
 
 Depurador/profiler PHP.
 
-Instalado mas desligado (phpdismod) para não abrandar tudo; ative quando for depurar: sudo phpenmod xdebug.
+Permite parar o código PHP em pontos escolhidos e inspecionar variáveis no editor. Útil para encontrar bugs; fica desativado após instalar e deve ser ativado por projeto quando precisar.
 
 | Campo | Valor |
 | --- | --- |
@@ -3096,7 +3238,7 @@ Opção **Versões** (`versions`): múltiplos valores. Padrão: 8.5.
   "area": "dev",
   "category": "PHP",
   "summary": "Depurador/profiler PHP.",
-  "why": "Instalado mas desligado (phpdismod) para não abrandar tudo; ative quando for depurar: sudo phpenmod xdebug.",
+  "why": "Permite parar o código PHP em pontos escolhidos e inspecionar variáveis no editor. Útil para encontrar bugs; fica desativado após instalar e deve ser ativado por projeto quando precisar.",
   "method": "apt",
   "packages": [
     "php{opt:versions}-xdebug"
@@ -3136,7 +3278,7 @@ Opção **Versões** (`versions`): múltiplos valores. Padrão: 8.5.
 
 Bibliotecas para compilar PHP/PECL a partir do código.
 
-Só se compilar PHP (phpbrew/asdf) ou extensões PECL. Com APT/php.new não é necessário.
+Fornece bibliotecas necessárias para compilar PHP e extensões. Use com phpbrew, asdf ou PECL; normalmente dispensável quando instala PHP por APT ou Herd Lite.
 
 | Campo | Valor |
 | --- | --- |
@@ -3158,7 +3300,7 @@ Só se compilar PHP (phpbrew/asdf) ou extensões PECL. Com APT/php.new não é n
   "area": "dev",
   "category": "Avançado",
   "summary": "Bibliotecas para compilar PHP/PECL a partir do código.",
-  "why": "Só se compilar PHP (phpbrew/asdf) ou extensões PECL. Com APT/php.new não é necessário.",
+  "why": "Fornece bibliotecas necessárias para compilar PHP e extensões. Use com phpbrew, asdf ou PECL; normalmente dispensável quando instala PHP por APT ou Herd Lite.",
   "method": "apt",
   "packages": [
     "autoconf",
@@ -3186,7 +3328,7 @@ Só se compilar PHP (phpbrew/asdf) ou extensões PECL. Com APT/php.new não é n
 
 Runtime Erlang/OTP.
 
-Só para RabbitMQ local ou projetos Elixir. Prefira RabbitMQ em Docker.
+Fornece o ambiente usado por programas Erlang/Elixir e pelo RabbitMQ. Use em projetos desses tipos ou para RabbitMQ local; um RabbitMQ em Docker não exige Erlang no host.
 
 | Campo | Valor |
 | --- | --- |
@@ -3208,7 +3350,7 @@ Só para RabbitMQ local ou projetos Elixir. Prefira RabbitMQ em Docker.
   "area": "dev",
   "category": "Avançado",
   "summary": "Runtime Erlang/OTP.",
-  "why": "Só para RabbitMQ local ou projetos Elixir. Prefira RabbitMQ em Docker.",
+  "why": "Fornece o ambiente usado por programas Erlang/Elixir e pelo RabbitMQ. Use em projetos desses tipos ou para RabbitMQ local; um RabbitMQ em Docker não exige Erlang no host.",
   "method": "apt",
   "packages": [
     "erlang"
@@ -3227,7 +3369,7 @@ Só para RabbitMQ local ou projetos Elixir. Prefira RabbitMQ em Docker.
 
 JDK antigo.
 
-Só para ferramentas legadas que exigem Java 8. Ainda existe no arquivo 26.04.
+Executa aplicações antigas que exigem especificamente Java 8. Escolha apenas se um projeto ou ferramenta indicar essa versão.
 
 | Campo | Valor |
 | --- | --- |
@@ -3249,7 +3391,7 @@ Só para ferramentas legadas que exigem Java 8. Ainda existe no arquivo 26.04.
   "area": "dev",
   "category": "Avançado",
   "summary": "JDK antigo.",
-  "why": "Só para ferramentas legadas que exigem Java 8. Ainda existe no arquivo 26.04.",
+  "why": "Executa aplicações antigas que exigem especificamente Java 8. Escolha apenas se um projeto ou ferramenta indicar essa versão.",
   "method": "apt",
   "packages": [
     "openjdk-8-jdk"
@@ -3362,7 +3504,7 @@ Rejeitado: alterar o kernel está fora do âmbito; use o kernel HWE/GA do Ubuntu
 
 Node 22 LTS do arquivo Ubuntu.
 
-Simples e atualizado pelo sistema; versão fixa. Escolha isto OU NVM.
+Executa JavaScript fora do navegador e fornece npm para instalar dependências. Útil para ferramentas frontend; escolha esta instalação do sistema ou NVM, conforme as versões exigidas pelos projetos.
 
 | Campo | Valor |
 | --- | --- |
@@ -3384,7 +3526,7 @@ Simples e atualizado pelo sistema; versão fixa. Escolha isto OU NVM.
   "area": "dev",
   "category": "Node.js",
   "summary": "Node 22 LTS do arquivo Ubuntu.",
-  "why": "Simples e atualizado pelo sistema; versão fixa. Escolha isto OU NVM.",
+  "why": "Executa JavaScript fora do navegador e fornece npm para instalar dependências. Útil para ferramentas frontend; escolha esta instalação do sistema ou NVM, conforme as versões exigidas pelos projetos.",
   "method": "apt",
   "verify": {
     "cmd": [
@@ -3416,7 +3558,7 @@ Simples e atualizado pelo sistema; versão fixa. Escolha isto OU NVM.
 
 Gestor de versões Node por utilizador.
 
-Projetos com versões Node diferentes (.nvmrc). Recomendado para desenvolvimento.
+Permite instalar e trocar versões de Node por projeto. Útil quando projetos têm requisitos diferentes; pode seguir a versão indicada no ficheiro .nvmrc.
 
 | Campo | Valor |
 | --- | --- |
@@ -3444,7 +3586,7 @@ Projetos com versões Node diferentes (.nvmrc). Recomendado para desenvolvimento
   "area": "dev",
   "category": "Node.js",
   "summary": "Gestor de versões Node por utilizador.",
-  "why": "Projetos com versões Node diferentes (.nvmrc). Recomendado para desenvolvimento.",
+  "why": "Permite instalar e trocar versões de Node por projeto. Útil quando projetos têm requisitos diferentes; pode seguir a versão indicada no ficheiro .nvmrc.",
   "method": "manual",
   "detect": {
     "files": [
@@ -3478,7 +3620,7 @@ Projetos com versões Node diferentes (.nvmrc). Recomendado para desenvolvimento
 
 Runtime/gestor de pacotes JS rápido.
 
-Alternativa rápida ao npm para scripts e testes.
+Executa programas JavaScript/TypeScript e instala dependências. Útil se o projeto já suporta Bun; confira compatibilidade antes de substituir npm.
 
 | Campo | Valor |
 | --- | --- |
@@ -3504,7 +3646,7 @@ Alternativa rápida ao npm para scripts e testes.
   "area": "dev",
   "category": "Node.js",
   "summary": "Runtime/gestor de pacotes JS rápido.",
-  "why": "Alternativa rápida ao npm para scripts e testes.",
+  "why": "Executa programas JavaScript/TypeScript e instala dependências. Útil se o projeto já suporta Bun; confira compatibilidade antes de substituir npm.",
   "method": "manual",
   "detect": {
     "commands": [
@@ -3533,7 +3675,7 @@ Alternativa rápida ao npm para scripts e testes.
 
 Docker Engine + Compose v2 (docker compose) do repositório oficial.
 
-Recomendado para desenvolvimento Laravel com Sail/Compose. Corre nativamente, sem VM.
+Executa aplicações e serviços em containers separados, definidos pelo projeto. Útil para levantar PHP, bases e Redis com Compose sem instalar cada serviço no host.
 
 | Campo | Valor |
 | --- | --- |
@@ -3559,7 +3701,7 @@ O docker-compose legado (v1) não é instalado; use 'docker compose'.
   "area": "dev",
   "category": "Contentores",
   "summary": "Docker Engine + Compose v2 (docker compose) do repositório oficial.",
-  "why": "Recomendado para desenvolvimento Laravel com Sail/Compose. Corre nativamente, sem VM.",
+  "why": "Executa aplicações e serviços em containers separados, definidos pelo projeto. Útil para levantar PHP, bases e Redis com Compose sem instalar cada serviço no host.",
   "method": "apt-repo",
   "verify": {
     "cmd": [
@@ -3602,7 +3744,7 @@ O docker-compose legado (v1) não é instalado; use 'docker compose'.
 
 Docker e Compose v2 mantidos pelo Ubuntu.
 
-Alternativa sem repositório externo; versões um pouco mais antigas.
+Fornece Docker e Compose pelo arquivo Ubuntu. Útil quando prefere pacotes da distribuição; é alternativa ao Docker Engine do fornecedor.
 
 | Campo | Valor |
 | --- | --- |
@@ -3626,7 +3768,7 @@ Alternativa sem repositório externo; versões um pouco mais antigas.
   "area": "dev",
   "category": "Contentores",
   "summary": "Docker e Compose v2 mantidos pelo Ubuntu.",
-  "why": "Alternativa sem repositório externo; versões um pouco mais antigas.",
+  "why": "Fornece Docker e Compose pelo arquivo Ubuntu. Útil quando prefere pacotes da distribuição; é alternativa ao Docker Engine do fornecedor.",
   "method": "apt",
   "packages": [
     "docker.io",
@@ -3752,17 +3894,27 @@ Conveniente, mas o grupo docker equivale a acesso root (qualquer contentor pode 
 
 Editor de código da Microsoft.
 
-Extensões para PHP/Laravel, Docker e Git. Repositório oficial atualiza com o sistema.
+Editor com extensões para PHP, JavaScript e Git. O pacote Flatpak é comunitário; ferramentas e terminais do host podem precisar de configuração.
 
 | Campo | Valor |
 | --- | --- |
 | ID | vscode |
 | Área / categoria | Desenvolvimento / Editores e APIs |
-| Método | apt-repo |
-| Fonte | Repositório oficial Microsoft |
-| Pacotes | code |
-| Repositório | vscode |
-| Evidência da receita | Chave/fingerprint e dists verificados em 2026-10-04 |
+| Método | flatpak |
+| Fonte | Flathub (editor não verificado) |
+| Flatpak | com.visualstudio.code |
+| Evidência da receita | API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação |
+| Dependências | [Flatpak + Flathub](#item-flathub) |
+
+Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas.
+
+#### Guia manual
+
+1. Abra o editor pelo menu ou com flatpak run com.visualstudio.code.
+2. Para usar a shell e ferramentas do host no terminal integrado, configure o perfil de terminal conforme o guia do empacotador.
+3. Instale as extensões e SDKs exigidos pelo seu projeto; instalar o editor não instala PHP, Node ou Docker no host.
+
+[Documentação do fornecedor](https://github.com/flathub/com.visualstudio.code#usage)
 
 <details>
 <summary>Receita JSON integral</summary>
@@ -3774,26 +3926,32 @@ Extensões para PHP/Laravel, Docker e Git. Repositório oficial atualiza com o s
   "area": "dev",
   "category": "Editores e APIs",
   "summary": "Editor de código da Microsoft.",
-  "why": "Extensões para PHP/Laravel, Docker e Git. Repositório oficial atualiza com o sistema.",
-  "method": "apt-repo",
-  "verify": {
-    "cmd": [
-      "code",
-      "--version"
-    ]
-  },
-  "packages": [
-    "code"
-  ],
-  "repo": "vscode",
-  "source": "Repositório oficial Microsoft",
-  "verified": "Chave/fingerprint e dists verificados em 2026-10-04",
+  "why": "Editor com extensões para PHP, JavaScript e Git. O pacote Flatpak é comunitário; ferramentas e terminais do host podem precisar de configuração.",
+  "method": "flatpak",
+  "source": "Flathub (editor não verificado)",
+  "verified": "API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação",
   "tags": [
     "snap:code"
   ],
   "compat": {
     "arch": [
       "amd64"
+    ]
+  },
+  "legacyPackages": [
+    "code"
+  ],
+  "flatpak": "com.visualstudio.code",
+  "requires": [
+    "flathub"
+  ],
+  "notes": "Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas.",
+  "manual": {
+    "url": "https://github.com/flathub/com.visualstudio.code#usage",
+    "steps": [
+      "Abra o editor pelo menu ou com flatpak run com.visualstudio.code.",
+      "Para usar a shell e ferramentas do host no terminal integrado, configure o perfil de terminal conforme o guia do empacotador.",
+      "Instale as extensões e SDKs exigidos pelo seu projeto; instalar o editor não instala PHP, Node ou Docker no host."
     ]
   }
 }
@@ -3807,21 +3965,19 @@ Extensões para PHP/Laravel, Docker e Git. Repositório oficial atualiza com o s
 
 IDE PHP da JetBrains (pago).
 
-O mais completo para Laravel. Instale pelo JetBrains Toolbox ou Flatpak (com.jetbrains.PhpStorm, não oficial).
+IDE para desenvolvimento PHP, com depuração e navegação de código. O pacote Flathub é comunitário; a licença e conta são configuradas diretamente na JetBrains.
 
 | Campo | Valor |
 | --- | --- |
 | ID | phpstorm |
 | Área / categoria | Desenvolvimento / Editores e APIs |
-| Método | manual |
-| Fonte | Manual / não suportado automaticamente |
+| Método | flatpak |
+| Fonte | Flathub (editor não verificado) |
+| Flatpak | com.jetbrains.PhpStorm |
+| Evidência da receita | API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação |
+| Dependências | [Flatpak + Flathub](#item-flathub) |
 
-#### Guia manual
-
-1. Recomendado: JetBrains Toolbox (https://www.jetbrains.com/toolbox-app/), extraia o .tar.gz e execute.
-2. Alternativa Flathub: com.jetbrains.PhpStorm (empacotamento comunitário).
-
-[Documentação do fornecedor](https://www.jetbrains.com/help/phpstorm/installation-guide.html)
+Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas. Licença paga ou avaliação geridas pelo fornecedor; o Meu Ubuntu não configura contas.
 
 <details>
 <summary>Receita JSON integral</summary>
@@ -3833,24 +3989,18 @@ O mais completo para Laravel. Instale pelo JetBrains Toolbox ou Flatpak (com.jet
   "area": "dev",
   "category": "Editores e APIs",
   "summary": "IDE PHP da JetBrains (pago).",
-  "why": "O mais completo para Laravel. Instale pelo JetBrains Toolbox ou Flatpak (com.jetbrains.PhpStorm, não oficial).",
-  "method": "manual",
-  "detect": {
-    "commands": [
-      "phpstorm"
-    ]
-  },
-  "manual": {
-    "steps": [
-      "Recomendado: JetBrains Toolbox (https://www.jetbrains.com/toolbox-app/), extraia o .tar.gz e execute.",
-      "Alternativa Flathub: com.jetbrains.PhpStorm (empacotamento comunitário)."
-    ],
-    "url": "https://www.jetbrains.com/help/phpstorm/installation-guide.html"
-  },
-  "source": "Manual / não suportado automaticamente",
+  "why": "IDE para desenvolvimento PHP, com depuração e navegação de código. O pacote Flathub é comunitário; a licença e conta são configuradas diretamente na JetBrains.",
+  "method": "flatpak",
+  "source": "Flathub (editor não verificado)",
   "tags": [
     "snap:phpstorm"
-  ]
+  ],
+  "flatpak": "com.jetbrains.PhpStorm",
+  "requires": [
+    "flathub"
+  ],
+  "verified": "API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação",
+  "notes": "Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas. Licença paga ou avaliação geridas pelo fornecedor; o Meu Ubuntu não configura contas."
 }
 ```
 
@@ -3862,7 +4012,7 @@ O mais completo para Laravel. Instale pelo JetBrains Toolbox ou Flatpak (com.jet
 
 Testar webhooks e eventos Stripe localmente.
 
-stripe listen encaminha webhooks para o seu Laravel local.
+Permite testar a integração de pagamentos e receber webhooks Stripe no projeto local. Exige configurar a sua conta depois da instalação; não recolhemos credenciais.
 
 | Campo | Valor |
 | --- | --- |
@@ -3884,7 +4034,7 @@ stripe listen encaminha webhooks para o seu Laravel local.
   "area": "dev",
   "category": "Editores e APIs",
   "summary": "Testar webhooks e eventos Stripe localmente.",
-  "why": "stripe listen encaminha webhooks para o seu Laravel local.",
+  "why": "Permite testar a integração de pagamentos e receber webhooks Stripe no projeto local. Exige configurar a sua conta depois da instalação; não recolhemos credenciais.",
   "method": "apt-repo",
   "verify": {
     "cmd": [
@@ -3914,16 +4064,16 @@ stripe listen encaminha webhooks para o seu Laravel local.
 
 Cliente de APIs offline, coleções em ficheiros.
 
-Coleções versionáveis no Git, sem conta cloud.
+Permite guardar e repetir pedidos HTTP para testar APIs. As coleções ficam em ficheiros que podem acompanhar o código no Git; não exige conta cloud.
 
 | Campo | Valor |
 | --- | --- |
 | ID | bruno |
 | Área / categoria | Desenvolvimento / Editores e APIs |
 | Método | flatpak |
-| Fonte | Flathub (editor não verificado) |
+| Fonte | Flathub (editor verificado) |
 | Flatpak | com.usebruno.Bruno |
-| Evidência da receita | Flathub API 200 em 2026-10-04 |
+| Evidência da receita | API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação |
 | Dependências | [Flatpak + Flathub](#item-flathub) |
 
 <details>
@@ -3936,14 +4086,14 @@ Coleções versionáveis no Git, sem conta cloud.
   "area": "dev",
   "category": "Editores e APIs",
   "summary": "Cliente de APIs offline, coleções em ficheiros.",
-  "why": "Coleções versionáveis no Git, sem conta cloud.",
+  "why": "Permite guardar e repetir pedidos HTTP para testar APIs. As coleções ficam em ficheiros que podem acompanhar o código no Git; não exige conta cloud.",
   "method": "flatpak",
   "flatpak": "com.usebruno.Bruno",
   "requires": [
     "flathub"
   ],
-  "source": "Flathub (editor não verificado)",
-  "verified": "Flathub API 200 em 2026-10-04",
+  "source": "Flathub (editor verificado)",
+  "verified": "API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação",
   "compat": {
     "arch": [
       "amd64"
@@ -3960,7 +4110,7 @@ Coleções versionáveis no Git, sem conta cloud.
 
 Cliente de APIs open source.
 
-Não está no Flathub; o pacote oficial é distribuído no GitHub.
+Permite enviar pedidos a APIs e conferir respostas numa interface gráfica. A instalação desta versão é guiada pelo pacote oficial; não entra automaticamente pelo Flathub.
 
 | Campo | Valor |
 | --- | --- |
@@ -3986,7 +4136,7 @@ Não está no Flathub; o pacote oficial é distribuído no GitHub.
   "area": "dev",
   "category": "Editores e APIs",
   "summary": "Cliente de APIs open source.",
-  "why": "Não está no Flathub; o pacote oficial é distribuído no GitHub.",
+  "why": "Permite enviar pedidos a APIs e conferir respostas numa interface gráfica. A instalação desta versão é guiada pelo pacote oficial; não entra automaticamente pelo Flathub.",
   "method": "manual",
   "detect": {
     "commands": [
@@ -6245,10 +6395,13 @@ Abrir e editar documentos Office/ODF; interface em português.
 | --- | --- |
 | ID | libreoffice |
 | Área / categoria | Aplicações / Escritório |
-| Método | apt |
-| Fonte | Arquivo Ubuntu |
-| Pacotes | libreoffice-writer, libreoffice-calc, libreoffice-impress, libreoffice-gnome, libreoffice-l10n-pt, libreoffice-l10n-pt-br |
-| Evidência da receita | Verificado: arquivo Ubuntu 26.04 (apt-cache policy, 2026-10-04) |
+| Método | flatpak |
+| Fonte | Flathub (editor verificado) |
+| Flatpak | org.libreoffice.LibreOffice |
+| Evidência da receita | API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação |
+| Dependências | [Flatpak + Flathub](#item-flathub) |
+
+Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas.
 
 <details>
 <summary>Receita JSON integral</summary>
@@ -6261,17 +6414,19 @@ Abrir e editar documentos Office/ODF; interface em português.
   "category": "Escritório",
   "summary": "Processador de texto, folha de cálculo e apresentações.",
   "why": "Abrir e editar documentos Office/ODF; interface em português.",
-  "method": "apt",
-  "packages": [
+  "method": "flatpak",
+  "source": "Flathub (editor verificado)",
+  "verified": "API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação",
+  "legacyPackages": [
     "libreoffice-writer",
     "libreoffice-calc",
-    "libreoffice-impress",
-    "libreoffice-gnome",
-    "libreoffice-l10n-pt",
-    "libreoffice-l10n-pt-br"
+    "libreoffice-impress"
   ],
-  "source": "Arquivo Ubuntu",
-  "verified": "Verificado: arquivo Ubuntu 26.04 (apt-cache policy, 2026-10-04)"
+  "flatpak": "org.libreoffice.LibreOffice",
+  "requires": [
+    "flathub"
+  ],
+  "notes": "Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas."
 }
 ```
 
@@ -6291,9 +6446,11 @@ No 26.04 o pacote APT é só uma transição para o Snap; o Flatpak vem da Mozil
 | Área / categoria | Aplicações / Escritório |
 | Método | flatpak |
 | Fonte | Flathub (editor verificado) |
-| Flatpak | org.mozilla.Thunderbird |
-| Evidência da receita | Flathub API 200 em 2026-10-04 |
+| Flatpak | org.mozilla.thunderbird |
+| Evidência da receita | ID atual org.mozilla.thunderbird ativo na API Flathub em 2026-10-13 |
 | Dependências | [Flatpak + Flathub](#item-flathub) |
+
+O ID antigo é reconhecido e preservado; não migra perfis nem substitui instalações existentes automaticamente.
 
 <details>
 <summary>Receita JSON integral</summary>
@@ -6307,12 +6464,12 @@ No 26.04 o pacote APT é só uma transição para o Snap; o Flatpak vem da Mozil
   "summary": "Cliente de email e calendário da Mozilla.",
   "why": "No 26.04 o pacote APT é só uma transição para o Snap; o Flatpak vem da Mozilla.",
   "method": "flatpak",
-  "flatpak": "org.mozilla.Thunderbird",
+  "flatpak": "org.mozilla.thunderbird",
   "requires": [
     "flathub"
   ],
   "source": "Flathub (editor verificado)",
-  "verified": "Flathub API 200 em 2026-10-04",
+  "verified": "ID atual org.mozilla.thunderbird ativo na API Flathub em 2026-10-13",
   "tags": [
     "snap:thunderbird"
   ],
@@ -6320,7 +6477,11 @@ No 26.04 o pacote APT é só uma transição para o Snap; o Flatpak vem da Mozil
     "arch": [
       "amd64"
     ]
-  }
+  },
+  "legacyFlatpaks": [
+    "org.mozilla.Thunderbird"
+  ],
+  "notes": "O ID antigo é reconhecido e preservado; não migra perfis nem substitui instalações existentes automaticamente."
 }
 ```
 
@@ -6341,7 +6502,7 @@ Alternativa privada ao Google Fotos. Requer conta.
 | Método | flatpak |
 | Fonte | Flathub (editor verificado) |
 | Flatpak | io.ente.photos |
-| Evidência da receita | Flathub API 200 em 2026-10-04 |
+| Evidência da receita | API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação |
 | Dependências | [Flatpak + Flathub](#item-flathub) |
 
 <details>
@@ -6361,7 +6522,7 @@ Alternativa privada ao Google Fotos. Requer conta.
     "flathub"
   ],
   "source": "Flathub (editor verificado)",
-  "verified": "Flathub API 200 em 2026-10-04",
+  "verified": "API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação",
   "compat": {
     "arch": [
       "amd64"
@@ -6378,7 +6539,7 @@ Alternativa privada ao Google Fotos. Requer conta.
 
 Gestor de senhas open source, sincronizado entre dispositivos.
 
-Senhas fortes e únicas em todo o lado; extensão para navegadores. Requer conta (plano gratuito).
+Guarda senhas e ajuda a usar uma senha diferente por serviço. Útil se quer um cofre sincronizado entre dispositivos; precisa de configurar uma conta.
 
 | Campo | Valor |
 | --- | --- |
@@ -6387,7 +6548,7 @@ Senhas fortes e únicas em todo o lado; extensão para navegadores. Requer conta
 | Método | flatpak |
 | Fonte | Flathub (editor verificado) |
 | Flatpak | com.bitwarden.desktop |
-| Evidência da receita | Flathub API 200 em 2026-10-04 |
+| Evidência da receita | API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação |
 | Dependências | [Flatpak + Flathub](#item-flathub) |
 
 <details>
@@ -6400,14 +6561,14 @@ Senhas fortes e únicas em todo o lado; extensão para navegadores. Requer conta
   "area": "security",
   "category": "Gestores de senhas",
   "summary": "Gestor de senhas open source, sincronizado entre dispositivos.",
-  "why": "Senhas fortes e únicas em todo o lado; extensão para navegadores. Requer conta (plano gratuito).",
+  "why": "Guarda senhas e ajuda a usar uma senha diferente por serviço. Útil se quer um cofre sincronizado entre dispositivos; precisa de configurar uma conta.",
   "method": "flatpak",
   "flatpak": "com.bitwarden.desktop",
   "requires": [
     "flathub"
   ],
   "source": "Flathub (editor verificado)",
-  "verified": "Flathub API 200 em 2026-10-04",
+  "verified": "API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação",
   "compat": {
     "arch": [
       "amd64"
@@ -6424,16 +6585,19 @@ Senhas fortes e únicas em todo o lado; extensão para navegadores. Requer conta
 
 Gestor de senhas offline (ficheiro .kdbx).
 
-Cofre local sem conta nem cloud; sincronize o ficheiro como quiser. Também guarda TOTP.
+Guarda senhas num ficheiro de cofre protegido por uma senha principal. Útil se prefere guardar e sincronizar esse ficheiro por si, sem conta cloud obrigatória.
 
 | Campo | Valor |
 | --- | --- |
 | ID | keepassxc |
 | Área / categoria | Segurança / Gestores de senhas |
-| Método | apt |
-| Fonte | Arquivo Ubuntu |
-| Pacotes | keepassxc |
-| Evidência da receita | Verificado: arquivo Ubuntu 26.04 (apt-cache policy, 2026-10-04) |
+| Método | flatpak |
+| Fonte | Flathub (editor verificado) |
+| Flatpak | org.keepassxc.KeePassXC |
+| Evidência da receita | API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação |
+| Dependências | [Flatpak + Flathub](#item-flathub) |
+
+Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas.
 
 <details>
 <summary>Receita JSON integral</summary>
@@ -6445,13 +6609,18 @@ Cofre local sem conta nem cloud; sincronize o ficheiro como quiser. Também guar
   "area": "security",
   "category": "Gestores de senhas",
   "summary": "Gestor de senhas offline (ficheiro .kdbx).",
-  "why": "Cofre local sem conta nem cloud; sincronize o ficheiro como quiser. Também guarda TOTP.",
-  "method": "apt",
-  "packages": [
+  "why": "Guarda senhas num ficheiro de cofre protegido por uma senha principal. Útil se prefere guardar e sincronizar esse ficheiro por si, sem conta cloud obrigatória.",
+  "method": "flatpak",
+  "source": "Flathub (editor verificado)",
+  "verified": "API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação",
+  "legacyPackages": [
     "keepassxc"
   ],
-  "source": "Arquivo Ubuntu",
-  "verified": "Verificado: arquivo Ubuntu 26.04 (apt-cache policy, 2026-10-04)"
+  "flatpak": "org.keepassxc.KeePassXC",
+  "requires": [
+    "flathub"
+  ],
+  "notes": "Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas."
 }
 ```
 
@@ -6463,7 +6632,7 @@ Cofre local sem conta nem cloud; sincronize o ficheiro como quiser. Também guar
 
 Gestor de senhas KeePass simples, ao estilo GNOME.
 
-Mais simples que o KeePassXC, mesmo formato .kdbx.
+Abre e edita cofres de senhas no formato .kdbx numa interface simples. Útil se quer um gestor local integrado no GNOME.
 
 | Campo | Valor |
 | --- | --- |
@@ -6472,7 +6641,7 @@ Mais simples que o KeePassXC, mesmo formato .kdbx.
 | Método | flatpak |
 | Fonte | Flathub (editor verificado) |
 | Flatpak | org.gnome.World.Secrets |
-| Evidência da receita | Flathub API 200 em 2026-10-04 |
+| Evidência da receita | API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação |
 | Dependências | [Flatpak + Flathub](#item-flathub) |
 
 <details>
@@ -6485,14 +6654,14 @@ Mais simples que o KeePassXC, mesmo formato .kdbx.
   "area": "security",
   "category": "Gestores de senhas",
   "summary": "Gestor de senhas KeePass simples, ao estilo GNOME.",
-  "why": "Mais simples que o KeePassXC, mesmo formato .kdbx.",
+  "why": "Abre e edita cofres de senhas no formato .kdbx numa interface simples. Útil se quer um gestor local integrado no GNOME.",
   "method": "flatpak",
   "flatpak": "org.gnome.World.Secrets",
   "requires": [
     "flathub"
   ],
   "source": "Flathub (editor verificado)",
-  "verified": "Flathub API 200 em 2026-10-04",
+  "verified": "API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação",
   "compat": {
     "arch": [
       "amd64"
@@ -6509,7 +6678,7 @@ Mais simples que o KeePassXC, mesmo formato .kdbx.
 
 Gere o chaveiro GNOME, chaves SSH e GPG.
 
-Ver/exportar o chaveiro na migração e gerir chaves GPG graficamente.
+Mostra senhas e chaves guardadas no chaveiro do GNOME e permite gerir chaves GPG. Útil para inspecionar acessos locais ou preparar uma migração.
 
 | Campo | Valor |
 | --- | --- |
@@ -6530,7 +6699,7 @@ Ver/exportar o chaveiro na migração e gerir chaves GPG graficamente.
   "area": "security",
   "category": "Gestores de senhas",
   "summary": "Gere o chaveiro GNOME, chaves SSH e GPG.",
-  "why": "Ver/exportar o chaveiro na migração e gerir chaves GPG graficamente.",
+  "why": "Mostra senhas e chaves guardadas no chaveiro do GNOME e permite gerir chaves GPG. Útil para inspecionar acessos locais ou preparar uma migração.",
   "method": "apt",
   "packages": [
     "seahorse"
@@ -6548,7 +6717,7 @@ Ver/exportar o chaveiro na migração e gerir chaves GPG graficamente.
 
 Códigos 2FA (TOTP) com backup cifrado e sincronização.
 
-Não perder os códigos 2FA ao trocar de telemóvel/PC. Funciona offline; conta opcional para sincronizar.
+Gera códigos de autenticação em dois fatores. Útil para manter acesso a contas ao trocar de dispositivo; funciona offline e permite sincronização opcional.
 
 | Campo | Valor |
 | --- | --- |
@@ -6557,7 +6726,7 @@ Não perder os códigos 2FA ao trocar de telemóvel/PC. Funciona offline; conta 
 | Método | flatpak |
 | Fonte | Flathub (editor verificado) |
 | Flatpak | io.ente.auth |
-| Evidência da receita | Flathub API 200 em 2026-10-04 |
+| Evidência da receita | API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação |
 | Dependências | [Flatpak + Flathub](#item-flathub) |
 
 <details>
@@ -6570,14 +6739,14 @@ Não perder os códigos 2FA ao trocar de telemóvel/PC. Funciona offline; conta 
   "area": "security",
   "category": "Autenticação 2FA",
   "summary": "Códigos 2FA (TOTP) com backup cifrado e sincronização.",
-  "why": "Não perder os códigos 2FA ao trocar de telemóvel/PC. Funciona offline; conta opcional para sincronizar.",
+  "why": "Gera códigos de autenticação em dois fatores. Útil para manter acesso a contas ao trocar de dispositivo; funciona offline e permite sincronização opcional.",
   "method": "flatpak",
   "flatpak": "io.ente.auth",
   "requires": [
     "flathub"
   ],
   "source": "Flathub (editor verificado)",
-  "verified": "Flathub API 200 em 2026-10-04",
+  "verified": "API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação",
   "compat": {
     "arch": [
       "amd64"
@@ -6594,7 +6763,7 @@ Não perder os códigos 2FA ao trocar de telemóvel/PC. Funciona offline; conta 
 
 Códigos 2FA locais no desktop.
 
-Alternativa simples e só local ao Ente Auth.
+Gera códigos de autenticação em dois fatores neste computador. Útil se prefere gerir esses códigos localmente.
 
 | Campo | Valor |
 | --- | --- |
@@ -6603,7 +6772,7 @@ Alternativa simples e só local ao Ente Auth.
 | Método | flatpak |
 | Fonte | Flathub (editor verificado) |
 | Flatpak | com.belmoussaoui.Authenticator |
-| Evidência da receita | Flathub API 200 em 2026-10-04 |
+| Evidência da receita | API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação |
 | Dependências | [Flatpak + Flathub](#item-flathub) |
 
 <details>
@@ -6616,14 +6785,14 @@ Alternativa simples e só local ao Ente Auth.
   "area": "security",
   "category": "Autenticação 2FA",
   "summary": "Códigos 2FA locais no desktop.",
-  "why": "Alternativa simples e só local ao Ente Auth.",
+  "why": "Gera códigos de autenticação em dois fatores neste computador. Útil se prefere gerir esses códigos localmente.",
   "method": "flatpak",
   "flatpak": "com.belmoussaoui.Authenticator",
   "requires": [
     "flathub"
   ],
   "source": "Flathub (editor verificado)",
-  "verified": "Flathub API 200 em 2026-10-04",
+  "verified": "API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação",
   "compat": {
     "arch": [
       "amd64"
@@ -6649,7 +6818,7 @@ Só se tiver YubiKey. Editor não verificado no Flathub.
 | Método | flatpak |
 | Fonte | Flathub (editor não verificado) |
 | Flatpak | com.yubico.yubioath |
-| Evidência da receita | Flathub API 200 em 2026-10-04 |
+| Evidência da receita | API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação |
 | Dependências | [Flatpak + Flathub](#item-flathub) |
 
 <details>
@@ -6669,7 +6838,7 @@ Só se tiver YubiKey. Editor não verificado no Flathub.
     "flathub"
   ],
   "source": "Flathub (editor não verificado)",
-  "verified": "Flathub API 200 em 2026-10-04",
+  "verified": "API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação",
   "compat": {
     "arch": [
       "amd64"
@@ -6728,7 +6897,7 @@ Gerir a chave física e usá-la para GPG/SSH.
 
 Cofres cifrados dentro de pastas sincronizadas (Drive, Dropbox…).
 
-Proteger documentos sensíveis guardados na cloud.
+Cifra ficheiros antes de os guardar ou sincronizar na cloud. Útil para proteger documentos pessoais; o serviço cloud continua a transportar os ficheiros cifrados.
 
 | Campo | Valor |
 | --- | --- |
@@ -6737,7 +6906,7 @@ Proteger documentos sensíveis guardados na cloud.
 | Método | flatpak |
 | Fonte | Flathub (editor verificado) |
 | Flatpak | org.cryptomator.Cryptomator |
-| Evidência da receita | Flathub API 200 em 2026-10-04 |
+| Evidência da receita | API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação |
 | Dependências | [Flatpak + Flathub](#item-flathub) |
 
 <details>
@@ -6750,14 +6919,14 @@ Proteger documentos sensíveis guardados na cloud.
   "area": "security",
   "category": "Cifragem",
   "summary": "Cofres cifrados dentro de pastas sincronizadas (Drive, Dropbox…).",
-  "why": "Proteger documentos sensíveis guardados na cloud.",
+  "why": "Cifra ficheiros antes de os guardar ou sincronizar na cloud. Útil para proteger documentos pessoais; o serviço cloud continua a transportar os ficheiros cifrados.",
   "method": "flatpak",
   "flatpak": "org.cryptomator.Cryptomator",
   "requires": [
     "flathub"
   ],
   "source": "Flathub (editor verificado)",
-  "verified": "Flathub API 200 em 2026-10-04",
+  "verified": "API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação",
   "compat": {
     "arch": [
       "amd64"
@@ -6774,7 +6943,7 @@ Proteger documentos sensíveis guardados na cloud.
 
 Remove metadados (GPS, autor, câmara) de fotos e documentos.
 
-Antes de partilhar ficheiros com clientes ou publicar fotos.
+Remove informação incorporada em ficheiros, como localização de fotografias ou autor de documentos. Útil antes de partilhar anexos; reveja o resultado exportado.
 
 | Campo | Valor |
 | --- | --- |
@@ -6783,8 +6952,10 @@ Antes de partilhar ficheiros com clientes ou publicar fotos.
 | Método | flatpak |
 | Fonte | Flathub (editor verificado) |
 | Flatpak | fr.romainvigier.MetadataCleaner |
-| Evidência da receita | Flathub API 200 em 2026-10-04 |
+| Evidência da receita | API Flathub e página da aplicação indicam fim de manutenção em 2026-10-13 |
 | Dependências | [Flatpak + Flathub](#item-flathub) |
+
+Instalações existentes são reconhecidas e preservadas. Consulte a origem para escolher uma alternativa mantida.
 
 <details>
 <summary>Receita JSON integral</summary>
@@ -6796,19 +6967,21 @@ Antes de partilhar ficheiros com clientes ou publicar fotos.
   "area": "security",
   "category": "Privacidade",
   "summary": "Remove metadados (GPS, autor, câmara) de fotos e documentos.",
-  "why": "Antes de partilhar ficheiros com clientes ou publicar fotos.",
+  "why": "Remove informação incorporada em ficheiros, como localização de fotografias ou autor de documentos. Útil antes de partilhar anexos; reveja o resultado exportado.",
   "method": "flatpak",
   "flatpak": "fr.romainvigier.MetadataCleaner",
   "requires": [
     "flathub"
   ],
   "source": "Flathub (editor verificado)",
-  "verified": "Flathub API 200 em 2026-10-04",
+  "verified": "API Flathub e página da aplicação indicam fim de manutenção em 2026-10-13",
   "compat": {
     "arch": [
       "amd64"
     ]
-  }
+  },
+  "flatpakUnavailable": "Metadata Cleaner foi descontinuado no Flathub; novas instalações automáticas indisponíveis.",
+  "notes": "Instalações existentes são reconhecidas e preservadas. Consulte a origem para escolher uma alternativa mantida."
 }
 ```
 
@@ -6820,7 +6993,7 @@ Antes de partilhar ficheiros com clientes ou publicar fotos.
 
 Rever e restringir permissões das aplicações Flatpak.
 
-Saber a que pastas/dispositivos cada Flatpak acede e reduzir.
+Mostra e permite ajustar permissões de aplicações Flatpak, como acesso a pastas e dispositivos. Útil para conferir o que cada aplicação pode usar.
 
 | Campo | Valor |
 | --- | --- |
@@ -6829,7 +7002,7 @@ Saber a que pastas/dispositivos cada Flatpak acede e reduzir.
 | Método | flatpak |
 | Fonte | Flathub (editor verificado) |
 | Flatpak | com.github.tchx84.Flatseal |
-| Evidência da receita | Flathub API 200 em 2026-10-04 |
+| Evidência da receita | API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação |
 | Dependências | [Flatpak + Flathub](#item-flathub) |
 
 <details>
@@ -6842,14 +7015,14 @@ Saber a que pastas/dispositivos cada Flatpak acede e reduzir.
   "area": "security",
   "category": "Privacidade",
   "summary": "Rever e restringir permissões das aplicações Flatpak.",
-  "why": "Saber a que pastas/dispositivos cada Flatpak acede e reduzir.",
+  "why": "Mostra e permite ajustar permissões de aplicações Flatpak, como acesso a pastas e dispositivos. Útil para conferir o que cada aplicação pode usar.",
   "method": "flatpak",
   "flatpak": "com.github.tchx84.Flatseal",
   "requires": [
     "flathub"
   ],
   "source": "Flathub (editor verificado)",
-  "verified": "Flathub API 200 em 2026-10-04",
+  "verified": "API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação",
   "compat": {
     "arch": [
       "amd64"
@@ -6872,10 +7045,13 @@ Navegação anónima quando necessário.
 | --- | --- |
 | ID | torbrowser-launcher |
 | Área / categoria | Segurança / Privacidade |
-| Método | apt |
-| Fonte | Arquivo Ubuntu |
-| Pacotes | torbrowser-launcher |
-| Evidência da receita | Verificado: arquivo Ubuntu 26.04 (apt-cache policy, 2026-10-04) |
+| Método | flatpak |
+| Fonte | Flathub (editor verificado) |
+| Flatpak | org.torproject.torbrowser-launcher |
+| Evidência da receita | API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação |
+| Dependências | [Flatpak + Flathub](#item-flathub) |
+
+Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas.
 
 <details>
 <summary>Receita JSON integral</summary>
@@ -6888,12 +7064,17 @@ Navegação anónima quando necessário.
   "category": "Privacidade",
   "summary": "Transfere e mantém o Tor Browser, verificando a assinatura do Tor Project.",
   "why": "Navegação anónima quando necessário.",
-  "method": "apt",
-  "packages": [
+  "method": "flatpak",
+  "source": "Flathub (editor verificado)",
+  "verified": "API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação",
+  "legacyPackages": [
     "torbrowser-launcher"
   ],
-  "source": "Arquivo Ubuntu",
-  "verified": "Verificado: arquivo Ubuntu 26.04 (apt-cache policy, 2026-10-04)"
+  "flatpak": "org.torproject.torbrowser-launcher",
+  "requires": [
+    "flathub"
+  ],
+  "notes": "Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas."
 }
 ```
 
@@ -6947,7 +7128,7 @@ Ative e configure manualmente, considerando portas de serviços, Docker e VPN.
 
 Auditoria de segurança do sistema (só leitura).
 
-Relatório de sugestões de hardening: sudo lynis audit system. Não altera nada.
+Inspeciona configurações de segurança e apresenta sugestões. Útil numa auditoria local; o relatório não aplica as sugestões automaticamente.
 
 | Campo | Valor |
 | --- | --- |
@@ -6968,7 +7149,7 @@ Relatório de sugestões de hardening: sudo lynis audit system. Não altera nada
   "area": "security",
   "category": "Firewall e auditoria",
   "summary": "Auditoria de segurança do sistema (só leitura).",
-  "why": "Relatório de sugestões de hardening: sudo lynis audit system. Não altera nada.",
+  "why": "Inspeciona configurações de segurança e apresenta sugestões. Útil numa auditoria local; o relatório não aplica as sugestões automaticamente.",
   "method": "apt",
   "packages": [
     "lynis"
@@ -7318,16 +7499,19 @@ O varrimento pode exigir privilégios. A aplicação não altera permissões nem
 
 Cliente de ambiente de trabalho remoto RDP, VNC e SSH.
 
-Aceder a servidores Windows e máquinas de clientes.
+Abre sessões gráficas remotas, por exemplo num servidor Windows por RDP. Útil para apoio a clientes e acesso a outras máquinas.
 
 | Campo | Valor |
 | --- | --- |
 | ID | remmina |
 | Área / categoria | Infraestrutura / Acesso remoto |
-| Método | apt |
-| Fonte | Arquivo Ubuntu |
-| Pacotes | remmina, remmina-plugin-rdp, remmina-plugin-vnc |
-| Evidência da receita | Verificado: arquivo Ubuntu 26.04 (apt-cache policy, 2026-10-04) |
+| Método | flatpak |
+| Fonte | Flathub (editor verificado) |
+| Flatpak | org.remmina.Remmina |
+| Evidência da receita | API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação |
+| Dependências | [Flatpak + Flathub](#item-flathub) |
+
+Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas.
 
 <details>
 <summary>Receita JSON integral</summary>
@@ -7339,15 +7523,20 @@ Aceder a servidores Windows e máquinas de clientes.
   "area": "infra",
   "category": "Acesso remoto",
   "summary": "Cliente de ambiente de trabalho remoto RDP, VNC e SSH.",
-  "why": "Aceder a servidores Windows e máquinas de clientes.",
-  "method": "apt",
-  "packages": [
+  "why": "Abre sessões gráficas remotas, por exemplo num servidor Windows por RDP. Útil para apoio a clientes e acesso a outras máquinas.",
+  "method": "flatpak",
+  "source": "Flathub (editor verificado)",
+  "verified": "API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação",
+  "legacyPackages": [
     "remmina",
     "remmina-plugin-rdp",
     "remmina-plugin-vnc"
   ],
-  "source": "Arquivo Ubuntu",
-  "verified": "Verificado: arquivo Ubuntu 26.04 (apt-cache policy, 2026-10-04)"
+  "flatpak": "org.remmina.Remmina",
+  "requires": [
+    "flathub"
+  ],
+  "notes": "Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas."
 }
 ```
 
@@ -7359,7 +7548,7 @@ Aceder a servidores Windows e máquinas de clientes.
 
 puttygen/pscp/plink: converter chaves .ppk e copiar ficheiros.
 
-Clientes que só entregam chaves PuTTY.
+Converte chaves SSH no formato PuTTY e fornece ferramentas de ligação. Útil quando um cliente entrega uma chave .ppk.
 
 | Campo | Valor |
 | --- | --- |
@@ -7380,7 +7569,7 @@ Clientes que só entregam chaves PuTTY.
   "area": "infra",
   "category": "Acesso remoto",
   "summary": "puttygen/pscp/plink: converter chaves .ppk e copiar ficheiros.",
-  "why": "Clientes que só entregam chaves PuTTY.",
+  "why": "Converte chaves SSH no formato PuTTY e fornece ferramentas de ligação. Útil quando um cliente entrega uma chave .ppk.",
   "method": "apt",
   "packages": [
     "putty-tools"
@@ -7398,7 +7587,7 @@ Clientes que só entregam chaves PuTTY.
 
 Montar pastas remotas por SSH.
 
-Editar ficheiros de um servidor como se fossem locais.
+Apresenta uma pasta de um servidor SSH como pasta neste computador. Útil para abrir ficheiros remotos no editor; depende da ligação de rede.
 
 | Campo | Valor |
 | --- | --- |
@@ -7419,7 +7608,7 @@ Editar ficheiros de um servidor como se fossem locais.
   "area": "infra",
   "category": "Acesso remoto",
   "summary": "Montar pastas remotas por SSH.",
-  "why": "Editar ficheiros de um servidor como se fossem locais.",
+  "why": "Apresenta uma pasta de um servidor SSH como pasta neste computador. Útil para abrir ficheiros remotos no editor; depende da ligação de rede.",
   "method": "apt",
   "packages": [
     "sshfs"
@@ -7437,7 +7626,7 @@ Editar ficheiros de um servidor como se fossem locais.
 
 Multiplexador de terminal com sessões persistentes.
 
-Sessões que sobrevivem a quedas de ligação.
+Mantém várias sessões de terminal e permite voltar a elas depois de se desligar. Útil num servidor remoto com tarefas longas.
 
 | Campo | Valor |
 | --- | --- |
@@ -7458,7 +7647,7 @@ Sessões que sobrevivem a quedas de ligação.
   "area": "infra",
   "category": "Acesso remoto",
   "summary": "Multiplexador de terminal com sessões persistentes.",
-  "why": "Sessões que sobrevivem a quedas de ligação.",
+  "why": "Mantém várias sessões de terminal e permite voltar a elas depois de se desligar. Útil num servidor remoto com tarefas longas.",
   "method": "apt",
   "packages": [
     "tmux"
@@ -7476,7 +7665,7 @@ Sessões que sobrevivem a quedas de ligação.
 
 mtr, traceroute, dig/nslookup, whois, ipcalc, ethtool.
 
-Kit básico para diagnosticar latência, DNS, rotas e interfaces.
+Reúne comandos para investigar DNS, endereços, rotas e latência. Útil quando um serviço não responde e precisa de localizar a falha de ligação.
 
 | Campo | Valor |
 | --- | --- |
@@ -7497,7 +7686,7 @@ Kit básico para diagnosticar latência, DNS, rotas e interfaces.
   "area": "infra",
   "category": "Rede e diagnóstico",
   "summary": "mtr, traceroute, dig/nslookup, whois, ipcalc, ethtool.",
-  "why": "Kit básico para diagnosticar latência, DNS, rotas e interfaces.",
+  "why": "Reúne comandos para investigar DNS, endereços, rotas e latência. Útil quando um serviço não responde e precisa de localizar a falha de ligação.",
   "method": "apt",
   "packages": [
     "mtr-tiny",
@@ -7562,7 +7751,7 @@ Inventário de rede. Use só em redes onde tem autorização.
 
 Medir largura de banda entre duas máquinas.
 
-Validar links e Wi-Fi. Não fica como serviço (opção padrão do pacote).
+Mede a transferência de dados entre duas máquinas com iperf3. Útil para comparar ligação por cabo e Wi-Fi; requer um ponto de teste na outra máquina.
 
 | Campo | Valor |
 | --- | --- |
@@ -7583,7 +7772,7 @@ Validar links e Wi-Fi. Não fica como serviço (opção padrão do pacote).
   "area": "infra",
   "category": "Rede e diagnóstico",
   "summary": "Medir largura de banda entre duas máquinas.",
-  "why": "Validar links e Wi-Fi. Não fica como serviço (opção padrão do pacote).",
+  "why": "Mede a transferência de dados entre duas máquinas com iperf3. Útil para comparar ligação por cabo e Wi-Fi; requer um ponto de teste na outra máquina.",
   "method": "apt",
   "packages": [
     "iperf3"
@@ -7601,7 +7790,7 @@ Validar links e Wi-Fi. Não fica como serviço (opção padrão do pacote).
 
 Tráfego por ligação, por processo e por interface.
 
-Descobrir quem está a consumir a rede.
+Mostra o tráfego de rede e os processos ou ligações envolvidos. Útil para perceber que aplicação está a consumir a ligação.
 
 | Campo | Valor |
 | --- | --- |
@@ -7622,7 +7811,7 @@ Descobrir quem está a consumir a rede.
   "area": "infra",
   "category": "Rede e diagnóstico",
   "summary": "Tráfego por ligação, por processo e por interface.",
-  "why": "Descobrir quem está a consumir a rede.",
+  "why": "Mostra o tráfego de rede e os processos ou ligações envolvidos. Útil para perceber que aplicação está a consumir a ligação.",
   "method": "apt",
   "packages": [
     "iftop",
@@ -7681,17 +7870,20 @@ Diagnóstico de protocolos; requer sudo para capturar.
 
 Análise gráfica de pacotes.
 
-Instalado sem permitir captura a utilizadores comuns (padrão seguro). Para capturar sem sudo: sudo dpkg-reconfigure wireshark-common e adicionar-se ao grupo wireshark (manual).
+Abre capturas de rede e ajuda a investigar protocolos. Captura ao vivo pode exigir dumpcap e permissões no host; o Flatpak não configura essas permissões.
 
 | Campo | Valor |
 | --- | --- |
 | ID | wireshark |
 | Área / categoria | Infraestrutura / Rede e diagnóstico |
-| Método | apt |
-| Fonte | Arquivo Ubuntu |
-| Pacotes | wireshark |
-| Evidência da receita | Verificado: arquivo Ubuntu 26.04 (apt-cache policy, 2026-10-04) |
+| Método | flatpak |
+| Fonte | Flathub (editor não verificado) |
+| Flatpak | org.wireshark.Wireshark |
+| Evidência da receita | API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação |
 | Atenção | Ferramenta de captura de tráfego |
+| Dependências | [Flatpak + Flathub](#item-flathub) |
+
+Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas. Não são concedidas permissões de captura nem instalados auxiliares administrativos por este Flatpak.
 
 <details>
 <summary>Receita JSON integral</summary>
@@ -7703,14 +7895,19 @@ Instalado sem permitir captura a utilizadores comuns (padrão seguro). Para capt
   "area": "infra",
   "category": "Rede e diagnóstico",
   "summary": "Análise gráfica de pacotes.",
-  "why": "Instalado sem permitir captura a utilizadores comuns (padrão seguro). Para capturar sem sudo: sudo dpkg-reconfigure wireshark-common e adicionar-se ao grupo wireshark (manual).",
-  "method": "apt",
-  "packages": [
+  "why": "Abre capturas de rede e ajuda a investigar protocolos. Captura ao vivo pode exigir dumpcap e permissões no host; o Flatpak não configura essas permissões.",
+  "method": "flatpak",
+  "sensitive": "Ferramenta de captura de tráfego",
+  "source": "Flathub (editor não verificado)",
+  "verified": "API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação",
+  "legacyPackages": [
     "wireshark"
   ],
-  "sensitive": "Ferramenta de captura de tráfego",
-  "source": "Arquivo Ubuntu",
-  "verified": "Verificado: arquivo Ubuntu 26.04 (apt-cache policy, 2026-10-04)"
+  "flatpak": "org.wireshark.Wireshark",
+  "requires": [
+    "flathub"
+  ],
+  "notes": "Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas. Não são concedidas permissões de captura nem instalados auxiliares administrativos por este Flatpak."
 }
 ```
 
@@ -7718,22 +7915,30 @@ Instalado sem permitir captura a utilizadores comuns (padrão seguro). Para capt
 
 <a id="item-virt-manager"></a>
 
-### Virtualização (virt-manager/KVM)
+### Virtualização (virt-manager)
 
 Máquinas virtuais KVM com interface gráfica.
 
-Laboratórios e VMs de clientes. Instala o serviço libvirtd; adicionar-se ao grupo libvirt é manual.
+Gere máquinas virtuais pela interface Flatpak. Para KVM local, o plano inclui QEMU/libvirt no host; permissões de acesso são configuradas por si.
 
 | Campo | Valor |
 | --- | --- |
 | ID | virt-manager |
 | Área / categoria | Infraestrutura / Virtualização |
-| Método | apt |
-| Fonte | Arquivo Ubuntu |
-| Pacotes | virt-manager, qemu-system-x86, libvirt-daemon-system |
-| Evidência da receita | Verificado: arquivo Ubuntu 26.04 (apt-cache policy, 2026-10-04) |
-| Serviço local | Sim |
-| Terminar sessão | Sim |
+| Método | flatpak |
+| Fonte | Flathub (editor verificado) |
+| Flatpak | org.virt_manager.virt-manager |
+| Evidência da receita | API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação |
+| Dependências | [Flatpak + Flathub](#item-flathub), [QEMU + libvirt (KVM local)](#item-kvm-libvirt) |
+
+Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas.
+
+#### Guia manual
+
+1. Confira a virtualização no Diagnóstico e as permissões de acesso ao serviço libvirt antes de criar máquinas.
+2. O cliente Flatpak pode gerir uma instância remota ou a instância do sistema; não altera permissões nem cria VMs automaticamente.
+
+[Documentação do fornecedor](https://github.com/flathub/org.virt_manager.virt-manager)
 
 <details>
 <summary>Receita JSON integral</summary>
@@ -7741,21 +7946,32 @@ Laboratórios e VMs de clientes. Instala o serviço libvirtd; adicionar-se ao gr
 ```json
 {
   "id": "virt-manager",
-  "name": "Virtualização (virt-manager/KVM)",
+  "name": "Virtualização (virt-manager)",
   "area": "infra",
   "category": "Virtualização",
   "summary": "Máquinas virtuais KVM com interface gráfica.",
-  "why": "Laboratórios e VMs de clientes. Instala o serviço libvirtd; adicionar-se ao grupo libvirt é manual.",
-  "method": "apt",
-  "packages": [
+  "why": "Gere máquinas virtuais pela interface Flatpak. Para KVM local, o plano inclui QEMU/libvirt no host; permissões de acesso são configuradas por si.",
+  "method": "flatpak",
+  "source": "Flathub (editor verificado)",
+  "verified": "API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação",
+  "legacyPackages": [
     "virt-manager",
     "qemu-system-x86",
     "libvirt-daemon-system"
   ],
-  "service": true,
-  "relogin": true,
-  "source": "Arquivo Ubuntu",
-  "verified": "Verificado: arquivo Ubuntu 26.04 (apt-cache policy, 2026-10-04)"
+  "flatpak": "org.virt_manager.virt-manager",
+  "requires": [
+    "flathub",
+    "kvm-libvirt"
+  ],
+  "notes": "Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas.",
+  "manual": {
+    "url": "https://github.com/flathub/org.virt_manager.virt-manager",
+    "steps": [
+      "Confira a virtualização no Diagnóstico e as permissões de acesso ao serviço libvirt antes de criar máquinas.",
+      "O cliente Flatpak pode gerir uma instância remota ou a instância do sistema; não altera permissões nem cria VMs automaticamente."
+    ]
+  }
 }
 ```
 
@@ -7767,16 +7983,19 @@ Laboratórios e VMs de clientes. Instala o serviço libvirtd; adicionar-se ao gr
 
 VMs simples por utilizador.
 
-Testar distribuições rapidamente sem configurar libvirt.
+Cria máquinas virtuais numa interface simples. Útil para experimentar outro sistema sem configurar muitos detalhes da virtualização.
 
 | Campo | Valor |
 | --- | --- |
 | ID | gnome-boxes |
 | Área / categoria | Infraestrutura / Virtualização |
-| Método | apt |
-| Fonte | Arquivo Ubuntu |
-| Pacotes | gnome-boxes |
-| Evidência da receita | Verificado: arquivo Ubuntu 26.04 (apt-cache policy, 2026-10-04) |
+| Método | flatpak |
+| Fonte | Flathub (editor verificado) |
+| Flatpak | org.gnome.Boxes |
+| Evidência da receita | API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação |
+| Dependências | [Flatpak + Flathub](#item-flathub) |
+
+Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas.
 
 <details>
 <summary>Receita JSON integral</summary>
@@ -7788,13 +8007,18 @@ Testar distribuições rapidamente sem configurar libvirt.
   "area": "infra",
   "category": "Virtualização",
   "summary": "VMs simples por utilizador.",
-  "why": "Testar distribuições rapidamente sem configurar libvirt.",
-  "method": "apt",
-  "packages": [
+  "why": "Cria máquinas virtuais numa interface simples. Útil para experimentar outro sistema sem configurar muitos detalhes da virtualização.",
+  "method": "flatpak",
+  "source": "Flathub (editor verificado)",
+  "verified": "API Flathub, ID e publicação ativos conferidos em 2026-10-13; verificação local após instalação",
+  "legacyPackages": [
     "gnome-boxes"
   ],
-  "source": "Arquivo Ubuntu",
-  "verified": "Verificado: arquivo Ubuntu 26.04 (apt-cache policy, 2026-10-04)"
+  "flatpak": "org.gnome.Boxes",
+  "requires": [
+    "flathub"
+  ],
+  "notes": "Novas instalações usam Flatpak para o utilizador; versões APT existentes são preservadas."
 }
 ```
 
@@ -7806,7 +8030,7 @@ Testar distribuições rapidamente sem configurar libvirt.
 
 Automação de configuração por SSH.
 
-Preparar vários servidores/postos de forma repetível.
+Aplica configurações descritas em ficheiros a uma ou várias máquinas. Útil para repetir a preparação de servidores; os acessos e tarefas são definidos por si.
 
 | Campo | Valor |
 | --- | --- |
@@ -7827,7 +8051,7 @@ Preparar vários servidores/postos de forma repetível.
   "area": "infra",
   "category": "Automação",
   "summary": "Automação de configuração por SSH.",
-  "why": "Preparar vários servidores/postos de forma repetível.",
+  "why": "Aplica configurações descritas em ficheiros a uma ou várias máquinas. Útil para repetir a preparação de servidores; os acessos e tarefas são definidos por si.",
   "method": "apt",
   "packages": [
     "ansible"
@@ -7845,7 +8069,7 @@ Preparar vários servidores/postos de forma repetível.
 
 wg/wg-quick para túneis WireGuard.
 
-Só instala as ferramentas; nenhuma VPN é configurada.
+Fornece comandos para ligações VPN WireGuard. Útil se recebeu configuração da equipa; instalar as ferramentas não cria nem ativa uma VPN.
 
 | Campo | Valor |
 | --- | --- |
@@ -7866,7 +8090,7 @@ Só instala as ferramentas; nenhuma VPN é configurada.
   "area": "infra",
   "category": "Automação",
   "summary": "wg/wg-quick para túneis WireGuard.",
-  "why": "Só instala as ferramentas; nenhuma VPN é configurada.",
+  "why": "Fornece comandos para ligações VPN WireGuard. Útil se recebeu configuração da equipa; instalar as ferramentas não cria nem ativa uma VPN.",
   "method": "apt",
   "packages": [
     "wireguard-tools"
@@ -7928,7 +8152,7 @@ Diagnóstico e salvamento de discos de clientes. smartd fica como serviço.
 
 Visualizador de logs com pesquisa e realce.
 
-Ler logs de servidores rapidamente.
+Abre vários logs, destaca mensagens e permite pesquisar por tempo ou conteúdo. Útil para investigar erros sem ler cada ficheiro separadamente.
 
 | Campo | Valor |
 | --- | --- |
@@ -7949,7 +8173,7 @@ Ler logs de servidores rapidamente.
   "area": "infra",
   "category": "Discos",
   "summary": "Visualizador de logs com pesquisa e realce.",
-  "why": "Ler logs de servidores rapidamente.",
+  "why": "Abre vários logs, destaca mensagens e permite pesquisar por tempo ou conteúdo. Útil para investigar erros sem ler cada ficheiro separadamente.",
   "method": "apt",
   "packages": [
     "lnav"
@@ -7967,7 +8191,7 @@ Ler logs de servidores rapidamente.
 
 Consola série.
 
-Equipamentos de rede com porta de consola.
+Abre uma consola através de uma porta série. Útil para configurar equipamentos de rede ou dispositivos ligados por adaptador USB/série.
 
 | Campo | Valor |
 | --- | --- |
@@ -7989,7 +8213,7 @@ Equipamentos de rede com porta de consola.
   "area": "infra",
   "category": "Acesso remoto",
   "summary": "Consola série.",
-  "why": "Equipamentos de rede com porta de consola.",
+  "why": "Abre uma consola através de uma porta série. Útil para configurar equipamentos de rede ou dispositivos ligados por adaptador USB/série.",
   "method": "apt",
   "packages": [
     "minicom"
@@ -9533,7 +9757,7 @@ A instalação existente é preservada. O acesso aos modelos e eventuais custos 
 
 Descobrir, instalar e consultar plugins no catálogo do Claude Code.
 
-Centraliza o guia de complementos junto da ferramenta correspondente.
+Mostra como acrescentar recursos ao Claude Code, como comandos, ferramentas e integrações. Use quando uma tarefa exige algo que a instalação base não fornece.
 
 | Campo | Valor |
 | --- | --- |
@@ -9566,7 +9790,7 @@ Confirme o âmbito e o estado. A instalação e ativação são feitas pelo Clau
   "area": "dev",
   "category": "Plugins e complementos",
   "summary": "Descobrir, instalar e consultar plugins no catálogo do Claude Code.",
-  "why": "Centraliza o guia de complementos junto da ferramenta correspondente.",
+  "why": "Mostra como acrescentar recursos ao Claude Code, como comandos, ferramentas e integrações. Use quando uma tarefa exige algo que a instalação base não fornece.",
   "method": "manual",
   "source": "Documentação oficial da ferramenta",
   "addonsFor": [
@@ -9595,7 +9819,7 @@ Confirme o âmbito e o estado. A instalação e ativação são feitas pelo Clau
 
 Acrescentar fluxos reutilizáveis através das skills do Codex.
 
-Centraliza o guia de complementos junto da ferramenta correspondente.
+Mostra como usar instruções reutilizáveis e ferramentas adicionais com Codex. Útil para repetir um processo de trabalho do projeto; o guia não instala complementos automaticamente.
 
 | Campo | Valor |
 | --- | --- |
@@ -9624,7 +9848,7 @@ Centraliza o guia de complementos junto da ferramenta correspondente.
   "area": "dev",
   "category": "Plugins e complementos",
   "summary": "Acrescentar fluxos reutilizáveis através das skills do Codex.",
-  "why": "Centraliza o guia de complementos junto da ferramenta correspondente.",
+  "why": "Mostra como usar instruções reutilizáveis e ferramentas adicionais com Codex. Útil para repetir um processo de trabalho do projeto; o guia não instala complementos automaticamente.",
   "method": "manual",
   "source": "Documentação oficial da ferramenta",
   "addonsFor": [
@@ -9653,7 +9877,7 @@ Centraliza o guia de complementos junto da ferramenta correspondente.
 
 Organizar plugins npm e plugins locais sem substituir a configuração existente.
 
-Centraliza o guia de complementos junto da ferramenta correspondente.
+Mostra como acrescentar ferramentas e comportamento ao OpenCode. Útil quando quer adaptar o agente ao projeto.
 
 | Campo | Valor |
 | --- | --- |
@@ -9682,7 +9906,7 @@ Centraliza o guia de complementos junto da ferramenta correspondente.
   "area": "dev",
   "category": "Plugins e complementos",
   "summary": "Organizar plugins npm e plugins locais sem substituir a configuração existente.",
-  "why": "Centraliza o guia de complementos junto da ferramenta correspondente.",
+  "why": "Mostra como acrescentar ferramentas e comportamento ao OpenCode. Útil quando quer adaptar o agente ao projeto.",
   "method": "manual",
   "source": "Documentação oficial da ferramenta",
   "addonsFor": [
@@ -9711,7 +9935,7 @@ Centraliza o guia de complementos junto da ferramenta correspondente.
 
 Gerir pacotes que podem incluir extensões, skills, prompts e temas.
 
-Centraliza o guia de complementos junto da ferramenta correspondente.
+Mostra como acrescentar extensões e recursos ao agente Pi. Útil para personalizar tarefas recorrentes.
 
 | Campo | Valor |
 | --- | --- |
@@ -9747,7 +9971,7 @@ Pode ativar ou desativar extensões, skills, prompts e temas sem carregar tudo o
   "area": "dev",
   "category": "Plugins e complementos",
   "summary": "Gerir pacotes que podem incluir extensões, skills, prompts e temas.",
-  "why": "Centraliza o guia de complementos junto da ferramenta correspondente.",
+  "why": "Mostra como acrescentar extensões e recursos ao agente Pi. Útil para personalizar tarefas recorrentes.",
   "method": "manual",
   "source": "Documentação oficial da ferramenta",
   "addonsFor": [
@@ -9776,7 +10000,7 @@ Pode ativar ou desativar extensões, skills, prompts e temas sem carregar tudo o
 
 Explorar extensões e consultar o seu estado no Gemini CLI.
 
-Centraliza o guia de complementos junto da ferramenta correspondente.
+Mostra como acrescentar ferramentas e integrações ao Gemini CLI. Útil para ligar o agente a um processo de trabalho específico.
 
 | Campo | Valor |
 | --- | --- |
@@ -9809,7 +10033,7 @@ Dentro de uma sessão Gemini, também pode usar /extensions list.
   "area": "dev",
   "category": "Plugins e complementos",
   "summary": "Explorar extensões e consultar o seu estado no Gemini CLI.",
-  "why": "Centraliza o guia de complementos junto da ferramenta correspondente.",
+  "why": "Mostra como acrescentar ferramentas e integrações ao Gemini CLI. Útil para ligar o agente a um processo de trabalho específico.",
   "method": "manual",
   "source": "Documentação oficial da ferramenta",
   "addonsFor": [
@@ -9838,7 +10062,7 @@ Dentro de uma sessão Gemini, também pode usar /extensions list.
 
 Servidor web para desenvolvimento e testes de aplicações.
 
-Servir projetos locais, incluindo aplicações PHP, ou testar configurações Apache.
+Serve páginas e aplicações a partir deste computador. Útil para projetos que usam Apache; instala um serviço local e exige configurar os sites.
 
 | Campo | Valor |
 | --- | --- |
@@ -9876,7 +10100,7 @@ O selo Já instalado confirma o pacote; não confirma que o serviço esteja ativ
   "area": "dev",
   "category": "Serviços locais · Web",
   "summary": "Servidor web para desenvolvimento e testes de aplicações.",
-  "why": "Servir projetos locais, incluindo aplicações PHP, ou testar configurações Apache.",
+  "why": "Serve páginas e aplicações a partir deste computador. Útil para projetos que usam Apache; instala um serviço local e exige configurar os sites.",
   "method": "apt",
   "packages": [
     "apache2"
@@ -9918,7 +10142,7 @@ O selo Já instalado confirma o pacote; não confirma que o serviço esteja ativ
 
 Servidor web e proxy inverso para aplicações locais.
 
-Testar aplicações servidas por Nginx e configurações de proxy inverso.
+Serve páginas e encaminha pedidos para aplicações. Útil para testar um projeto com Nginx ou proxy inverso; instala um serviço local e exige configurar sites e portas.
 
 | Campo | Valor |
 | --- | --- |
@@ -9956,7 +10180,7 @@ O selo Já instalado confirma o pacote; não confirma que o serviço esteja ativ
   "area": "dev",
   "category": "Serviços locais · Web",
   "summary": "Servidor web e proxy inverso para aplicações locais.",
-  "why": "Testar aplicações servidas por Nginx e configurações de proxy inverso.",
+  "why": "Serve páginas e encaminha pedidos para aplicações. Útil para testar um projeto com Nginx ou proxy inverso; instala um serviço local e exige configurar sites e portas.",
   "method": "apt",
   "packages": [
     "nginx"
@@ -9998,7 +10222,7 @@ O selo Já instalado confirma o pacote; não confirma que o serviço esteja ativ
 
 Servidor Redis para cache, sessões e filas de desenvolvimento.
 
-Testar aplicações que usam Redis sem depender de um servidor remoto.
+Guarda dados rápidos em memória para cache e filas. Útil para testar uma aplicação com Redis fora do Docker; instala um serviço local.
 
 | Campo | Valor |
 | --- | --- |
@@ -10035,7 +10259,7 @@ O selo Já instalado confirma o pacote; não confirma que o serviço esteja ativ
   "area": "dev",
   "category": "Serviços locais · Dados e cache",
   "summary": "Servidor Redis para cache, sessões e filas de desenvolvimento.",
-  "why": "Testar aplicações que usam Redis sem depender de um servidor remoto.",
+  "why": "Guarda dados rápidos em memória para cache e filas. Útil para testar uma aplicação com Redis fora do Docker; instala um serviço local.",
   "method": "apt",
   "packages": [
     "redis-server"
@@ -10070,7 +10294,7 @@ O selo Já instalado confirma o pacote; não confirma que o serviço esteja ativ
 
 Broker de mensagens para filas e aplicações com AMQP.
 
-Desenvolver e testar produtores, consumidores e processamento assíncrono.
+Recebe mensagens para serem processadas por outros programas. Útil para testar filas e tarefas assíncronas; instala um serviço local e exige configurar os acessos.
 
 | Campo | Valor |
 | --- | --- |
@@ -10107,7 +10331,7 @@ O selo Já instalado confirma o pacote; não confirma que o serviço esteja ativ
   "area": "dev",
   "category": "Serviços locais · Mensageria",
   "summary": "Broker de mensagens para filas e aplicações com AMQP.",
-  "why": "Desenvolver e testar produtores, consumidores e processamento assíncrono.",
+  "why": "Recebe mensagens para serem processadas por outros programas. Útil para testar filas e tarefas assíncronas; instala um serviço local e exige configurar os acessos.",
   "method": "apt",
   "packages": [
     "rabbitmq-server"
@@ -10136,7 +10360,7 @@ O selo Já instalado confirma o pacote; não confirma que o serviço esteja ativ
 
 Servidor PostgreSQL mantido pelo Ubuntu.
 
-Desenvolver e testar aplicações com PostgreSQL instalado neste computador.
+Guarda e consulta bases de dados PostgreSQL neste computador. Útil para projetos que usam PostgreSQL fora do Docker; instala um serviço local.
 
 | Campo | Valor |
 | --- | --- |
@@ -10173,7 +10397,7 @@ O selo Já instalado confirma o pacote; não confirma que o serviço esteja ativ
   "area": "dev",
   "category": "Serviços locais · Dados e cache",
   "summary": "Servidor PostgreSQL mantido pelo Ubuntu.",
-  "why": "Desenvolver e testar aplicações com PostgreSQL instalado neste computador.",
+  "why": "Guarda e consulta bases de dados PostgreSQL neste computador. Útil para projetos que usam PostgreSQL fora do Docker; instala um serviço local.",
   "method": "apt",
   "packages": [
     "postgresql"
@@ -10208,7 +10432,7 @@ O selo Já instalado confirma o pacote; não confirma que o serviço esteja ativ
 
 Cache simples em memória para aplicações locais.
 
-Testar aplicações que usam Memcached como cache temporária.
+Guarda resultados temporários em memória para reduzir trabalho repetido da aplicação. Útil para projetos que exigem Memcached; não é armazenamento permanente.
 
 | Campo | Valor |
 | --- | --- |
@@ -10245,7 +10469,7 @@ O selo Já instalado confirma o pacote; não confirma que o serviço esteja ativ
   "area": "dev",
   "category": "Serviços locais · Dados e cache",
   "summary": "Cache simples em memória para aplicações locais.",
-  "why": "Testar aplicações que usam Memcached como cache temporária.",
+  "why": "Guarda resultados temporários em memória para reduzir trabalho repetido da aplicação. Útil para projetos que exigem Memcached; não é armazenamento permanente.",
   "method": "apt",
   "packages": [
     "memcached"
@@ -10280,7 +10504,7 @@ O selo Já instalado confirma o pacote; não confirma que o serviço esteja ativ
 
 Guia para testar Kafka num contentor local com a imagem oficial.
 
-Testar aplicações baseadas em eventos sem preparar um cluster de produção.
+Explica como montar um laboratório para aplicações que publicam e consomem eventos. Útil quando o projeto exige Kafka; o guia não cria um cluster de produção.
 
 | Campo | Valor |
 | --- | --- |
@@ -10314,7 +10538,7 @@ Mantenha este terminal aberto. O exemplo não configura persistência; Ctrl+C en
   "area": "dev",
   "category": "Serviços locais · Mensageria",
   "summary": "Guia para testar Kafka num contentor local com a imagem oficial.",
-  "why": "Testar aplicações baseadas em eventos sem preparar um cluster de produção.",
+  "why": "Explica como montar um laboratório para aplicações que publicam e consomem eventos. Útil quando o projeto exige Kafka; o guia não cria um cluster de produção.",
   "method": "manual",
   "source": "Imagem oficial apache/kafka e documentação Apache",
   "notes": "Requer Docker disponível. O guia é manual: não instala nem inicia um contentor pelo plano. O exemplo usa a porta 9092 só no localhost e dados temporários.",
@@ -10327,6 +10551,53 @@ Mantenha este terminal aberto. O exemplo não configura persistência; Ctrl+C en
     ]
   },
   "verified": "Imagem e exemplo conferidos no quickstart oficial Apache em 2026-10-12; a conclusão do guia não é deteção de um broker instalado."
+}
+```
+
+</details>
+
+<a id="item-kvm-libvirt"></a>
+
+### QEMU + libvirt (KVM local)
+
+Motor e serviço do host para máquinas virtuais KVM.
+
+Permite ao virt-manager gerir VMs locais. A interface é instalada por Flatpak; QEMU e libvirt precisam de funcionar no host.
+
+| Campo | Valor |
+| --- | --- |
+| ID | kvm-libvirt |
+| Área / categoria | Infraestrutura / Virtualização |
+| Método | apt |
+| Fonte | Arquivo Ubuntu |
+| Pacotes | qemu-system-x86, libvirt-daemon-system |
+| Evidência da receita | Pacotes já usados pela receita KVM; integração desktop ainda por validar |
+| Serviço local | Sim |
+| Terminar sessão | Sim |
+
+Instala um serviço local. Permissões de acesso ao libvirt e suporte de virtualização são conferidos manualmente.
+
+<details>
+<summary>Receita JSON integral</summary>
+
+```json
+{
+  "id": "kvm-libvirt",
+  "name": "QEMU + libvirt (KVM local)",
+  "area": "infra",
+  "category": "Virtualização",
+  "summary": "Motor e serviço do host para máquinas virtuais KVM.",
+  "why": "Permite ao virt-manager gerir VMs locais. A interface é instalada por Flatpak; QEMU e libvirt precisam de funcionar no host.",
+  "method": "apt",
+  "packages": [
+    "qemu-system-x86",
+    "libvirt-daemon-system"
+  ],
+  "service": true,
+  "relogin": true,
+  "source": "Arquivo Ubuntu",
+  "verified": "Pacotes já usados pela receita KVM; integração desktop ainda por validar",
+  "notes": "Instala um serviço local. Permissões de acesso ao libvirt e suporte de virtualização são conferidos manualmente."
 }
 ```
 

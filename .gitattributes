@@ -1,0 +1,2 @@
+# Preserve raw terminal receipts; their CR/progress output is evidence.
+dogfood-output/**/*.log -whitespace

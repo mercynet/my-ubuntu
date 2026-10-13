@@ -4,7 +4,7 @@
 package catalog
 
 import (
-	_ "embed"
+	"embed"
 	"encoding/json"
 	"fmt"
 	"regexp"
@@ -14,6 +14,28 @@ import (
 
 //go:embed catalog.json
 var embedded []byte
+
+//go:embed refs/*.flatpakref
+var flatpakReferences embed.FS
+
+// FlatpakReference returns a reviewed vendor reference embedded with the app.
+func FlatpakReference(it *Item) ([]byte, error) {
+	if it.FlatpakRef == "" || !idRe.MatchString(it.FlatpakRef) {
+		return nil, fmt.Errorf("referência Flatpak inválida")
+	}
+	b, err := flatpakReferences.ReadFile("refs/" + it.FlatpakRef + ".flatpakref")
+	name := ""
+	for _, line := range strings.Split(string(b), "\n") {
+		fields := strings.SplitN(line, "=", 2)
+		if len(fields) == 2 && strings.TrimSpace(fields[0]) == "Name" {
+			name = strings.TrimSpace(fields[1])
+		}
+	}
+	if err != nil || name != it.Flatpak {
+		return nil, fmt.Errorf("referência Flatpak não corresponde à aplicação")
+	}
+	return b, nil
+}
 
 // Methods understood by the planner/executor.
 const (
@@ -120,45 +142,49 @@ type Manual struct {
 }
 
 type Item struct {
-	ID         string       `json:"id"`
-	Name       string       `json:"name"`
-	Area       string       `json:"area"` // apps, desktop, extensions, dev, energy
-	Category   string       `json:"category"`
-	Summary    string       `json:"summary"`
-	Why        string       `json:"why"`
-	Notes      string       `json:"notes,omitempty"`
-	Source     string       `json:"source"`
-	Method     string       `json:"method"`
-	Packages   []string     `json:"packages,omitempty"` // may contain {opt:key}
-	Repo       string       `json:"repo,omitempty"`
-	Flatpak    string       `json:"flatpak,omitempty"`
-	Extension  string       `json:"extension,omitempty"` // uuid
-	ProvidedBy []string     `json:"providedBy,omitempty"`
-	Template   *Template    `json:"template,omitempty"`
-	Script     *Script      `json:"script,omitempty"`
-	NPM        *NPM         `json:"npm,omitempty"`
-	AdminOp    string       `json:"adminOp,omitempty"`
-	Profile    string       `json:"powerProfile,omitempty"`
-	Settings   []Setting    `json:"settings,omitempty"`
-	Git        []GitSetting `json:"git,omitempty"`
-	Requires   []string     `json:"requires,omitempty"`
-	Conflicts  []Conflict   `json:"conflicts,omitempty"`
-	Group      string       `json:"group,omitempty"`     // mutually exclusive alternatives
-	AddonsFor  []string     `json:"addonsFor,omitempty"` // tools extended by this item; not exclusive
-	Compat     Compat       `json:"compat"`
-	Detect     Detect       `json:"detect"`
-	Verify     Verify       `json:"verify"`
-	Options    []Option     `json:"options,omitempty"`
-	Advanced   bool         `json:"advanced,omitempty"`
-	Service    bool         `json:"service,omitempty"`
-	Relogin    bool         `json:"relogin,omitempty"`
-	Reboot     bool         `json:"reboot,omitempty"`
-	Manual     *Manual      `json:"manual,omitempty"`
-	Post       []string     `json:"post,omitempty"` // allowlisted admin post-ops, e.g. "xdebug-off"
-	Tags       []string     `json:"tags,omitempty"`
-	Verified   string       `json:"verified,omitempty"` // where the recipe was verified
-	Confirm    string       `json:"confirm,omitempty"`  // explicit confirmation required in the plan
-	Sensitive  string       `json:"sensitive,omitempty"`
+	ID                 string       `json:"id"`
+	Name               string       `json:"name"`
+	Area               string       `json:"area"` // apps, desktop, extensions, dev, energy
+	Category           string       `json:"category"`
+	Summary            string       `json:"summary"`
+	Why                string       `json:"why"`
+	Notes              string       `json:"notes,omitempty"`
+	Source             string       `json:"source"`
+	Method             string       `json:"method"`
+	Packages           []string     `json:"packages,omitempty"` // may contain {opt:key}
+	Repo               string       `json:"repo,omitempty"`
+	Flatpak            string       `json:"flatpak,omitempty"`
+	FlatpakRef         string       `json:"flatpakRef,omitempty"`
+	LegacyPackages     []string     `json:"legacyPackages,omitempty"` // detect native installs without replacing them
+	LegacyFlatpaks     []string     `json:"legacyFlatpaks,omitempty"` // previous app IDs kept for detection only
+	FlatpakUnavailable string       `json:"flatpakUnavailable,omitempty"`
+	Extension          string       `json:"extension,omitempty"` // uuid
+	ProvidedBy         []string     `json:"providedBy,omitempty"`
+	Template           *Template    `json:"template,omitempty"`
+	Script             *Script      `json:"script,omitempty"`
+	NPM                *NPM         `json:"npm,omitempty"`
+	AdminOp            string       `json:"adminOp,omitempty"`
+	Profile            string       `json:"powerProfile,omitempty"`
+	Settings           []Setting    `json:"settings,omitempty"`
+	Git                []GitSetting `json:"git,omitempty"`
+	Requires           []string     `json:"requires,omitempty"`
+	Conflicts          []Conflict   `json:"conflicts,omitempty"`
+	Group              string       `json:"group,omitempty"`     // mutually exclusive alternatives
+	AddonsFor          []string     `json:"addonsFor,omitempty"` // tools extended by this item; not exclusive
+	Compat             Compat       `json:"compat"`
+	Detect             Detect       `json:"detect"`
+	Verify             Verify       `json:"verify"`
+	Options            []Option     `json:"options,omitempty"`
+	Advanced           bool         `json:"advanced,omitempty"`
+	Service            bool         `json:"service,omitempty"`
+	Relogin            bool         `json:"relogin,omitempty"`
+	Reboot             bool         `json:"reboot,omitempty"`
+	Manual             *Manual      `json:"manual,omitempty"`
+	Post               []string     `json:"post,omitempty"` // allowlisted admin post-ops, e.g. "xdebug-off"
+	Tags               []string     `json:"tags,omitempty"`
+	Verified           string       `json:"verified,omitempty"` // where the recipe was verified
+	Confirm            string       `json:"confirm,omitempty"`  // explicit confirmation required in the plan
+	Sensitive          string       `json:"sensitive,omitempty"`
 }
 
 // SensitiveReason explains why an item deserves attention in imported
@@ -204,6 +230,7 @@ type NPM struct {
 var npmPackageRe = regexp.MustCompile(`^(?:@[a-z0-9][a-z0-9._-]*/)?[a-z0-9][a-z0-9._-]*$`)
 var npmVersionRe = regexp.MustCompile(`^[0-9]+\.[0-9]+\.[0-9]+$`)
 var npmBinaryRe = regexp.MustCompile(`^[a-z][a-z0-9-]*$`)
+var flatpakIDRe = regexp.MustCompile(`^[A-Za-z_][A-Za-z0-9_-]*(?:\.[A-Za-z_][A-Za-z0-9_-]*){2,}$`)
 
 func (n *NPM) Valid() bool {
 	return n != nil && npmPackageRe.MatchString(n.Package) && npmVersionRe.MatchString(n.Version) && npmBinaryRe.MatchString(n.Binary)
@@ -254,8 +281,29 @@ func (c *Catalog) index() error {
 			return fmt.Errorf("id duplicado %q", it.ID)
 		}
 		c.byID[it.ID] = it
+		if it.Method == MethodFlatpak && !flatpakIDRe.MatchString(it.Flatpak) {
+			return fmt.Errorf("%s: ID Flatpak inválido", it.ID)
+		}
+		for _, old := range it.LegacyFlatpaks {
+			if !flatpakIDRe.MatchString(old) {
+				return fmt.Errorf("%s: ID Flatpak anterior inválido", it.ID)
+			}
+		}
+		for _, old := range it.LegacyPackages {
+			if !pkgRe.MatchString(old) {
+				return fmt.Errorf("%s: pacote anterior inválido", it.ID)
+			}
+		}
 		if it.Method == MethodNPMUser && !it.NPM.Valid() {
 			return fmt.Errorf("%s: pacote npm, versão fixa ou comando inválido", it.ID)
+		}
+		if it.FlatpakRef != "" {
+			if it.Method != MethodFlatpak {
+				return fmt.Errorf("%s: referência exige método Flatpak", it.ID)
+			}
+			if _, err := FlatpakReference(it); err != nil {
+				return fmt.Errorf("%s: %w", it.ID, err)
+			}
 		}
 		for _, p := range it.Packages {
 			if !strings.Contains(p, "{opt:") && !pkgRe.MatchString(p) {

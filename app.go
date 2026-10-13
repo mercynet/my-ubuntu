@@ -13,6 +13,7 @@ import (
 	"slices"
 	"sort"
 	"strings"
+	"sync"
 
 	"github.com/wailsapp/wails/v2/pkg/runtime"
 
@@ -21,6 +22,7 @@ import (
 	"meuubuntu/internal/diag"
 	"meuubuntu/internal/engine"
 	"meuubuntu/internal/helper"
+	"meuubuntu/internal/integrations"
 	"meuubuntu/internal/inventory"
 	"meuubuntu/internal/migrate"
 	"meuubuntu/internal/plan"
@@ -43,6 +45,9 @@ type App struct {
 	simulated          bool
 	diagCache          diagnosticsCache
 	integrationPending integrationPending
+	setup              *integrations.Preparer
+	operationMu        sync.Mutex
+	closing            bool
 }
 
 func NewApp(simulated bool) (*App, error) {
@@ -68,6 +73,7 @@ func NewApp(simulated bool) (*App, error) {
 		fetch = func(u string) ([]byte, error) { return simFetch(cat, u) }
 	}
 	a := &App{cat: cat, r: r, st: st, home: home, simulated: simulated}
+	a.setup = &integrations.Preparer{Manager: a.integrationManager()}
 	a.det = &detect.Detector{R: r, Cat: cat, Sys: detect.ReadSystem(r, simulated), Home: home}
 	if simulated {
 		a.det.Root = filepath.Join(st.Data, "root-simulado")
@@ -117,7 +123,7 @@ func (a *App) startup(ctx context.Context) {
 	a.ctx = ctx
 	// A run left "running" means the app died mid-run: mark it so the UI can offer resuming.
 	for _, r := range a.st.Runs() {
-		if r.Status == "running" {
+		if r.Status == "running" || r.Status == "paused" {
 			r.Status = "interrupted"
 			a.st.SaveRun(r)
 		}
@@ -373,6 +379,11 @@ func (a *App) ScriptPreview(item string, options map[string][]string, expected s
 // Execute rebuilds the plan from the selection (the UI never sends commands)
 // and requires the explicit confirmations shown in the reviewed plan.
 func (a *App) Execute(sel map[string]catalog.Selection, reverts []string, confirmed map[string]string, reviewToken string) (string, error) {
+	a.operationMu.Lock()
+	defer a.operationMu.Unlock()
+	if a.closing || a.setup.Running() {
+		return "", errors.New("aguarde a operação em curso antes de iniciar outra")
+	}
 	p, err := a.BuildPlan(sel, reverts)
 	if err != nil {
 		return "", err
@@ -397,8 +408,27 @@ func (a *App) EndSession(action string) error {
 	return exec.Command("gnome-session-quit", "--"+action).Start()
 }
 
-func (a *App) Cancel()       { a.eng.Cancel() }
-func (a *App) Running() bool { return a.eng.Running() }
+func (a *App) Cancel() error {
+	if a.setup.Running() {
+		return a.setup.Control("cancel")
+	} else {
+		a.eng.Cancel()
+	}
+	return nil
+}
+func (a *App) Pause() error {
+	if a.setup.Running() {
+		return a.setup.Control("pause")
+	}
+	return a.eng.Pause()
+}
+func (a *App) Resume() error {
+	if a.setup.Running() {
+		return a.setup.Control("resume")
+	}
+	return a.eng.Resume()
+}
+func (a *App) Running() bool { return a.eng.Running() || a.setup.Running() }
 
 func (a *App) Runs() []store.Run { return a.st.Runs() }
 

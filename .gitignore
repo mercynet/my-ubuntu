@@ -1,7 +1,26 @@
-dist/
-frontend/dist/
-frontend/node_modules/
-build/test/out/
+/dist/
+/frontend/dist/
+/frontend/node_modules/
+/build/test/out/
+/logs/
+/.qa-vm/
+__pycache__/
+*.py[cod]
+/.agents/
+/.codex/
+/.aws/
+.env
+.env.*
+!.env.example
 
 # Internal integration assessments and packages
 /private/
+
+# Runtime state from native QA; curated reports, logs and screenshots remain public.
+/dogfood-output/**/screenshots/config/
+/dogfood-output/**/screenshots/data/
+/dogfood-output/**/screenshots/home/
+/dogfood-output/**/screenshots/runtime/
+/dogfood-output/**/screenshots/state/
+/dogfood-output/**/screenshots/project/
+/dogfood-output/**/native-data/

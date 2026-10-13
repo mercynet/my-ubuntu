@@ -1,0 +1,34 @@
+button | enabled | Minimize
+button | enabled | Restore
+button | enabled | Close
+label | enabled | Meu Ubuntu
+landmark | enabled | Navegação
+landmark | enabled | Secções da aplicação
+button | enabled | Início
+button | enabled | Catálogo
+button | enabled | Perfis prontos
+button | enabled | Agentes de IA
+button | enabled | Plugins e complementos
+button | enabled | Minhas escolhas 20
+button | enabled | Explorar por área
+button | enabled | Rever e aplicar
+button | enabled | Diagnóstico
+button | enabled | Migração
+button | enabled | Histórico e reversão
+button | enabled | Ajuda e manual
+button | enabled | Pacotes de integração
+button | enabled | Sobre 1.0.0-rc.2
+entry | enabled | Pesquisar em todo o catálogo
+button | enabled | Mudar tema (atual: escuro)
+button | enabled | Minhas escolhas: 20 itens
+button | enabled | Rever plano
+heading | enabled | Histórico e reversão
+paragraph | enabled | Cada preferência alterada fica registada com o valor anterior. A reversão é específica por alteração e recusa-se se o valor mudou depois. Instalações de pacotes não têm rollback automático.
+button | enabled | Atualizar
+heading | enabled | Alterações registadas
+heading | enabled | Execuções
+button | enabled | Ver registo
+button | enabled | Ver registo
+button | enabled | Ver registo
+button | enabled | Ver registo
+button | enabled | Fechar aviso

@@ -221,6 +221,7 @@ func Build(ctx context.Context, cat *catalog.Catalog, d *detect.Detector, sel ma
 	}
 	needUpdate := false
 	flathubDone := false
+	flatpakWarning := false
 	for _, id := range ids {
 		it := cat.Item(id)
 		s := p.Selection[id]
@@ -295,15 +296,30 @@ func Build(ctx context.Context, cat *catalog.Catalog, d *detect.Detector, sel ma
 			}
 			step(x)
 		case catalog.MethodFlatpak:
+			if !flatpakWarning {
+				flatpakWarning = true
+				p.Warnings = append(p.Warnings, "Estas aplicações requerem Flatpak. O plano inclui a dependência quando falta e valida Flatpak, remoto e ID antes de instalar. Instalações existentes são preservadas.")
+			}
 			if !flathubDone {
 				flathubDone = true
-				step(Step{Kind: "user", Op: "flatpak-remote", Title: "Garantir Flathub (utilizador)", Category: "Sistema",
+				step(Step{Item: "flathub", Kind: "user", Op: "flatpak-remote", Title: "Garantir Flathub (utilizador)", Category: "Sistema",
 					Detail: []string{sys.Argv("flatpak", "remote-add", "--user", "--if-not-exists", "flathub", "https://dl.flathub.org/repo/flathub.flatpakrepo")}})
 			}
 			x := base
 			x.Kind, x.Op, x.Title = "user", "flatpak-install", "Instalar "+it.Name+" (Flatpak)"
 			x.Detail = []string{sys.Argv("flatpak", "install", "--user", "-y", "--noninteractive", "flathub", it.Flatpak)}
+			if it.FlatpakRef != "" {
+				ref, err := catalog.FlatpakReference(it)
+				if err != nil {
+					return nil, err
+				}
+				x.Expect = fmt.Sprintf("%x", sha256.Sum256(ref))
+				x.Detail = []string{"Referência oficial incluída: " + it.FlatpakRef + ".flatpakref", "SHA-256: " + x.Expect, "Instalação Flatpak por utilizador; origem: " + it.Source, it.Notes}
+			}
 			step(x)
+			if it.Manual != nil {
+				p.Manual = append(p.Manual, ManualStep{Item: id, Name: it.Name, Steps: it.Manual.Steps, URL: it.Manual.URL})
+			}
 		case catalog.MethodExtension:
 			x := base
 			x.Kind, x.Op, x.Title = "user", "extension", "Instalar extensão "+it.Name

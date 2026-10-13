@@ -3,7 +3,7 @@ import {
   AppWindow, Code2, Palette, Puzzle, BatteryCharging, Stethoscope, FolderInput, Bookmark, ListChecks, History, Home,
   Search, Moon, Sun, Monitor, X, AlertTriangle, Brush, Server, ShieldCheck, Info, BookOpen, ChevronDown, Undo2, Sparkles,
 } from "lucide-react";
-import { api, on, errText, InitData, ItemState, Selections, Plan, StepEvent, LogEvent, Item, Origins, ProfileReview, MergeConflict, Profile, IntegrationPackage } from "./api";
+import { api, on, errText, InitData, ItemState, Selections, Plan, StepEvent, LogEvent, Item, Origins, ProfileReview, MergeConflict, Profile, IntegrationPackage, SetupJob } from "./api";
 import { ItemsPage } from "./Catalog";
 import { PlanPage, RunState } from "./PlanRun";
 import { HomePage, ProfilesPage, DiagnosticsPage, MigrationPage, HistoryPage } from "./Pages";
@@ -14,6 +14,8 @@ import { includeInstalled, matchingStates, optionSignature } from "./installedSe
 import { PluginsPage } from "./Plugins";
 import { AboutPage, HelpPage } from "./HelpAbout";
 import { IntegrationsPage } from "./Integrations";
+import { ExecutionProgress } from "./ExecutionProgress";
+import { SetupProgress } from "./IntegrationSetup";
 import icon from "./icon.png";
 
 export const AREAS: Record<string, { title: string; desc: string }> = {
@@ -85,6 +87,7 @@ export type Ctx = {
   openHelp: (topic?: string) => void;
   clearSelection: () => void;
   running: boolean;
+  execution: RunState | null;
 };
 
 type Theme = "system" | "light" | "dark";
@@ -104,6 +107,7 @@ export default function App() {
   const [page, setPage] = useState("home");
   const [pluginTool, setPluginTool] = useState("all");
   const [integrations, setIntegrations] = useState<IntegrationPackage[]>([]);
+  const [setupJob, setSetupJob] = useState<SetupJob | null>(null);
   const [query, setQuery] = useState("");
   const [theme, setTheme] = useState<Theme>("system");
   const [showAdv, setShowAdv] = useState(false);
@@ -174,6 +178,7 @@ export default function App() {
     api.init().then((d) => {
       setData(d);
       api.integrations().then(setIntegrations).catch((e) => toast("Não foi possível ler os pacotes: " + errText(e), true));
+      api.integrationSetupStatus().then(setSetupJob).catch((e) => toast(errText(e), true));
       stateItems.current = Object.fromEntries(d.items.map((it) => [it.id, it]));
       const s = d.prefs.selections || {};
       setSelState(s);
@@ -196,6 +201,23 @@ export default function App() {
       if (d.pendingError) toast("Perfil recusado: " + d.pendingError, true);
     }).catch((e) => setLoadErr(errText(e)));
   }, [acceptStates, toast]);
+
+  useEffect(() => {
+    if (!setupJob || setupJob.finished) return;
+    let stopped = false;
+    let timer: number;
+    const poll = async () => {
+      try {
+        const current = await api.integrationSetupStatus();
+        if (!stopped) setSetupJob(current);
+      } catch (e) {
+        if (!stopped) toast("Não foi possível atualizar o progresso: " + errText(e), true);
+      }
+      if (!stopped) timer = window.setTimeout(poll, 1500);
+    };
+    timer = window.setTimeout(poll, 500);
+    return () => { stopped = true; window.clearTimeout(timer); };
+  }, [setupJob?.id, setupJob?.finished, toast]);
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-color-scheme: dark)");
@@ -229,6 +251,9 @@ export default function App() {
       return { ...r, logs: { ...r.logs, [e.stepId]: [...prev.slice(-1500), e] }, last: e.time, lastLine: e.line };
       });
     });
+    const offState = on<{ runId: string; state: string; version: number }>("run:state", (e) => {
+      setRun(r => r && !r.finished && r.id === e.runId && e.version > (r.stateVersion || 0) ? { ...r, state: e.state, stateVersion: e.version } : r);
+    });
     const offDone = on<{ runId: string; status: string; error?: string }>("run:done", (e) => {
       if (starting.current) earlyDone.current = e;
       setRun((r) => (r && r.id === e.runId ? { ...r, finished: e.status, error: e.error } : r));
@@ -242,7 +267,7 @@ export default function App() {
     });
     const offReview = on<ProfileReview>("profile:review", (r) => setReview(r));
     const offReviewErr = on<string>("profile:review-error", (m) => toast("Perfil recusado: " + m, true));
-    return () => { offStep(); offLog(); offDone(); offReview(); offReviewErr(); };
+    return () => { offStep(); offLog(); offState(); offDone(); offReview(); offReviewErr(); };
   }, [refresh, toast]);
 
   const items = useMemo(() => Object.fromEntries((data?.items || []).map((i) => [i.id, i])), [data]);
@@ -377,6 +402,8 @@ export default function App() {
   }, [setSel, toast]);
 
   const reviewPlan = useCallback(async (s?: Selections, r?: string[]) => {
+    if (setupJob && !setupJob.finished) { setQuery(""); setPage("integration:" + setupJob.package); return; }
+    if (runRef.current && !runRef.current.finished) { setQuery(""); setPage("plan"); return; }
     const request = ++planRequest.current;
     setRun((previous) => previous?.finished ? null : previous);
     setPlanItem(null);
@@ -386,7 +413,7 @@ export default function App() {
     try { const next = await api.buildPlan(s || selRef.current, r || revRef.current); if (request === planRequest.current) setPlan(next); }
     catch (e) { if (request === planRequest.current) {setPlan(null); toast(errText(e), true);} }
     finally { if (request === planRequest.current) setPlanBusy(false); }
-  }, [toast]);
+  }, [toast, setupJob]);
 
   const go = (next: string) => {
     if (next === "plan" && !runRef.current?.id) { reviewPlan(); return; }
@@ -440,13 +467,14 @@ export default function App() {
     setProfiles: (p) => setData((d) => (d ? { ...d, profiles: p } : d)),
     setReverts, editPlanItem, manualProgress, toggleManualStep, catalogProfile, catalogScope, showCatalogProfile, openHelp,
     clearSelection: () => { if (!runRef.current || runRef.current.finished) setClearConfirm(true); },
-    running: !!run && !run.finished,
+    running: !!run && !run.finished || !!setupJob && !setupJob.finished,
+    execution: run,
   };
   const pending = (id: string) => states[id]?.status !== "installed" && states[id]?.status !== "provided";
   const inProfile = Object.keys(sel).length;
   const inArea = (id: string, a: string) => a === "services" ? items[id]?.category.startsWith("Serviços locais ·") || items[id]?.category === "Contentores" : items[id]?.area === a;
   const areaCount = (a: string) => Object.keys(sel).filter((id) => inArea(id, a) && pending(id)).length + reverts.filter((id) => inArea(id, a)).length;
-  const running = !!run && !run.finished;
+  const running = !!run && !run.finished || !!setupJob && !setupJob.finished;
 
   if (!onboarded) {
     return (
@@ -535,6 +563,8 @@ export default function App() {
             </button>
           </div>
         </header>
+        <ExecutionProgress run={run} onOpen={() => go("plan")} toast={toast} />
+        <SetupProgress job={setupJob} onOpen={() => go("integration:" + setupJob!.package)} toast={toast} />
         {(AREAS[page] || ["catalog", "search", "selection"].includes(page)) && <div className="catalog-preferences" role="region" aria-label="Preferências do catálogo"><label><input type="checkbox" checked={showAdv} onChange={(e) => setShowAdv(e.target.checked)} /> Mostrar opções avançadas</label><span>Os já instalados ficam marcados automaticamente. Desmarcar não desinstala nem reverte.</span></div>}
         {selectionBackup && <div className="editbar" role="status"><span>As escolhas foram limpas.</span><button className="btn sm" onClick={() => { setSel(selectionBackup.selections, selectionBackup.origins); setReverts(selectionBackup.reverts); setSelectionBackup(null); toast("Escolhas anteriores recuperadas."); }}><Undo2 size={14} /> Desfazer limpeza</button></div>}
         {edit && <div className="editbar" role="status">
@@ -586,7 +616,7 @@ export default function App() {
           {page === "history" && <HistoryPage ctx={ctx} />}
           {page === "help" && <HelpPage ctx={ctx} topic={helpTopic} onTopic={setHelpTopic} />}
           {page === "about" && <AboutPage ctx={ctx} />}
-          {(page === "integrations" || page.startsWith("integration:")) && <IntegrationsPage selected={page.startsWith("integration:") ? page.slice(12) : ""} packages={integrations} onPackages={setIntegrations} onSelect={id => go("integration:" + id)} toast={toast} />}
+          {(page === "integrations" || page.startsWith("integration:")) && <IntegrationsPage ctx={ctx} selected={page.startsWith("integration:") ? page.slice(12) : ""} packages={integrations} onPackages={setIntegrations} onSelect={id => go("integration:" + id)} job={setupJob} onJob={setSetupJob} toast={toast} />}
         </main>
       </div>
       {review && <ReviewDialog ctx={ctx} review={review} onClose={() => setReview(null)} />}

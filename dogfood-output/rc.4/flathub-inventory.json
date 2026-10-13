@@ -1,0 +1,999 @@
+{
+  "collectedAt": "2026-10-13T19:01:10.671461+00:00",
+  "apps": [
+    {
+      "recipe": "deja-dup",
+      "appId": "org.gnome.DejaDup",
+      "url": "https://flathub.org/api/v2/appstream/org.gnome.DejaDup",
+      "status": 200,
+      "name": "Déjà Dup Backups",
+      "id": "org.gnome.DejaDup",
+      "eol": false,
+      "verified": true,
+      "developer": "Michael Terry",
+      "bundle": {
+        "sdk": "org.gnome.Sdk/x86_64/51",
+        "runtime": "org.gnome.Platform/x86_64/51",
+        "type": "flatpak",
+        "value": "app/org.gnome.DejaDup/x86_64/stable"
+      },
+      "links": {
+        "contact": "https://matrix.to/#/#deja-dup:gnome.org",
+        "vcs_browser": "https://gitlab.gnome.org/World/deja-dup",
+        "contribute": "https://welcome.gnome.org/app/DejaDup/",
+        "bugtracker": "https://gitlab.gnome.org/World/deja-dup/-/work_items",
+        "homepage": "https://dejadup.org/",
+        "help": "https://gitlab.gnome.org/World/deja-dup/-/wikis/home",
+        "donation": "https://dejadup.org/donate",
+        "translate": "https://l10n.gnome.org/module/deja-dup/",
+        "faq": "https://gitlab.gnome.org/World/deja-dup/-/wikis/FAQ"
+      }
+    },
+    {
+      "recipe": "filezilla",
+      "appId": "org.filezillaproject.Filezilla",
+      "url": "https://flathub.org/api/v2/appstream/org.filezillaproject.Filezilla",
+      "status": 200,
+      "name": "FileZilla",
+      "id": "org.filezillaproject.Filezilla",
+      "eol": false,
+      "verified": null,
+      "developer": "Tim Kosse",
+      "bundle": {
+        "sdk": "org.freedesktop.Sdk/x86_64/25.08",
+        "runtime": "org.freedesktop.Platform/x86_64/25.08",
+        "type": "flatpak",
+        "value": "app/org.filezillaproject.Filezilla/x86_64/stable"
+      },
+      "links": {
+        "vcs_browser": null,
+        "contribute": null,
+        "help": "https://filezilla-project.org/support.php",
+        "bugtracker": "https://github.com/flathub/org.filezillaproject.Filezilla/issues",
+        "translate": "https://filezilla-project.org/translations.php",
+        "homepage": "https://filezilla-project.org/",
+        "contact": null,
+        "donation": null,
+        "faq": "https://wiki.filezilla-project.org/FAQ"
+      }
+    },
+    {
+      "recipe": "brave",
+      "appId": "com.brave.Browser",
+      "url": "https://flathub.org/api/v2/appstream/com.brave.Browser",
+      "status": 200,
+      "name": "Brave",
+      "id": "com.brave.Browser",
+      "eol": false,
+      "verified": true,
+      "developer": "Brave Software",
+      "bundle": {
+        "type": "flatpak",
+        "runtime": "org.freedesktop.Platform/x86_64/25.08",
+        "sdk": "org.freedesktop.Sdk/x86_64/25.08",
+        "value": "app/com.brave.Browser/x86_64/stable"
+      },
+      "links": {
+        "homepage": "https://brave.com",
+        "help": "https://support.brave.com/hc/en-us",
+        "donation": null,
+        "translate": null,
+        "faq": "https://brave.com/faq",
+        "contact": null,
+        "vcs_browser": null,
+        "contribute": "https://github.com/brave/brave-browser/blob/master/CONTRIBUTING.md",
+        "bugtracker": "https://github.com/brave/brave-browser/issues"
+      }
+    },
+    {
+      "recipe": "vlc",
+      "appId": "org.videolan.VLC",
+      "url": "https://flathub.org/api/v2/appstream/org.videolan.VLC",
+      "status": 200,
+      "name": "VLC",
+      "id": "org.videolan.VLC",
+      "eol": false,
+      "verified": null,
+      "developer": "VideoLAN et al.",
+      "bundle": {
+        "runtime": "org.kde.Platform/x86_64/5.15-25.08",
+        "sdk": "org.kde.Sdk/x86_64/5.15-25.08",
+        "type": "flatpak",
+        "value": "app/org.videolan.VLC/x86_64/stable"
+      },
+      "links": {
+        "bugtracker": "https://github.com/flathub/org.videolan.VLC/issues",
+        "homepage": "https://www.videolan.org/vlc/",
+        "help": null,
+        "donation": "https://www.videolan.org/contribute.html",
+        "translate": null,
+        "faq": null,
+        "contact": null,
+        "vcs_browser": null,
+        "contribute": null
+      }
+    },
+    {
+      "recipe": "qbittorrent",
+      "appId": "org.qbittorrent.qBittorrent",
+      "url": "https://flathub.org/api/v2/appstream/org.qbittorrent.qBittorrent",
+      "status": 200,
+      "name": "qBittorrent",
+      "id": "org.qbittorrent.qBittorrent",
+      "eol": false,
+      "verified": true,
+      "developer": "The qBittorrent Project",
+      "bundle": {
+        "type": "flatpak",
+        "runtime": "org.kde.Platform/x86_64/6.10",
+        "sdk": "org.kde.Sdk/x86_64/6.10",
+        "value": "app/org.qbittorrent.qBittorrent/x86_64/stable"
+      },
+      "links": {
+        "vcs_browser": "https://github.com/qbittorrent/qBittorrent",
+        "contribute": "https://github.com/qbittorrent/qBittorrent/blob/master/CONTRIBUTING.md",
+        "bugtracker": "https://bugs.qbittorrent.org/",
+        "homepage": "https://www.qbittorrent.org/",
+        "help": "https://forum.qbittorrent.org/",
+        "donation": "https://www.qbittorrent.org/donate",
+        "translate": "https://wiki.qbittorrent.org/How-to-translate-qBittorrent",
+        "faq": "https://wiki.qbittorrent.org/Frequently-Asked-Questions",
+        "contact": null
+      }
+    },
+    {
+      "recipe": "flameshot",
+      "appId": "org.flameshot.Flameshot",
+      "url": "https://flathub.org/api/v2/appstream/org.flameshot.Flameshot",
+      "status": 200,
+      "name": "Flameshot",
+      "id": "org.flameshot.Flameshot",
+      "eol": false,
+      "verified": true,
+      "developer": "Flameshot Developers",
+      "bundle": {
+        "sdk": "org.kde.Sdk/x86_64/6.10",
+        "runtime": "org.kde.Platform/x86_64/6.10",
+        "type": "flatpak",
+        "value": "app/org.flameshot.Flameshot/x86_64/stable"
+      },
+      "links": {
+        "bugtracker": "https://github.com/flameshot-org/flameshot/issues",
+        "homepage": "https://github.com/flameshot-org/flameshot",
+        "help": null,
+        "donation": null,
+        "translate": "https://hosted.weblate.org/projects/flameshot/",
+        "faq": null,
+        "contact": null,
+        "vcs_browser": "https://github.com/flameshot-org/flameshot/",
+        "contribute": "https://github.com/flameshot-org/flameshot/blob/master/docs/CONTRIBUTING.md"
+      }
+    },
+    {
+      "recipe": "solaar",
+      "appId": "io.github.pwr_solaar.solaar",
+      "url": "https://flathub.org/api/v2/appstream/io.github.pwr_solaar.solaar",
+      "status": 200,
+      "name": "Solaar",
+      "id": "io.github.pwr_solaar.solaar",
+      "eol": false,
+      "verified": null,
+      "developer": "pwr-Solaar",
+      "bundle": {
+        "type": "flatpak",
+        "sdk": "org.gnome.Sdk/x86_64/49",
+        "runtime": "org.gnome.Platform/x86_64/49",
+        "value": "app/io.github.pwr_solaar.solaar/x86_64/stable"
+      },
+      "links": {
+        "vcs_browser": "https://github.com/pwr-Solaar/Solaar",
+        "contribute": null,
+        "bugtracker": "https://github.com/flathub/io.github.pwr_solaar.solaar/issues",
+        "homepage": "https://pwr-solaar.github.io/Solaar/",
+        "help": null,
+        "donation": null,
+        "translate": null,
+        "faq": null,
+        "contact": null
+      }
+    },
+    {
+      "recipe": "libreoffice",
+      "appId": "org.libreoffice.LibreOffice",
+      "url": "https://flathub.org/api/v2/appstream/org.libreoffice.LibreOffice",
+      "status": 200,
+      "name": "LibreOffice",
+      "id": "org.libreoffice.LibreOffice",
+      "eol": false,
+      "verified": true,
+      "developer": "The Document Foundation",
+      "bundle": {
+        "runtime": "org.freedesktop.Platform/x86_64/25.08",
+        "sdk": "org.freedesktop.Sdk/x86_64/25.08",
+        "type": "flatpak",
+        "value": "app/org.libreoffice.LibreOffice/x86_64/stable"
+      },
+      "links": {
+        "help": "http://www.libreoffice.org/get-help/documentation/",
+        "donation": "https://donate.libreoffice.org/",
+        "contact": null,
+        "vcs_browser": null,
+        "contribute": null,
+        "translate": "https://wiki.documentfoundation.org/Translating_LibreOffice",
+        "faq": "https://wiki.documentfoundation.org/Faq",
+        "bugtracker": "https://bugs.documentfoundation.org/",
+        "homepage": "http://www.libreoffice.org/discover/libreoffice/"
+      }
+    },
+    {
+      "recipe": "gnome-tweaks",
+      "appId": "org.gnome.tweaks",
+      "url": "https://flathub.org/api/v2/appstream/org.gnome.tweaks",
+      "status": 404
+    },
+    {
+      "recipe": "extension-manager",
+      "appId": "com.mattjakeman.ExtensionManager",
+      "url": "https://flathub.org/api/v2/appstream/com.mattjakeman.ExtensionManager",
+      "status": 200,
+      "name": "Extension Manager",
+      "id": "com.mattjakeman.ExtensionManager",
+      "eol": false,
+      "verified": true,
+      "developer": "Matthew Jakeman",
+      "bundle": {
+        "type": "flatpak",
+        "sdk": "org.gnome.Sdk/x86_64/50",
+        "runtime": "org.gnome.Platform/x86_64/50",
+        "value": "app/com.mattjakeman.ExtensionManager/x86_64/stable"
+      },
+      "links": {
+        "bugtracker": "https://github.com/mjakeman/extension-manager/issues",
+        "homepage": "https://mattjakeman.com/apps/extension-manager",
+        "help": "https://github.com/mjakeman/extension-manager/discussions",
+        "donation": "https://ko-fi.com/mjakeman",
+        "translate": "https://github.com/mjakeman/extension-manager/blob/master/po/README.md",
+        "faq": null,
+        "contact": "https://matrix.to/#/#extension-manager:matrix.org",
+        "vcs_browser": "https://github.com/mjakeman/extension-manager",
+        "contribute": null
+      }
+    },
+    {
+      "recipe": "dconf-editor",
+      "appId": "ca.desrt.dconf-editor",
+      "url": "https://flathub.org/api/v2/appstream/ca.desrt.dconf-editor",
+      "status": 200,
+      "name": "Dconf Editor",
+      "id": "ca.desrt.dconf-editor",
+      "eol": false,
+      "verified": true,
+      "developer": "The GNOME Project",
+      "bundle": {
+        "sdk": "org.gnome.Sdk/x86_64/50",
+        "runtime": "org.gnome.Platform/x86_64/50",
+        "type": "flatpak",
+        "value": "app/ca.desrt.dconf-editor/x86_64/stable"
+      },
+      "links": {
+        "homepage": "https://apps.gnome.org/DconfEditor/",
+        "help": null,
+        "donation": "https://www.gnome.org/donate/",
+        "translate": "https://l10n.gnome.org/module/dconf-editor/",
+        "faq": null,
+        "contact": null,
+        "vcs_browser": "https://gitlab.gnome.org/GNOME/dconf-editor",
+        "contribute": "https://welcome.gnome.org/app/DconfEditor/",
+        "bugtracker": "https://gitlab.gnome.org/GNOME/dconf-editor/issues"
+      }
+    },
+    {
+      "recipe": "vscode",
+      "appId": "com.visualstudio.code",
+      "url": "https://flathub.org/api/v2/appstream/com.visualstudio.code",
+      "status": 200,
+      "name": "Visual Studio Code",
+      "id": "com.visualstudio.code",
+      "eol": false,
+      "verified": null,
+      "developer": "Microsoft Corporation",
+      "bundle": {
+        "runtime": "org.freedesktop.Sdk/x86_64/25.08",
+        "sdk": "org.freedesktop.Sdk/x86_64/25.08",
+        "type": "flatpak",
+        "value": "app/com.visualstudio.code/x86_64/stable"
+      },
+      "links": {
+        "help": "https://github.com/flathub/com.visualstudio.code?tab=readme-ov-file#usage",
+        "donation": null,
+        "translate": null,
+        "faq": null,
+        "contact": null,
+        "vcs_browser": null,
+        "contribute": null,
+        "bugtracker": "https://github.com/flathub/com.visualstudio.code/issues",
+        "homepage": "https://code.visualstudio.com"
+      }
+    },
+    {
+      "recipe": "phpstorm",
+      "appId": "com.jetbrains.PhpStorm",
+      "url": "https://flathub.org/api/v2/appstream/com.jetbrains.PhpStorm",
+      "status": 200,
+      "name": "PhpStorm",
+      "id": "com.jetbrains.PhpStorm",
+      "eol": false,
+      "verified": null,
+      "developer": "JetBrains s.r.o.",
+      "bundle": {
+        "runtime": "org.freedesktop.Sdk/x86_64/25.08",
+        "sdk": "org.freedesktop.Sdk/x86_64/25.08",
+        "type": "flatpak",
+        "value": "app/com.jetbrains.PhpStorm/x86_64/stable"
+      },
+      "links": {
+        "homepage": "https://www.jetbrains.com/phpstorm/",
+        "help": "https://www.jetbrains.com/help/phpstorm/",
+        "donation": null,
+        "translate": null,
+        "faq": null,
+        "contact": null,
+        "vcs_browser": null,
+        "bugtracker": "https://github.com/flathub/com.jetbrains.PhpStorm/issues",
+        "contribute": null
+      }
+    },
+    {
+      "recipe": "warp",
+      "appId": "dev.warp.Warp",
+      "url": "https://flathub.org/api/v2/appstream/dev.warp.Warp",
+      "status": 404
+    },
+    {
+      "recipe": "hoppscotch",
+      "appId": "io.hoppscotch.Hoppscotch",
+      "url": "https://flathub.org/api/v2/appstream/io.hoppscotch.Hoppscotch",
+      "status": 404
+    },
+    {
+      "recipe": "keepassxc",
+      "appId": "org.keepassxc.KeePassXC",
+      "url": "https://flathub.org/api/v2/appstream/org.keepassxc.KeePassXC",
+      "status": 200,
+      "name": "KeePassXC",
+      "id": "org.keepassxc.KeePassXC",
+      "eol": false,
+      "verified": true,
+      "developer": "KeePassXC Team",
+      "bundle": {
+        "type": "flatpak",
+        "runtime": "org.kde.Platform/x86_64/5.15-25.08",
+        "sdk": "org.kde.Sdk/x86_64/5.15-25.08",
+        "value": "app/org.keepassxc.KeePassXC/x86_64/stable"
+      },
+      "links": {
+        "bugtracker": "https://github.com/keepassxreboot/keepassxc/issues",
+        "homepage": "https://keepassxc.org",
+        "help": "https://keepassxc.org/docs/",
+        "donation": "https://keepassxc.org/donate/",
+        "translate": "https://explore.transifex.com/keepassxc/keepassxc/",
+        "faq": "https://keepassxc.org/docs/#faq",
+        "contact": "https://keepassxc.org/team/#contact",
+        "vcs_browser": "https://github.com/keepassxreboot/keepassxc",
+        "contribute": "https://keepassxc.org/docs/#contribute"
+      }
+    },
+    {
+      "recipe": "seahorse",
+      "appId": "org.gnome.seahorse",
+      "url": "https://flathub.org/api/v2/appstream/org.gnome.seahorse",
+      "status": 404
+    },
+    {
+      "recipe": "yubikey-manager",
+      "appId": "com.yubico.yubikey-manager",
+      "url": "https://flathub.org/api/v2/appstream/com.yubico.yubikey-manager",
+      "status": 404
+    },
+    {
+      "recipe": "gufw",
+      "appId": "org.gufw.Gufw",
+      "url": "https://flathub.org/api/v2/appstream/org.gufw.Gufw",
+      "status": 404
+    },
+    {
+      "recipe": "clamtk",
+      "appId": "com.gitlab.davem.ClamTk",
+      "url": "https://flathub.org/api/v2/appstream/com.gitlab.davem.ClamTk",
+      "status": "error",
+      "error": "AttributeError"
+    },
+    {
+      "recipe": "wireshark",
+      "appId": "org.wireshark.Wireshark",
+      "url": "https://flathub.org/api/v2/appstream/org.wireshark.Wireshark",
+      "status": 200,
+      "name": "Wireshark",
+      "id": "org.wireshark.Wireshark",
+      "eol": false,
+      "verified": null,
+      "developer": "The Wireshark developer community",
+      "bundle": {
+        "value": "app/org.wireshark.Wireshark/x86_64/stable",
+        "type": "flatpak",
+        "runtime": "org.kde.Platform/x86_64/6.11",
+        "sdk": "org.kde.Sdk/x86_64/6.11"
+      },
+      "links": {
+        "bugtracker": "https://github.com/flathub/org.wireshark.Wireshark/issues",
+        "homepage": "https://www.wireshark.org"
+      }
+    },
+    {
+      "recipe": "remmina",
+      "appId": "org.remmina.Remmina",
+      "url": "https://flathub.org/api/v2/appstream/org.remmina.Remmina",
+      "status": 200,
+      "name": "Remmina",
+      "id": "org.remmina.Remmina",
+      "eol": false,
+      "verified": true,
+      "developer": "Hiroyuki_Tanaka",
+      "bundle": {
+        "runtime": "org.gnome.Platform/x86_64/49",
+        "sdk": "org.gnome.Sdk/x86_64/49",
+        "type": "flatpak",
+        "value": "app/org.remmina.Remmina/x86_64/stable"
+      },
+      "links": {
+        "contact": null,
+        "homepage": "https://www.remmina.org/",
+        "contribute": null,
+        "help": "https://gitlab.com/Remmina/Remmina/wikis/home",
+        "bugtracker": "https://gitlab.com/Remmina/Remmina/issues",
+        "donation": null,
+        "translate": null,
+        "vcs_browser": null,
+        "faq": null
+      }
+    },
+    {
+      "recipe": "virt-manager",
+      "appId": "org.virt_manager.virt-manager",
+      "url": "https://flathub.org/api/v2/appstream/org.virt_manager.virt-manager",
+      "status": 200,
+      "name": "Virtual Machine Manager",
+      "id": "org.virt_manager.virt-manager",
+      "eol": false,
+      "verified": true,
+      "developer": "The Virtual Machine Manager contributors",
+      "bundle": {
+        "type": "flatpak",
+        "runtime": "org.freedesktop.Platform/x86_64/25.08",
+        "sdk": "org.freedesktop.Sdk/x86_64/25.08",
+        "value": "app/org.virt_manager.virt-manager/x86_64/stable"
+      },
+      "links": {
+        "homepage": "https://www.virt-manager.org/",
+        "vcs_browser": null,
+        "donation": null,
+        "translate": "https://translate.fedoraproject.org/projects/virt-manager/virt-manager/",
+        "faq": null,
+        "contact": null,
+        "contribute": null,
+        "help": null,
+        "bugtracker": "https://github.com/virt-manager/virt-manager/issues/new/choose"
+      }
+    },
+    {
+      "recipe": "gnome-boxes",
+      "appId": "org.gnome.Boxes",
+      "url": "https://flathub.org/api/v2/appstream/org.gnome.Boxes",
+      "status": 200,
+      "name": "Boxes",
+      "id": "org.gnome.Boxes",
+      "eol": false,
+      "verified": true,
+      "developer": "The GNOME Project",
+      "bundle": {
+        "type": "flatpak",
+        "sdk": "org.gnome.Sdk/x86_64/50",
+        "runtime": "org.gnome.Platform/x86_64/50",
+        "value": "app/org.gnome.Boxes/x86_64/stable"
+      },
+      "links": {
+        "contribute": "https://welcome.gnome.org/app/Boxes/",
+        "bugtracker": "https://gitlab.gnome.org/GNOME/gnome-boxes/issues",
+        "homepage": "https://gnomeboxes.org",
+        "help": "https://help.gnome.org/gnome-boxes/",
+        "donation": "https://www.gnome.org/donate/",
+        "translate": "https://l10n.gnome.org/module/gnome-boxes/",
+        "faq": null,
+        "contact": null,
+        "vcs_browser": "https://gitlab.gnome.org/GNOME/gnome-boxes"
+      }
+    },
+    {
+      "recipe": "opensnitch",
+      "appId": "io.github.evilsocket.opensnitch",
+      "url": "https://flathub.org/api/v2/appstream/io.github.evilsocket.opensnitch",
+      "status": 404
+    },
+    {
+      "recipe": "torbrowser-launcher",
+      "appId": "org.torproject.torbrowser-launcher",
+      "url": "https://flathub.org/api/v2/appstream/org.torproject.torbrowser-launcher",
+      "status": 200,
+      "name": "Tor Browser Launcher",
+      "id": "org.torproject.torbrowser-launcher",
+      "eol": false,
+      "verified": true,
+      "developer": "Tor Project",
+      "bundle": {
+        "type": "flatpak",
+        "sdk": "org.kde.Sdk/x86_64/6.11",
+        "runtime": "org.kde.Platform/x86_64/6.11",
+        "value": "app/org.torproject.torbrowser-launcher/x86_64/stable"
+      },
+      "links": {
+        "bugtracker": "https://gitlab.torproject.org/tpo/applications/torbrowser-launcher/-/issues",
+        "homepage": "https://gitlab.torproject.org/tpo/applications/torbrowser-launcher",
+        "help": null,
+        "donation": null,
+        "translate": null,
+        "faq": null,
+        "contact": null,
+        "vcs_browser": null,
+        "contribute": null
+      }
+    },
+    {
+      "recipe": "freefilesync",
+      "appId": "org.freefilesync.FreeFileSync",
+      "url": "https://flathub.org/api/v2/appstream/org.freefilesync.FreeFileSync",
+      "status": 200,
+      "name": "FreeFileSync",
+      "id": "org.freefilesync.FreeFileSync",
+      "eol": false,
+      "verified": null,
+      "developer": "Zenju",
+      "bundle": {
+        "sdk": "org.gnome.Sdk/x86_64/50",
+        "runtime": "org.gnome.Platform/x86_64/50",
+        "type": "flatpak",
+        "value": "app/org.freefilesync.FreeFileSync/x86_64/stable"
+      },
+      "links": {
+        "vcs_browser": null,
+        "contribute": null,
+        "help": "https://freefilesync.org/manual.php",
+        "bugtracker": "https://github.com/flathub/org.freefilesync.FreeFileSync/issues",
+        "translate": null,
+        "homepage": "https://freefilesync.org",
+        "contact": null,
+        "donation": "https://freefilesync.org/download.php",
+        "faq": "https://freefilesync.org/faq.php"
+      }
+    },
+    {
+      "recipe": "firefox-flatpak",
+      "appId": "org.mozilla.firefox",
+      "url": "https://flathub.org/api/v2/appstream/org.mozilla.firefox",
+      "status": 200,
+      "name": "Firefox",
+      "id": "org.mozilla.firefox",
+      "eol": false,
+      "verified": true,
+      "developer": "Mozilla",
+      "bundle": {
+        "type": "flatpak",
+        "sdk": "org.freedesktop.Sdk/x86_64/25.08",
+        "runtime": "org.freedesktop.Platform/x86_64/25.08",
+        "value": "app/org.mozilla.firefox/x86_64/stable"
+      },
+      "links": {
+        "contact": null,
+        "homepage": "https://www.mozilla.org/firefox/",
+        "help": "https://support.mozilla.org/",
+        "contribute": null,
+        "donation": "https://donate.mozilla.org/",
+        "translate": "https://wiki.mozilla.org/L10n:Starting_a_localization",
+        "faq": null,
+        "bugtracker": "https://bugzilla.mozilla.org/",
+        "vcs_browser": null
+      }
+    },
+    {
+      "recipe": "dbeaver",
+      "appId": "io.dbeaver.DBeaverCommunity",
+      "url": "https://flathub.org/api/v2/appstream/io.dbeaver.DBeaverCommunity",
+      "status": 200,
+      "name": "DBeaver Community",
+      "id": "io.dbeaver.DBeaverCommunity",
+      "eol": false,
+      "verified": null,
+      "developer": "DBeaver Corporation",
+      "bundle": {
+        "runtime": "org.gnome.Platform/x86_64/50",
+        "sdk": "org.gnome.Sdk/x86_64/50",
+        "type": "flatpak",
+        "value": "app/io.dbeaver.DBeaverCommunity/x86_64/stable"
+      },
+      "links": {
+        "donation": null,
+        "translate": null,
+        "faq": null,
+        "contact": null,
+        "vcs_browser": "https://github.com/dbeaver/dbeaver",
+        "contribute": null,
+        "bugtracker": "https://github.com/flathub/io.dbeaver.DBeaverCommunity/issues",
+        "homepage": "https://dbeaver.io",
+        "help": null
+      }
+    },
+    {
+      "recipe": "bruno",
+      "appId": "com.usebruno.Bruno",
+      "url": "https://flathub.org/api/v2/appstream/com.usebruno.Bruno",
+      "status": 200,
+      "name": "Bruno",
+      "id": "com.usebruno.Bruno",
+      "eol": false,
+      "verified": true,
+      "developer": "Bruno",
+      "bundle": {
+        "sdk": "org.freedesktop.Sdk/x86_64/25.08",
+        "runtime": "org.freedesktop.Platform/x86_64/25.08",
+        "type": "flatpak",
+        "value": "app/com.usebruno.Bruno/x86_64/stable"
+      },
+      "links": {
+        "help": null,
+        "donation": null,
+        "translate": null,
+        "faq": null,
+        "contact": null,
+        "vcs_browser": "https://github.com/usebruno/bruno",
+        "contribute": null,
+        "bugtracker": "https://github.com/usebruno/bruno/issues",
+        "homepage": "https://www.usebruno.com/"
+      }
+    },
+    {
+      "recipe": "thunderbird",
+      "appId": "org.mozilla.Thunderbird",
+      "url": "https://flathub.org/api/v2/appstream/org.mozilla.Thunderbird",
+      "status": 200,
+      "name": "Thunderbird",
+      "id": "org.mozilla.Thunderbird",
+      "eol": true,
+      "verified": true,
+      "developer": "MZLA Technologies, part of the Mozilla Foundation",
+      "bundle": {
+        "type": "flatpak",
+        "runtime": "org.freedesktop.Platform/x86_64/24.08",
+        "sdk": "org.freedesktop.Sdk/x86_64/24.08",
+        "value": "app/org.mozilla.Thunderbird/x86_64/stable"
+      },
+      "links": {
+        "homepage": "https://www.thunderbird.net/",
+        "help": "https://support.mozilla.org/products/thunderbird/",
+        "donation": "https://www.thunderbird.net/donate/",
+        "translate": "https://www.thunderbird.net/participate/",
+        "faq": "https://support.mozilla.org/kb/thunderbird-faq/",
+        "contact": "https://www.thunderbird.net/contact/",
+        "vcs_browser": null,
+        "contribute": null,
+        "bugtracker": "https://bugzilla.mozilla.org/"
+      }
+    },
+    {
+      "recipe": "ente-photos",
+      "appId": "io.ente.photos",
+      "url": "https://flathub.org/api/v2/appstream/io.ente.photos",
+      "status": 200,
+      "name": "Ente Photos",
+      "id": "io.ente.photos",
+      "eol": false,
+      "verified": true,
+      "developer": "Ente Developers",
+      "bundle": {
+        "value": "app/io.ente.photos/x86_64/stable",
+        "type": "flatpak",
+        "runtime": "org.freedesktop.Platform/x86_64/25.08",
+        "sdk": "org.freedesktop.Sdk/x86_64/25.08"
+      },
+      "links": {
+        "bugtracker": "https://github.com/ente/ente/issues",
+        "homepage": "https://ente.com",
+        "vcs_browser": "https://github.com/ente/ente"
+      }
+    },
+    {
+      "recipe": "bitwarden",
+      "appId": "com.bitwarden.desktop",
+      "url": "https://flathub.org/api/v2/appstream/com.bitwarden.desktop",
+      "status": 200,
+      "name": "Bitwarden",
+      "id": "com.bitwarden.desktop",
+      "eol": false,
+      "verified": true,
+      "developer": "Bitwarden Inc.",
+      "bundle": {
+        "runtime": "org.freedesktop.Platform/x86_64/25.08",
+        "sdk": "org.freedesktop.Sdk/x86_64/25.08",
+        "type": "flatpak",
+        "value": "app/com.bitwarden.desktop/x86_64/stable"
+      },
+      "links": {
+        "bugtracker": "https://github.com/bitwarden/clients/issues/",
+        "homepage": "https://www.bitwarden.com/",
+        "help": "https://bitwarden.com/help/",
+        "donation": null,
+        "translate": "https://bitwarden.com/translate/",
+        "faq": "https://bitwarden.com/help/product-faqs/",
+        "contact": "https://bitwarden.com/contact/",
+        "vcs_browser": "https://github.com/bitwarden/clients",
+        "contribute": "https://contributing.bitwarden.com/"
+      }
+    },
+    {
+      "recipe": "gnome-secrets",
+      "appId": "org.gnome.World.Secrets",
+      "url": "https://flathub.org/api/v2/appstream/org.gnome.World.Secrets",
+      "status": 200,
+      "name": "Secrets",
+      "id": "org.gnome.World.Secrets",
+      "eol": false,
+      "verified": true,
+      "developer": "Falk Alexander Seidl",
+      "bundle": {
+        "runtime": "org.gnome.Platform/x86_64/51",
+        "sdk": "org.gnome.Sdk/x86_64/51",
+        "type": "flatpak",
+        "value": "app/org.gnome.World.Secrets/x86_64/stable"
+      },
+      "links": {
+        "contact": "https://matrix.to/#/#secrets:gnome.org",
+        "homepage": "https://apps.gnome.org/Secrets/",
+        "contribute": "https://welcome.gnome.org/app/Secrets/",
+        "help": null,
+        "bugtracker": "https://gitlab.gnome.org/World/secrets/-/issues",
+        "donation": null,
+        "translate": "https://l10n.gnome.org/module/Secrets/",
+        "vcs_browser": "https://gitlab.gnome.org/World/secrets",
+        "faq": null
+      }
+    },
+    {
+      "recipe": "ente-auth",
+      "appId": "io.ente.auth",
+      "url": "https://flathub.org/api/v2/appstream/io.ente.auth",
+      "status": 200,
+      "name": "Ente Auth",
+      "id": "io.ente.auth",
+      "eol": false,
+      "verified": true,
+      "developer": "Ente Developers",
+      "bundle": {
+        "runtime": "org.gnome.Platform/x86_64/50",
+        "sdk": "org.gnome.Sdk/x86_64/50",
+        "type": "flatpak",
+        "value": "app/io.ente.auth/x86_64/stable"
+      },
+      "links": {
+        "donation": null,
+        "translate": null,
+        "faq": null,
+        "contact": null,
+        "vcs_browser": "https://github.com/ente/ente",
+        "contribute": null,
+        "bugtracker": null,
+        "homepage": "https://ente.com/auth",
+        "help": null
+      }
+    },
+    {
+      "recipe": "gnome-authenticator",
+      "appId": "com.belmoussaoui.Authenticator",
+      "url": "https://flathub.org/api/v2/appstream/com.belmoussaoui.Authenticator",
+      "status": 200,
+      "name": "Authenticator",
+      "id": "com.belmoussaoui.Authenticator",
+      "eol": false,
+      "verified": true,
+      "developer": "Bilal Elmoussaoui",
+      "bundle": {
+        "sdk": "org.gnome.Sdk/x86_64/50",
+        "runtime": "org.gnome.Platform/x86_64/50",
+        "type": "flatpak",
+        "value": "app/com.belmoussaoui.Authenticator/x86_64/stable"
+      },
+      "links": {
+        "help": null,
+        "donation": null,
+        "translate": "https://l10n.gnome.org/module/authenticator/",
+        "faq": null,
+        "contact": null,
+        "vcs_browser": "https://gitlab.gnome.org/World/Authenticator",
+        "contribute": null,
+        "homepage": "https://gitlab.gnome.org/World/Authenticator",
+        "bugtracker": "https://gitlab.gnome.org/World/Authenticator/issues"
+      }
+    },
+    {
+      "recipe": "yubico-authenticator",
+      "appId": "com.yubico.yubioath",
+      "url": "https://flathub.org/api/v2/appstream/com.yubico.yubioath",
+      "status": 200,
+      "name": "Yubico Authenticator",
+      "id": "com.yubico.yubioath",
+      "eol": false,
+      "verified": null,
+      "developer": "Yubico",
+      "bundle": {
+        "type": "flatpak",
+        "sdk": "org.freedesktop.Sdk/x86_64/25.08",
+        "runtime": "org.freedesktop.Platform/x86_64/25.08",
+        "value": "app/com.yubico.yubioath/x86_64/stable"
+      },
+      "links": {
+        "contribute": null,
+        "bugtracker": "https://github.com/flathub/com.yubico.yubioath/issues",
+        "homepage": "https://www.yubico.com/products/yubico-authenticator/yubico-authenticator-desktop-beta/",
+        "vcs_browser": null,
+        "help": null,
+        "translate": null,
+        "faq": null,
+        "contact": "https://support.yubico.com/support/tickets/new",
+        "donation": null
+      }
+    },
+    {
+      "recipe": "cryptomator",
+      "appId": "org.cryptomator.Cryptomator",
+      "url": "https://flathub.org/api/v2/appstream/org.cryptomator.Cryptomator",
+      "status": 200,
+      "name": "Cryptomator",
+      "id": "org.cryptomator.Cryptomator",
+      "eol": false,
+      "verified": true,
+      "developer": "Skymatic GmbH",
+      "bundle": {
+        "type": "flatpak",
+        "sdk": "org.freedesktop.Sdk/x86_64/25.08",
+        "runtime": "org.freedesktop.Platform/x86_64/25.08",
+        "value": "app/org.cryptomator.Cryptomator/x86_64/stable"
+      },
+      "links": {
+        "contact": null,
+        "vcs_browser": "https://github.com/cryptomator/cryptomator",
+        "contribute": null,
+        "bugtracker": "https://github.com/cryptomator/cryptomator/issues/",
+        "homepage": "https://cryptomator.org/",
+        "help": "https://docs.cryptomator.org/",
+        "donation": "https://cryptomator.org/donate",
+        "translate": "https://translate.cryptomator.org",
+        "faq": "https://community.cryptomator.org/c/kb/faq"
+      }
+    },
+    {
+      "recipe": "metadata-cleaner",
+      "appId": "fr.romainvigier.MetadataCleaner",
+      "url": "https://flathub.org/api/v2/appstream/fr.romainvigier.MetadataCleaner",
+      "status": 200,
+      "name": "Metadata Cleaner",
+      "id": "fr.romainvigier.MetadataCleaner",
+      "eol": true,
+      "verified": true,
+      "developer": "Romain Vigier",
+      "bundle": {
+        "runtime": "org.gnome.Platform/x86_64/46",
+        "sdk": "org.gnome.Sdk/x86_64/46",
+        "type": "flatpak",
+        "value": "app/fr.romainvigier.MetadataCleaner/x86_64/stable"
+      },
+      "links": {
+        "faq": null,
+        "contact": "https://matrix.to/#/#metadata-cleaner:gnome.org",
+        "vcs_browser": "https://gitlab.com/rmnvgr/metadata-cleaner/",
+        "contribute": null,
+        "bugtracker": "https://gitlab.com/rmnvgr/metadata-cleaner/-/issues",
+        "homepage": "https://metadatacleaner.romainvigier.fr",
+        "donation": null,
+        "help": null,
+        "translate": "https://hosted.weblate.org/engage/metadata-cleaner/"
+      }
+    },
+    {
+      "recipe": "flatseal",
+      "appId": "com.github.tchx84.Flatseal",
+      "url": "https://flathub.org/api/v2/appstream/com.github.tchx84.Flatseal",
+      "status": 200,
+      "name": "Flatseal",
+      "id": "com.github.tchx84.Flatseal",
+      "eol": false,
+      "verified": true,
+      "developer": "Martin Abente Lahaye",
+      "bundle": {
+        "type": "flatpak",
+        "sdk": "org.gnome.Sdk/x86_64/50",
+        "runtime": "org.gnome.Platform/x86_64/50",
+        "value": "app/com.github.tchx84.Flatseal/x86_64/stable"
+      },
+      "links": {
+        "help": null,
+        "vcs_browser": null,
+        "bugtracker": "https://github.com/tchx84/flatseal/issues",
+        "homepage": "https://github.com/tchx84/flatseal",
+        "donation": null,
+        "translate": null,
+        "faq": null,
+        "contact": null,
+        "contribute": null
+      }
+    },
+    {
+      "recipe": "thunderbird-current",
+      "appId": "net.thunderbird.Thunderbird",
+      "url": "https://flathub.org/api/v2/appstream/net.thunderbird.Thunderbird",
+      "status": 404
+    },
+    {
+      "recipe": "thunderbird-monthly",
+      "appId": "org.mozilla.thunderbird",
+      "url": "https://flathub.org/api/v2/appstream/org.mozilla.thunderbird",
+      "status": 200,
+      "name": "Thunderbird",
+      "id": "org.mozilla.thunderbird",
+      "eol": false,
+      "verified": true,
+      "developer": "MZLA Technologies, part of the Mozilla Foundation",
+      "bundle": {
+        "type": "flatpak",
+        "sdk": "org.freedesktop.Sdk/x86_64/25.08",
+        "runtime": "org.freedesktop.Platform/x86_64/25.08",
+        "value": "app/org.mozilla.thunderbird/x86_64/stable"
+      },
+      "links": {
+        "bugtracker": "https://bugzilla.mozilla.org/",
+        "homepage": "https://www.thunderbird.net/",
+        "help": "https://support.mozilla.org/products/thunderbird/",
+        "donation": "https://www.thunderbird.net/donate/",
+        "translate": "https://www.thunderbird.net/participate/",
+        "faq": "https://support.mozilla.org/kb/thunderbird-faq/",
+        "contact": "https://www.thunderbird.net/contact/",
+        "vcs_browser": "https://hg-edge.mozilla.org/comm-central/",
+        "contribute": null
+      }
+    },
+    {
+      "recipe": "thunderbird-esr",
+      "appId": "org.mozilla.thunderbird_esr",
+      "url": "https://flathub.org/api/v2/appstream/org.mozilla.thunderbird_esr",
+      "status": 200,
+      "name": "Thunderbird ESR",
+      "id": "org.mozilla.thunderbird_esr",
+      "eol": false,
+      "verified": true,
+      "developer": "MZLA Technologies, part of the Mozilla Foundation",
+      "bundle": {
+        "runtime": "org.freedesktop.Platform/x86_64/25.08",
+        "sdk": "org.freedesktop.Sdk/x86_64/25.08",
+        "type": "flatpak",
+        "value": "app/org.mozilla.thunderbird_esr/x86_64/stable"
+      },
+      "links": {
+        "bugtracker": "https://bugzilla.mozilla.org/",
+        "homepage": "https://www.thunderbird.net/",
+        "help": "https://support.mozilla.org/products/thunderbird/",
+        "donation": "https://www.thunderbird.net/donate/",
+        "translate": "https://www.thunderbird.net/participate/",
+        "faq": "https://support.mozilla.org/kb/thunderbird-faq/",
+        "contact": "https://www.thunderbird.net/contact/",
+        "vcs_browser": "https://hg-edge.mozilla.org/comm-central/",
+        "contribute": null
+      }
+    }
+  ]
+}

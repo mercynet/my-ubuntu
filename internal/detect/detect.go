@@ -306,7 +306,30 @@ func (d *Detector) State(ctx context.Context, it *catalog.Item, sel catalog.Sele
 		if flat[it.Flatpak] {
 			return ItemState{Status: Installed, Detail: "Flatpak " + it.Flatpak + " instalado"}
 		}
-		return ItemState{Status: Available, Detail: "Flathub: " + it.Flatpak}
+		for _, old := range it.LegacyFlatpaks {
+			if flat[old] {
+				return ItemState{Status: Provided, Detail: "ID Flatpak anterior já instalado: " + old + "; instalação preservada, migração não automática"}
+			}
+		}
+		if len(it.LegacyPackages) > 0 {
+			present := true
+			for _, pkg := range it.LegacyPackages {
+				if !pkgs[pkg] {
+					present = false
+					break
+				}
+			}
+			if present {
+				return ItemState{Status: Provided, Detail: "Aplicação já instalada por APT; preservada. Flatpak será usado nas novas instalações."}
+			}
+		}
+		if it.FlatpakUnavailable != "" {
+			return ItemState{Status: Incompatible, Detail: it.FlatpakUnavailable}
+		}
+		if !d.R.LookPath("flatpak") {
+			return ItemState{Status: Available, Detail: "Requer Flatpak instalado; o plano inclui essa dependência antes da aplicação."}
+		}
+		return ItemState{Status: Available, Detail: it.Source + ": " + it.Flatpak + "; Flatpak e origem serão validados antes de instalar"}
 	case catalog.MethodGSettings:
 		st := ItemState{Status: Installed, Detail: "Já está com o valor proposto"}
 		for _, s := range it.Settings {

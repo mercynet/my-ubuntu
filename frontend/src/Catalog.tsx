@@ -7,6 +7,7 @@ import { settingLabel } from "./settingLabels";
 import { AppIcon } from "./AppIcon";
 import { ManualGuide } from "./ManualGuide";
 import { ProfilePicker } from "./ProfilePicker";
+import { ItemExecution } from "./ExecutionProgress";
 import { SaveProfileDialog } from "./Modals";
 import { matches, searchScore } from "./catalogSearch";
 
@@ -195,6 +196,9 @@ export function Card({ ctx, item }: { ctx: Ctx; item: Item }) {
         <StatusBadge st={st} method={item.method} adminOp={item.adminOp} />
       </div>
       <p>{item.summary}</p>
+      <div className="item-purpose"><b>Para que serve:</b> {item.why}</div>
+      {item.method === "flatpak" && <div className="flatpak-requirement"><b>Requer Flatpak.</b> {item.flatpakUnavailable || "O plano prepara Flatpak + Flathub quando faltam e valida a origem antes de instalar para o seu utilizador."}<small>{item.source}</small></div>}
+      <ItemExecution run={ctx.execution} item={item.id} />
       {!selected && present && !reverting && <div className="selection-result kept">Retirado das escolhas; permanece instalado.</div>}
       {selected && <div className={"selection-result" + (["incompatible", "unknown"].includes(st?.status || "unknown") ? " attention" : "")}>
         {st?.status === "installed" || st?.status === "provided" ? "Já está como pretende; nenhuma alteração necessária."
@@ -282,6 +286,7 @@ export function Card({ ctx, item }: { ctx: Ctx; item: Item }) {
           {sens && <><dt>Atenção</dt><dd>{sens}</dd></>}
           {item.packages && <><dt>Pacotes</dt><dd className="mono">{item.packages.join(" ")}</dd></>}
           {item.flatpak && <><dt>Flatpak</dt><dd className="mono">{item.flatpak}</dd></>}
+          {item.legacyPackages?.length && <><dt>Instalação APT preservada</dt><dd>{item.legacyPackages.join(", ")}</dd></>}
           {item.extension && <><dt>UUID</dt><dd className="mono">{item.extension}</dd></>}
           {item.repo && <><dt>Repositório</dt><dd>{ctx.data.repos.find((r) => r.id === item.repo)?.url}</dd></>}
           {item.script && <><dt>Script</dt><dd className="mono">{item.script.url}</dd></>}

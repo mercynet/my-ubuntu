@@ -2,12 +2,48 @@ package main
 
 import (
 	"context"
+	"encoding/json"
 	"strings"
 	"testing"
 
 	"meuubuntu/internal/catalog"
 	"meuubuntu/internal/sys"
 )
+
+func TestReviewedNoChangePlanSerializesStepsAsArray(t *testing.T) {
+	for _, tc := range []struct {
+		name string
+		sel  map[string]catalog.Selection
+	}{
+		{"empty selection", nil},
+		{"already installed", map[string]catalog.Selection{"git": {}}},
+	} {
+		t.Run(tc.name, func(t *testing.T) {
+			a := simulationApp(t)
+			p, err := a.BuildPlan(tc.sel, nil)
+			if err != nil {
+				t.Fatal(err)
+			}
+			if len(p.Steps) != 0 {
+				t.Fatalf("expected no changes, got %+v", p.Steps)
+			}
+			body, err := json.Marshal(p)
+			if err != nil {
+				t.Fatal(err)
+			}
+			var fields map[string]json.RawMessage
+			if err := json.Unmarshal(body, &fields); err != nil {
+				t.Fatal(err)
+			}
+			if string(fields["steps"]) != "[]" {
+				t.Fatalf("frontend requires an iterable array, got steps=%s", fields["steps"])
+			}
+			if p.ReviewToken != p.Fingerprint() {
+				t.Fatal("review token does not bind the returned plan")
+			}
+		})
+	}
+}
 
 func simulationApp(t *testing.T) *App {
 	t.Helper()

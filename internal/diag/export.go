@@ -195,6 +195,8 @@ func pdfReport(rows [][]string, meta Metadata) ([]byte, error) {
 	f.SetTitle("Diagnóstico — Meu Ubuntu", true)
 	f.SetCreator("Meu Ubuntu "+meta.Version, true)
 	f.SetHeaderFunc(func() {
+		// Automatic breaks can retain the previous cell's horizontal position.
+		f.SetXY(15, 15)
 		f.SetFont("DejaVu", "", 15)
 		f.SetTextColor(200, 65, 15)
 		f.CellFormat(180, 10, "Diagnóstico — Meu Ubuntu", "", 1, "L", false, 0, "")

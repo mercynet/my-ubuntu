@@ -6,12 +6,12 @@ from pathlib import Path
 import tarfile
 
 ROOT = Path(__file__).resolve().parents[2]
-version = os.environ.get("VERSION", "1.0.0-rc.1")
+version = os.environ.get("VERSION", (ROOT/"VERSION").read_text().strip())
 epoch = int(os.environ.get("SOURCE_DATE_EPOCH", "1790000000"))
 prefix = "meu-ubuntu-" + version + "-source"
-roots = ["LICENSE", "NOTICE.md", "README.md", "AGENTS.md", ".gitignore", "CONTRIBUTING.md",
-         "SECURITY.md", "CHANGELOG.md", "Makefile", "go.mod", "go.sum", "wails.json",
-         "internal", "frontend", "build", "docs", ".github"]
+roots = ["LICENSE", "NOTICE.md", "README.md", "AGENTS.md", ".gitignore", ".gitattributes", "CONTRIBUTING.md",
+         "SECURITY.md", "CHANGELOG.md", "RELEASING.md", "VERSION", "Makefile", "go.mod", "go.sum",
+         "internal", "frontend", "build", "docs", "examples", ".github"]
 files = list(ROOT.glob("*.go"))
 for name in roots:
     path = ROOT / name
@@ -21,7 +21,8 @@ for name in roots:
         files.append(path)
 files.extend(p for p in (ROOT / "dogfood-output").rglob("*.md") if not p.is_symlink())
 excluded = {"node_modules", "dist", "__pycache__", "harness", ".cache"}
-files = sorted(set(p for p in files if not excluded.intersection(p.relative_to(ROOT).parts)))
+files = sorted(set(p for p in files if not excluded.intersection(p.relative_to(ROOT).parts)
+                   and p.relative_to(ROOT).parts[:3] != ("build", "test", "out")))
 output = ROOT / "dist" / (prefix + ".tar.gz")
 with output.open("wb") as dest, gzip.GzipFile(filename="", mode="wb", fileobj=dest, mtime=epoch) as zipped:
     with tarfile.open(fileobj=zipped, mode="w") as archive:

@@ -2,11 +2,12 @@
 # Runs inside meu-ubuntu-build:26.04. Produces dist/meu-ubuntu, .deb and SHA256SUMS.
 set -euo pipefail
 cd /src
-VERSION="${VERSION:-1.0.0-rc.1}"
+VERSION="${VERSION:-$(cat VERSION)}"
 PACKAGE_VERSION="${VERSION/-beta./\~beta}"
 PACKAGE_VERSION="${PACKAGE_VERSION/-rc./\~rc}"
 export SOURCE_DATE_EPOCH="${SOURCE_DATE_EPOCH:-$(git log -1 --format=%ct 2>/dev/null || echo 1790000000)}"
 
+python3 build/scripts/check-version.py
 python3 build/scripts/generate-docs.py --check
 (cd frontend && npm ci --no-audit --no-fund && npm run build)
 
@@ -23,7 +24,7 @@ install -m644 build/appicon.png "$PKG/usr/share/icons/hicolor/512x512/apps/meu-u
 install -m644 build/linux/meu-ubuntu.desktop "$PKG/usr/share/applications/meu-ubuntu.desktop"
 mkdir -p "$PKG/usr/share/doc/meu-ubuntu/logos"
 install -m644 README.md docs/manual.md docs/catalogo.md docs/desenvolvimento.md docs/beta-usabilidade.md "$PKG/usr/share/doc/meu-ubuntu/"
-install -m644 LICENSE NOTICE.md CONTRIBUTING.md SECURITY.md CHANGELOG.md "$PKG/usr/share/doc/meu-ubuntu/"
+install -m644 LICENSE NOTICE.md CONTRIBUTING.md SECURITY.md CHANGELOG.md RELEASING.md VERSION "$PKG/usr/share/doc/meu-ubuntu/"
 cp -R dist/third-party "$PKG/usr/share/doc/meu-ubuntu/"
 mkdir -p "$PKG/usr/share/doc/meu-ubuntu/diagnostics"
 install -m644 internal/diag/assets/*LICENSE.txt "$PKG/usr/share/doc/meu-ubuntu/diagnostics/"

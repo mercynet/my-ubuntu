@@ -101,7 +101,9 @@ func main() {
 		// One window only: opening a profile JSON again reviews it in the running app.
 		SingleInstanceLock: &options.SingleInstanceLock{UniqueId: instanceID,
 			OnSecondInstanceLaunch: func(d options.SecondInstanceData) { app.SecondInstance(d.Args) }},
-		Linux: &linux.Options{Icon: icon, ProgramName: "meu-ubuntu", WebviewGpuPolicy: linux.WebviewGpuPolicyOnDemand},
+		// The catalog UI has no WebGL content. Software compositing also works on
+		// virtual desktops whose DRM device cannot create a usable EGL context.
+		Linux: &linux.Options{Icon: icon, ProgramName: "meu-ubuntu", WebviewGpuPolicy: linux.WebviewGpuPolicyNever},
 	})
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)

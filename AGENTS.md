@@ -28,7 +28,7 @@ Use Go's `testing` package with `*_test.go` files and `Test...` functions; front
 
 ## Commit & Pull Request Guidelines
 
-Git history is unavailable in this checkout, so existing commit conventions cannot be verified. Use concise, imperative subjects. PRs should explain behavior changes, link relevant issues, report validation and limitations, and include screenshots for interface changes.
+Use concise, imperative commit subjects. Development happens on `development`; release tags use `v<version>`. Follow `RELEASING.md` for versions, evidence and publication. Generated files in `dist/` and `frontend/dist/` stay out of Git. PRs should explain behavior changes, link relevant issues, report validation and limitations, and include screenshots for interface changes.
 
 ## Security & Documentation
 

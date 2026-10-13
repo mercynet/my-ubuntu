@@ -1,0 +1,6 @@
+dbus-daemon[16]: [session uid=1000 pid=16 pidfd=5] Activating service name='org.a11y.Bus' requested by ':1.0' (uid=1000 pid=17 comm="python3 /src/build/test/flatpak-native-smoke.py" label="docker-default (enforce)")
+dbus-daemon[16]: [session uid=1000 pid=16 pidfd=5] Successfully activated service 'org.a11y.Bus'
+dbus-daemon[26]: Activating service name='org.a11y.atspi.Registry' requested by ':1.0' (uid=1000 pid=17 comm="python3 /src/build/test/flatpak-native-smoke.py" label="docker-default (enforce)")
+dbus-daemon[26]: Successfully activated service 'org.a11y.atspi.Registry'
+SpiRegistry daemon is running with well-known name - org.a11y.atspi.Registry
+PASS: visible Flatpak requirement, dependency review and simulated completion in native GTK/WebKit.

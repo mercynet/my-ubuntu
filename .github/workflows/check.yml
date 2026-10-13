@@ -20,6 +20,9 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+      - name: Read source version
+        id: version
+        run: echo "value=$(cat VERSION)" >> "$GITHUB_OUTPUT"
       - name: Validate the frontend and Go app, including race detection
         run: make check
       - name: Audit Go and npm dependencies
@@ -30,11 +33,14 @@ jobs:
         run: make verify
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: meu-ubuntu-linux-amd64
+          name: meu-ubuntu-${{ steps.version.outputs.value }}-ubuntu26-amd64
           path: |
-            dist/meu-ubuntu-*-linux-amd64
-            dist/meu-ubuntu_*_amd64.deb
-            dist/meu-ubuntu-*-source.tar.gz
+            dist/meu-ubuntu-${{ steps.version.outputs.value }}-linux-amd64
+            dist/meu-ubuntu_${{ steps.version.outputs.value }}_amd64.deb
+            dist/meu-ubuntu-${{ steps.version.outputs.value }}-source.tar.gz
+            dist/meu-ubuntu-${{ steps.version.outputs.value }}.zip
+            dist/meu-ubuntu-${{ steps.version.outputs.value }}-instalar.zip
             dist/SHA256SUMS
+            dist/release-manifest.json
           if-no-files-found: error
           retention-days: 14

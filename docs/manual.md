@@ -2,7 +2,7 @@
 
 # Manual do Meu Ubuntu
 
-Guia da versão 1.0.0-rc.1. O Meu Ubuntu ajuda a escolher aplicações e ajustes, rever as alterações, executá-las e conferir o resultado. O catálogo, este manual e os logos estão incluídos na aplicação; a instalação de software pode precisar de internet.
+Guia da versão 1.0.0-rc.4. O Meu Ubuntu ajuda a escolher aplicações e ajustes, rever as alterações, executá-las e conferir o resultado. O catálogo, este manual e os logos estão incluídos na aplicação; a instalação de software pode precisar de internet.
 
 ## Índice
 
@@ -15,7 +15,7 @@ Guia da versão 1.0.0-rc.1. O Meu Ubuntu ajuda a escolher aplicações e ajustes
 - [Catálogo, áreas e pesquisa](#areas-e-pesquisa)
 - [Guardar, combinar e partilhar perfis](#perfis-reutilizaveis)
 - [Rever o plano](#rever-plano)
-- [Executar, acompanhar e cancelar](#executar-e-cancelar)
+- [Executar, acompanhar, pausar e cancelar](#executar-e-cancelar)
 - [Recuperar de falhas](#falhas-e-retoma)
 - [Histórico e reversão](#historico-e-reversao)
 - [Desktop e estilo](#desktop-e-estilo)
@@ -30,8 +30,10 @@ Guia da versão 1.0.0-rc.1. O Meu Ubuntu ajuda a escolher aplicações e ajustes
 - [Dados locais e privacidade](#dados-e-privacidade)
 - [Simulação e opções de terminal](#simulacao-e-terminal)
 - [Problemas frequentes](#problemas-frequentes)
+- [Pacotes de integração](#pacotes-de-integracao)
 - [Contribuir, licenças e limites](#contribuir-e-licencas)
 - [Instalar agentes de IA](#agentes-de-ia)
+- [Flatpak e origens de instalação](#flatpak-e-origens)
 
 <a id="primeiros-passos"></a>
 
@@ -61,7 +63,7 @@ O .deb instala o executável, o atalho no menu, o ícone e a documentação. O A
 
 ```sh
 sha256sum -c SHA256SUMS --ignore-missing
-sudo apt install ./meu-ubuntu_1.0.0-rc.1_amd64.deb
+sudo apt install ./meu-ubuntu_1.0.0-rc.4_amd64.deb
 meu-ubuntu --version
 meu-ubuntu
 ```
@@ -69,7 +71,7 @@ meu-ubuntu
 O checksum confirma que o ficheiro corresponde à lista recebida; a confiança também depende de obter o pacote e a lista de uma origem de confiança. Para atualizar, instale o novo .deb pelo mesmo comando. Não existe atualizador automático integrado.
 
 ```sh
-cp meu-ubuntu-1.0.0-rc.1-linux-amd64 ~/meu-ubuntu
+cp meu-ubuntu-1.0.0-rc.4-linux-amd64 ~/meu-ubuntu
 chmod +x ~/meu-ubuntu
 ~/meu-ubuntu --simular
 ```
@@ -212,13 +214,13 @@ A execução volta a validar o plano e a evidência. Se escolhas, sistema ou con
 
 <a id="executar-e-cancelar"></a>
 
-## Executar, acompanhar e cancelar
+## Executar, acompanhar, pausar e cancelar
 
 Progresso por passo e efeitos de uma interrupção.
 
-Durante a execução, acompanhe cada passo e o respetivo registo. O Meu Ubuntu permite uma execução de cada vez. O programa principal corre como utilizador; um auxiliar restrito trata as operações administrativas autorizadas.
+Durante a execução, o topo mostra a etapa atual, passos terminados, tempo decorrido e última mensagem. Pode navegar entre separadores; os cartões também mostram estado e passos de cada item. O Meu Ubuntu permite uma execução de cada vez.
 
-Cancelar pede a interrupção do trabalho em curso. Não desfaz passos já concluídos. Evite desligar o computador enquanto um gestor de pacotes está a trabalhar. Uma execução interrompida fica identificada no histórico e deve ser retomada através de um plano novo.
+Pausar aguarda o fim da operação atual e impede iniciar a próxima. Retomar confere o estado antes de prosseguir; alterações externas podem exigir nova revisão. Cancelar aguarda o limite seguro e não desfaz passos concluídos. Depois de fechar ou reiniciar o computador, uma execução interrompida exige um plano novo. Evite desligar enquanto um gestor de pacotes está a trabalhar.
 
 | Resultado | Próximo passo |
 | --- | --- |
@@ -475,13 +477,29 @@ Respostas para dúvidas de estado, perfis, execução e compatibilidade.
 
 Se uma funcionalidade deixou de funcionar ao atualizar, compare um plano pequeno com o que funcionava na versão anterior. Registe o ambiente, a versão e o resultado esperado versus observado para tornar o problema reproduzível.
 
+<a id="pacotes-de-integracao"></a>
+
+## Pacotes de integração
+
+Diagnóstico e preparação revista para uma pasta de projeto local.
+
+Em Pacotes de integração, escolha Instalar pacote… e selecione o ZIP recebido de uma origem que conhece. Reveja nome, versão e fornecedor antes de confirmar. Instalar o pacote acrescenta o separador e as instruções do projeto.
+
+1. Abra o separador instalado e escolha a pasta onde já clonou o projeto.
+2. Carregue em Verificar ambiente. Em simulação, os resultados são exemplos; no modo real, as verificações consultam os requisitos locais.
+3. Se o pacote inclui Preparar ambiente, reveja as ferramentas necessárias e aplique o plano. Depois reveja a preparação do projeto e confirme. Pacotes só de guia mantêm execução manual dos comandos.
+4. A preparação mostra cada etapa e admite pausa/retoma entre operações. Configurações originais, serviços alheios e dados existentes são preservados. Após uma interrupção, reveja novamente para conferir o estado real.
+5. Ao atualizar o pacote, a pasta escolhida é preservada. Se o ZIP mudar depois da revisão, escolha-o e reveja-o novamente.
+
+> Use um checkout de desenvolvimento em que confia: Docker e Composer executam código desse projeto. O pacote pode preparar containers isolados, schemas, Redis e dependências. Dumps, credenciais privadas e comandos administrativos continuam manuais. Containers ativos não comprovam que o projeto já funciona com os dados da equipa.
+
 <a id="contribuir-e-licencas"></a>
 
 ## Contribuir, licenças e limites
 
 Estado do projeto e como ajudar com evidência útil.
 
-O código do Meu Ubuntu é distribuído sob GNU GPL versão 3 (GPL-3.0-only), incluída em LICENSE. Logos, dependências e a fonte do PDF conservam as suas licenças próprias. Consulte NOTICE.md, Sobre e os avisos do pacote. A candidata inclui um arquivo com o código-fonte correspondente; a publicação num repositório público é uma etapa posterior.
+O código do Meu Ubuntu é distribuído sob GNU GPL versão 3 (GPL-3.0-only), incluída em LICENSE. Logos, dependências e a fonte do PDF conservam as suas licenças próprias. Consulte NOTICE.md, Sobre e os avisos do pacote. A candidata inclui um arquivo com o código-fonte correspondente; o repositório público está em https://github.com/mercynet/my-ubuntu. Vulnerabilidades devem ser comunicadas em privado pelo separador Security, opção Report a vulnerability.
 
 Para contribuir, leia docs/desenvolvimento.md e docs/catalogo.md no código-fonte. Descreva problemas com passos, ambiente e resultado, e proponha receitas com fontes oficiais, método de deteção, verificação posterior, dependências e riscos concretos. Não inclua segredos em exemplos ou registos.
 
@@ -506,3 +524,17 @@ Agentes de IA reúne Claude Code, Codex, Gemini CLI, OpenCode, Pi e GitHub Copil
 > O Meu Ubuntu não guarda contas, chaves nem subscrições dos agentes. A instalação da ferramenta não inclui créditos nem garante acesso a modelos; o fornecedor define as condições de acesso.
 
 Se ~/.local/bin ainda não estava no PATH da sua sessão, use o caminho completo indicado no guia ou termine e volte a iniciar sessão no Ubuntu. Não é necessário usar sudo para instalar os pacotes dos agentes.
+
+<a id="flatpak-e-origens"></a>
+
+## Flatpak e origens de instalação
+
+Requisitos, verificação e conservação de aplicações já presentes.
+
+Aplicações com publicação ativa confirmada usam Flatpak para o seu utilizador. Cada cartão mostra o requisito e a origem. Quando falta Flatpak, o plano inclui essa dependência antes da aplicação.
+
+Antes de instalar, a execução confere Flatpak, o remoto do utilizador, origem permitida, verificação de assinaturas e ID da aplicação. Remoto incorreto, desativado, rede indisponível ou aplicação não encontrada impedem a instalação. Não muda silenciosamente para outra origem.
+
+Versões APT e IDs Flatpak anteriores já instalados são reconhecidos e preservados. Esta política aplica-se a novas instalações; não remove programas nem migra dados e perfis automaticamente.
+
+> Flatpak isola a aplicação. Algumas ferramentas precisam de SDKs, permissões de dispositivo ou serviços no host. Consulte o guia da receita. Um editor não verificado no Flathub fica identificado na origem; instaladores do próprio fornecedor também são identificados.

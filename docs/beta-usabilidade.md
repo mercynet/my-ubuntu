@@ -1,4 +1,4 @@
-# Testar o Meu Ubuntu 1.0.0-rc.1
+# Testar o Meu Ubuntu 1.0.0-rc.4
 
 ## Ambiente suportado
 
@@ -6,11 +6,11 @@ Ubuntu **26.04 LTS**, GNOME, computador **amd64/x86_64**. Não há suporte nesta
 
 ## Instalar e abrir
 
-Para teste, envie o ZIP da RC ou estes ficheiros de `dist/`: `meu-ubuntu_1.0.0-rc.1_amd64.deb`, `meu-ubuntu-1.0.0-rc.1-linux-amd64`, `meu-ubuntu-1.0.0-rc.1-source.tar.gz` e `SHA256SUMS`. Na pasta recebida:
+Para teste, envie o ZIP da RC ou estes ficheiros de `dist/`: `meu-ubuntu_1.0.0-rc.4_amd64.deb`, `meu-ubuntu-1.0.0-rc.4-linux-amd64`, `meu-ubuntu-1.0.0-rc.4-source.tar.gz` e `SHA256SUMS`. Na pasta recebida:
 
 ```bash
 sha256sum -c SHA256SUMS
-sudo apt install ./meu-ubuntu_1.0.0-rc.1_amd64.deb
+sudo apt install ./meu-ubuntu_1.0.0-rc.4_amd64.deb
 meu-ubuntu --simular
 ```
 

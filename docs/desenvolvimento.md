@@ -186,9 +186,11 @@ Operações reais precisam de VM ou máquina autorizada com backup e estado inic
 
 O [roteiro da 1.0 open source](../README.md#preparação-da-100-open-source) define escopo, correções e critérios de aceitação. A revisão [Astra/high de 2026-10-12](../dogfood-output/review-astra-high-2026-10-12.md) registou sete achados por inspeção; testes existentes aprovados não substituem reproduções dirigidas de falhas parciais e reversões. As regressões e a revisão final estão em dogfood-output/rc.1/. Validar também o fecho durante execução numa sessão GNOME descartável.
 
-A versão Debian da candidata é `1.0.0~rc1`, inferior a `1.0.0`; a verificação do pacote comprova essa ordem. O build inclui GPLv3, avisos de terceiros e um arquivo de código-fonte da mesma árvore. Este checkout não dispõe de histórico Git, por isso o checksum do arquivo identifica a origem entregue. Não inclua estado local, segredos ou integrações privadas no arquivo.
+A versão Debian da candidata é `1.0.0~rc4`, inferior a `1.0.0`; a verificação do pacote comprova essa ordem. O build inclui GPLv3, avisos de terceiros e um arquivo de código-fonte da mesma árvore. Registe o commit e o estado da árvore usados no build; o checksum do arquivo identifica os bytes das fontes entregues. Não inclua estado local, segredos ou integrações privadas no arquivo.
 
 O diagnóstico é recolhido e guardado como uma fotografia identificada. A exportação usa os mesmos registos normalizados em PDF/CSV/XLSX, sem recolher novamente. CSV protege células interpretáveis como fórmulas; XLSX usa texto; PDF embute DejaVu Sans e representa Unicode suplementar pelo código. Limites de tamanho são explícitos; gravação é atómica e requer a extensão escolhida.
+
+O build gera também `dist/meu-ubuntu-<versão>-instalar.zip`, contendo apenas o .deb, o checksum desse pacote e instruções. `make verify` confere o conteúdo e recusa a inclusão de pastas `private/` ou `logs/` no arquivo de fontes. O exemplo sanitizado fica em `examples/integrations/officegest/`. Pastas locais `private/` não são versionadas; conteúdo antigo já presente no histórico permanece público.
 
 ## Reportar e contribuir
 
@@ -198,6 +200,49 @@ O código do projeto usa GPL-3.0-only; leia LICENSE, NOTICE.md, CONTRIBUTING.md 
 
 ## Beta de usabilidade
 
-A candidata 1.0.0-rc.1 visa Ubuntu 26.04 LTS, GNOME e amd64. Veja o [roteiro do beta](beta-usabilidade.md) e a [avaliação da v0.5.0](../dogfood-output/v0.5.0/report.md). As versões anteriores permanecem em dist/. O pacote Debian usa 1.0.0~rc1, anterior à versão estável 1.0.0.
+A candidata 1.0.0-rc.4 visa Ubuntu 26.04 LTS, GNOME e amd64. Veja o [roteiro do beta](beta-usabilidade.md) e a [avaliação da v0.5.0](../dogfood-output/v0.5.0/report.md). As versões anteriores permanecem em dist/. O pacote Debian usa 1.0.0~rc4, anterior à versão estável 1.0.0.
 
 Receitas npm usam metadados fixos do catálogo; perfis só podem escolher IDs. Não aceite URLs, nomes de comandos ou versões livres através de perfis. A instalação preserva um agente já encontrado, não recolhe credenciais e não configura subscrições. Ao atualizar uma receita, confirme a documentação oficial, a versão npm, os requisitos de Node e uma instalação sem root.
+
+## Preparação declarativa e pausa (RC.3)
+
+Pacotes formato 2 podem declarar ComposeSetup; apenas IDs, caminhos relativos,
+serviços, schemas, portas Redis e domínios. O manifesto nunca fornece comandos
+executáveis. O script Python incorporado implementa operações fixas; build e
+Composer executam código do checkout escolhido após revisão e confirmação.
+A aplicação bloqueia preparações e planos concorrentes. Tokens ligam pacote,
+pasta, configuração Compose, ficheiros relevantes e portas à revisão.
+
+Configuração pessoal em XDG data/dev-environments; ficheiros originais Compose
+não são reescritos. Recursos Docker recebem nomes e etiquetas próprios, redes
+externas são isoladas e portas são locais. Credenciais geradas permanecem na
+configuração pessoal; stdout bruto Docker/Composer não chega aos logs/IPC.
+Schemas usam CREATE DATABASE IF NOT EXISTS. Redis só cria cluster em nós vazios
+ou confere cluster pronto; nunca aplica reset. Dados existentes são preservados.
+
+Pausa/cancelamento aguardam uma operação concluída. Retoma confere novamente
+estado do plano ou ficheiros/configuração e propriedade dos recursos do addon.
+Histórico de preparação persistido fica como interrupted após reinício;
+reexecução exige nova revisão. A interface mantém progresso ao navegar.
+
+Um lock de kernel partilhado com o processo Python impede iniciar trabalho
+concorrente enquanto um filho termina a operação após crash da janela.
+Reabrir aguarda esse processo; quando termina, o histórico permite nova revisão.
+
+Os checks incluem regressões Python sintéticas, sem iniciar Docker ou alterar
+um projeto real. make limita containers de build a 2 CPUs e 4 GiB por padrão;
+BUILD_CPUS e BUILD_MEMORY permitem ajuste. Esse limite não identifica a causa
+de um bloqueio do host, nem limita o daemon BuildKit de projetos preparados.
+
+## Organização do repositório
+
+README apresenta instalação, limites e navegação. docs/README.md indexa guias;
+docs/contexto-projeto.md conserva evolução anterior. CHANGELOG.md regista versões
+e RELEASING.md define preparação/publicação. VERSION e manifests frontend são
+conferidos; set-version.py sincroniza-os. dist/ e frontend/dist/ são gerados e
+ficam fora do Git, assim como estado XDG e notas locais. A CI constrói a partir
+de um checkout e identifica os artefactos pela versão. Publicação é explícita.
+
+A política Flatpak e a conservação de instalações existentes estão em flatpak.md.
+Cli/serviços do host continuam com receitas próprias. Registe fontes e teste
+integrações com hardware, ferramentas do host e permissões antes de anunciar prontidão.

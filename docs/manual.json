@@ -388,23 +388,26 @@
     },
     {
       "id": "executar-e-cancelar",
-      "title": "Executar, acompanhar e cancelar",
+      "title": "Executar, acompanhar, pausar e cancelar",
       "summary": "Progresso por passo e efeitos de uma interrupção.",
       "keywords": [
         "progresso",
         "senha",
         "pkexec",
         "reiniciar",
-        "logout"
+        "logout",
+        "pausar",
+        "retomar",
+        "contador"
       ],
       "blocks": [
         {
           "kind": "paragraph",
-          "text": "Durante a execução, acompanhe cada passo e o respetivo registo. O Meu Ubuntu permite uma execução de cada vez. O programa principal corre como utilizador; um auxiliar restrito trata as operações administrativas autorizadas."
+          "text": "Durante a execução, o topo mostra a etapa atual, passos terminados, tempo decorrido e última mensagem. Pode navegar entre separadores; os cartões também mostram estado e passos de cada item. O Meu Ubuntu permite uma execução de cada vez."
         },
         {
           "kind": "paragraph",
-          "text": "Cancelar pede a interrupção do trabalho em curso. Não desfaz passos já concluídos. Evite desligar o computador enquanto um gestor de pacotes está a trabalhar. Uma execução interrompida fica identificada no histórico e deve ser retomada através de um plano novo."
+          "text": "Pausar aguarda o fim da operação atual e impede iniciar a próxima. Retomar confere o estado antes de prosseguir; alterações externas podem exigir nova revisão. Cancelar aguarda o limite seguro e não desfaz passos concluídos. Depois de fechar ou reiniciar o computador, uma execução interrompida exige um plano novo. Evite desligar enquanto um gestor de pacotes está a trabalhar."
         },
         {
           "kind": "table",
@@ -1025,6 +1028,39 @@
       ]
     },
     {
+      "id": "pacotes-de-integracao",
+      "title": "Pacotes de integração",
+      "summary": "Diagnóstico e preparação revista para uma pasta de projeto local.",
+      "keywords": [
+        "pacotes",
+        "integração",
+        "zip",
+        "projeto",
+        "diagnóstico"
+      ],
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Em Pacotes de integração, escolha Instalar pacote… e selecione o ZIP recebido de uma origem que conhece. Reveja nome, versão e fornecedor antes de confirmar. Instalar o pacote acrescenta o separador e as instruções do projeto."
+        },
+        {
+          "kind": "steps",
+          "items": [
+            "Abra o separador instalado e escolha a pasta onde já clonou o projeto.",
+            "Carregue em Verificar ambiente. Em simulação, os resultados são exemplos; no modo real, as verificações consultam os requisitos locais.",
+            "Se o pacote inclui Preparar ambiente, reveja as ferramentas necessárias e aplique o plano. Depois reveja a preparação do projeto e confirme. Pacotes só de guia mantêm execução manual dos comandos.",
+            "A preparação mostra cada etapa e admite pausa/retoma entre operações. Configurações originais, serviços alheios e dados existentes são preservados. Após uma interrupção, reveja novamente para conferir o estado real.",
+            "Ao atualizar o pacote, a pasta escolhida é preservada. Se o ZIP mudar depois da revisão, escolha-o e reveja-o novamente."
+          ]
+        },
+        {
+          "kind": "note",
+          "tone": "info",
+          "text": "Use um checkout de desenvolvimento em que confia: Docker e Composer executam código desse projeto. O pacote pode preparar containers isolados, schemas, Redis e dependências. Dumps, credenciais privadas e comandos administrativos continuam manuais. Containers ativos não comprovam que o projeto já funciona com os dados da equipa."
+        }
+      ]
+    },
+    {
       "id": "contribuir-e-licencas",
       "title": "Contribuir, licenças e limites",
       "summary": "Estado do projeto e como ajudar com evidência útil.",
@@ -1039,7 +1075,7 @@
       "blocks": [
         {
           "kind": "paragraph",
-          "text": "O código do Meu Ubuntu é distribuído sob GNU GPL versão 3 (GPL-3.0-only), incluída em LICENSE. Logos, dependências e a fonte do PDF conservam as suas licenças próprias. Consulte NOTICE.md, Sobre e os avisos do pacote. A candidata inclui um arquivo com o código-fonte correspondente; a publicação num repositório público é uma etapa posterior."
+          "text": "O código do Meu Ubuntu é distribuído sob GNU GPL versão 3 (GPL-3.0-only), incluída em LICENSE. Logos, dependências e a fonte do PDF conservam as suas licenças próprias. Consulte NOTICE.md, Sobre e os avisos do pacote. A candidata inclui um arquivo com o código-fonte correspondente; o repositório público está em https://github.com/mercynet/my-ubuntu. Vulnerabilidades devem ser comunicadas em privado pelo separador Security, opção Report a vulnerability."
         },
         {
           "kind": "paragraph",
@@ -1092,6 +1128,37 @@
         {
           "kind": "paragraph",
           "text": "Se ~/.local/bin ainda não estava no PATH da sua sessão, use o caminho completo indicado no guia ou termine e volte a iniciar sessão no Ubuntu. Não é necessário usar sudo para instalar os pacotes dos agentes."
+        }
+      ]
+    },
+    {
+      "id": "flatpak-e-origens",
+      "title": "Flatpak e origens de instalação",
+      "summary": "Requisitos, verificação e conservação de aplicações já presentes.",
+      "keywords": [
+        "flatpak",
+        "flathub",
+        "origem",
+        "requisito",
+        "apt"
+      ],
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Aplicações com publicação ativa confirmada usam Flatpak para o seu utilizador. Cada cartão mostra o requisito e a origem. Quando falta Flatpak, o plano inclui essa dependência antes da aplicação."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Antes de instalar, a execução confere Flatpak, o remoto do utilizador, origem permitida, verificação de assinaturas e ID da aplicação. Remoto incorreto, desativado, rede indisponível ou aplicação não encontrada impedem a instalação. Não muda silenciosamente para outra origem."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Versões APT e IDs Flatpak anteriores já instalados são reconhecidos e preservados. Esta política aplica-se a novas instalações; não remove programas nem migra dados e perfis automaticamente."
+        },
+        {
+          "kind": "note",
+          "tone": "info",
+          "text": "Flatpak isola a aplicação. Algumas ferramentas precisam de SDKs, permissões de dispositivo ou serviços no host. Consulte o guia da receita. Um editor não verificado no Flathub fica identificado na origem; instaladores do próprio fornecedor também são identificados."
         }
       ]
     }

@@ -1,0 +1,143 @@
+{
+  "format": 2,
+  "id": "officegest",
+  "name": "OfficeGest",
+  "version": "0.2.0",
+  "publisher": "Equipa OfficeGest",
+  "description": "Prepara containers isolados, bases de desenvolvimento, Redis Cluster e dependências OfficeGest. Dumps ficam manuais.",
+  "checks": [
+    {
+      "type": "docker",
+      "title": "Docker instalado"
+    },
+    {
+      "type": "compose",
+      "title": "Docker Compose atualizado"
+    },
+    {
+      "type": "daemon",
+      "title": "Acesso ao Docker"
+    },
+    {
+      "type": "file",
+      "title": "Projeto Docker",
+      "path": "docker-compose.yml"
+    },
+    {
+      "type": "file",
+      "title": "Imagem da aplicação",
+      "path": "docker/Dockerfile"
+    },
+    {
+      "type": "file",
+      "title": "Dependências bloqueadas",
+      "path": "composer.lock"
+    },
+    {
+      "type": "file",
+      "title": "Configuração local",
+      "path": ".env"
+    },
+    {
+      "type": "compose-config",
+      "title": "Validação do Compose"
+    }
+  ],
+  "guide": [
+    {
+      "title": "Obter checkout e configuração",
+      "text": "Clone o projeto e peça à equipa uma configuração .env de desenvolvimento sanitizada. Sem composer.lock e modelo de tenant, a preparação é recusada. Não use credenciais nem dumps de produção."
+    },
+    {
+      "title": "Preparar em poucos cliques",
+      "text": "Escolha a pasta; reveja as ferramentas necessárias e aplique o plano. Depois reveja a preparação do projeto e confirme. Se as permissões Docker mudaram, termine sessão e entre novamente."
+    },
+    {
+      "title": "Conferir resultado",
+      "text": "As etapas mostram build, containers, schemas, Redis e Composer. Dados existentes são preservados. Composer pode precisar de autenticação privada; nesse caso o resultado pede intervenção e apresenta o comando para gerir somente este ambiente."
+    },
+    {
+      "title": "Importar dumps",
+      "text": "Importe manualmente os dumps sanitizados da equipa nos schemas indicados. Portas e credenciais geradas ficam na configuração pessoal, junto do comando dock apresentado no final. Confira configurações de tenants preservadas antes de importar."
+    },
+    {
+      "title": "Nomes locais e certificado",
+      "text": "No final, siga as instruções para /etc/hosts e, opcionalmente, confiar no certificado local. Esses passos pedem root e são manuais. Os containers ficam sem arranque automático após reboot."
+    },
+    {
+      "title": "Pausar, retomar ou parar",
+      "text": "Pode navegar noutros separadores e acompanhar o progresso no topo. Pausa e cancelamento aguardam o fim da etapa ativa. Ao retomar, configurações são revalidadas. Depois de fechar ou reiniciar, reveja novamente a preparação; os dados são preservados."
+    }
+  ],
+  "setup": {
+    "compose": "docker-compose.yml",
+    "application": "app",
+    "worker": "worker",
+    "initializer": "redis-cluster-init",
+    "template": "docker/bin/tenant-create.sh",
+    "tools": [
+      "git",
+      "docker-engine",
+      "docker-group",
+      "python-dev"
+    ],
+    "databases": [
+      {
+        "service": "mariadb",
+        "schemas": [
+          "tenant1",
+          "tenant2"
+        ]
+      },
+      {
+        "service": "mariadb2",
+        "schemas": [
+          "tenant3",
+          "tenant4",
+          "tenant5"
+        ]
+      }
+    ],
+    "redis": [
+      {
+        "service": "redis-node-1",
+        "port": 7001
+      },
+      {
+        "service": "redis-node-2",
+        "port": 7002
+      },
+      {
+        "service": "redis-node-3",
+        "port": 7003
+      }
+    ],
+    "tenants": [
+      {
+        "domain": "og-tenant1.test",
+        "service": "mariadb",
+        "schema": "tenant1"
+      },
+      {
+        "domain": "og-tenant2.test",
+        "service": "mariadb",
+        "schema": "tenant2"
+      },
+      {
+        "domain": "og-tenant3.test",
+        "service": "mariadb2",
+        "schema": "tenant3"
+      },
+      {
+        "domain": "og-tenant4.test",
+        "service": "mariadb2",
+        "schema": "tenant4"
+      },
+      {
+        "domain": "og-tenant5.test",
+        "service": "mariadb2",
+        "schema": "tenant5"
+      }
+    ]
+  }
+}

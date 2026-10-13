@@ -1,0 +1,16 @@
+{
+  "csv_rows": 148,
+  "xlsx_matches_csv": true,
+  "formulas": false,
+  "preference": {
+    "before": "true",
+    "applied": "false",
+    "reverted": "2026-10-13T15:16:46Z"
+  },
+  "artifacts": {
+    "meu-ubuntu-diagnostico-2026-10-13.csv": "1db1ff51b80a88f17714438cfa1327257e53b538f51f80df85a6941ac437415c",
+    "meu-ubuntu-diagnostico-2026-10-13.xlsx": "43fc5a0a7075ce284ceeb9809095953c7476a913a1a35f43acc6606266be3b3e",
+    "meu-ubuntu-diagnostico-2026-10-13.pdf": "58e24bd53950b43f3f1b07b6240d9b2819105621bc39561379fac7a787a91f22"
+  },
+  "binary_sha256": "73641b079a4da9f18083d24800954ed1869472f64b9b88eb284b6dc2c4f2c688"
+}

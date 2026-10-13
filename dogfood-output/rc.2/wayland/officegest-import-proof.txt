@@ -1,0 +1,57 @@
+button | enabled | Minimize
+button | enabled | Restore
+button | enabled | Close
+label | enabled | Meu Ubuntu
+landmark | enabled | Navegação
+landmark | enabled | Secções da aplicação
+button | enabled | Início
+button | enabled | Catálogo
+button | enabled | Perfis prontos
+button | enabled | Agentes de IA
+button | enabled | Plugins e complementos
+button | enabled | Minhas escolhas 20
+button | enabled | Explorar por área
+button | enabled | Rever e aplicar
+button | enabled | Diagnóstico
+button | enabled | Migração
+button | enabled | Histórico e reversão
+button | enabled | Ajuda e manual
+button | enabled | Pacotes de integração
+button | enabled | OfficeGest
+button | enabled | Sobre 1.0.0-rc.2
+entry | enabled | Pesquisar em todo o catálogo
+button | enabled | Mudar tema (atual: escuro)
+button | enabled | Minhas escolhas: 20 itens
+button | enabled | Rever plano
+heading | enabled | OfficeGest
+paragraph | enabled | Diagnóstico e preparação assistida do ambiente local OfficeGest em Docker.
+button | enabled | Instalar pacote…
+heading | enabled | Projeto local
+paragraph | enabled | Pacote 0.1.0 · Equipa OfficeGest. Escolha a pasta onde já clonou o projeto.
+paragraph | enabled | Pasta ainda não escolhida
+button | enabled | Escolher pasta…
+button | disabled | Verificar ambiente
+paragraph | enabled | As verificações consultam o ambiente. Os comandos do guia são copiados para execução manual; nada é instalado ou iniciado por este separador.
+heading | enabled | Preparação assistida
+paragraph | enabled | Conclua os passos pela ordem indicada. Confirme os problemas do diagnóstico antes de iniciar os serviços. Este primeiro pacote não cria tenants nem importa bases de dados.
+heading | enabled | 1. Confirmar requisitos
+paragraph | enabled | Use Ubuntu 26.04 e Docker Compose 2.20 ou superior. Corrija os bloqueios do diagnóstico antes de continuar. Se o Docker acabou de ser instalado, confirme as permissões numa nova sessão.
+button | enabled | Copiar comando
+heading | enabled | 2. Preparar configuração local
+paragraph | enabled | Peça à equipa uma configuração de desenvolvimento sanitizada e confirme WWWUSER/WWWGROUP com a identidade local. Nunca copie dados ou credenciais de produção. Execute os comandos seguintes na pasta do projeto.
+button | enabled | Copiar comando
+heading | enabled | 3. Conferir rede e imagem
+paragraph | enabled | O Compose atual exige a rede externa shared-network e o worker espera ogdevel_app:latest. Confirme a rede e que o serviço app declara essa mesma imagem antes do build. Esta primeira versão não altera o Compose.
+button | enabled | Copiar comando
+heading | enabled | 4. Construir e iniciar
+paragraph | enabled | Depois de validar os requisitos, construa a imagem e inicie o ambiente. O Compose atual inicia também serviços de apoio; confirme memória disponível e portas livres. Este fluxo ainda precisa de validação numa instalação limpa.
+button | enabled | Copiar comando
+heading | enabled | 5. Instalar dependências
+paragraph | enabled | Com a aplicação a correr, instale as versões do composer.lock. Se uma dependência privada pedir autenticação, use a conta da equipa pelo procedimento habitual; o Meu Ubuntu não recolhe essa credencial.
+button | enabled | Copiar comando
+heading | enabled | 6. Configurar tenant de desenvolvimento
+paragraph | enabled | Combine com a equipa o domínio, certificado e dados de demonstração sanitizados. Não importe dumps reais nem execute reset de base de dados. Este passo ainda é manual; ter containers ativos não comprova que o OfficeGest está pronto.
+heading | enabled | 7. Parar o ambiente
+paragraph | enabled | Pare somente este projeto. Evite comandos globais de limpeza ou remoção de volumes.
+button | enabled | Copiar comando
+button | enabled | Fechar aviso

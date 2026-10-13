@@ -23,6 +23,8 @@ export type RunState = {
   lastLine?: string;
   finished?: string;
   error?: string;
+  state?: string;
+  stateVersion?: number;
 };
 
 const INSTALL_OPS = ["apt-install", "flatpak-install", "extension", "user-script", "npm-user"];

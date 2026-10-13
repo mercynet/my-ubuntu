@@ -16,7 +16,8 @@ import (
 
 // ReviewUndo binds batch reversals to the journal and values actually shown.
 func (e *Engine) ReviewUndo(ctx context.Context, p *plan.Plan) error {
-	var keptSteps []plan.Step
+	// The frontend iterates steps even when every action is already satisfied.
+	keptSteps := make([]plan.Step, 0, len(p.Steps))
 	for i := range p.Steps {
 		s := &p.Steps[i]
 		if s.Op != "undo" && s.Op != "revert" {

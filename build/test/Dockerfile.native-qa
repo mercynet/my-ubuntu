@@ -1,0 +1,5 @@
+# Native GTK/WebKit QA in simulation. This is X11/Xvfb, not GNOME/Wayland QA.
+FROM meu-ubuntu-build:26.04
+RUN apt-get update && apt-get install -y --no-install-recommends \
+      xvfb xdotool imagemagick dbus-x11 fonts-ubuntu python3-pyatspi \
+    && rm -rf /var/lib/apt/lists/*

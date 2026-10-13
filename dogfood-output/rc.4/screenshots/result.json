@@ -1,0 +1,38 @@
+{
+  "binary_sha256": "08ebb7784c5f92f1358f390f94c99b0ea8f1dab65bf2bfe3160de58b4f3854b3",
+  "version": "meu-ubuntu 1.0.0-rc.4",
+  "scope": "Native GTK/WebKit X11/Xvfb; simulation executor; no real app installation, GNOME/Wayland or polkit",
+  "result": "PASS",
+  "checks": [
+    "visible requirement and origin",
+    "reviewed Flatpak/Flathub dependency",
+    "simulated completion and persisted steps"
+  ],
+  "steps": [
+    {
+      "item": "",
+      "op": "sources-check",
+      "title": "Verificar fontes APT (duplicados)"
+    },
+    {
+      "item": "",
+      "op": "apt-update",
+      "title": "Atualizar índices APT"
+    },
+    {
+      "item": "flathub",
+      "op": "apt-install",
+      "title": "Instalar Flatpak + Flathub"
+    },
+    {
+      "item": "flathub",
+      "op": "flatpak-remote",
+      "title": "Garantir Flathub (utilizador)"
+    },
+    {
+      "item": "vlc",
+      "op": "flatpak-install",
+      "title": "Instalar VLC (Flatpak)"
+    }
+  ]
+}

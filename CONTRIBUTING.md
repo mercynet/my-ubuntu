@@ -14,4 +14,14 @@ Relate problemas com versão, ambiente, passos, resultado esperado/observado e e
 
 Preserve IDs de receitas/perfis, a revisão obrigatória e as listas de operações permitidas do helper. Perfis nunca transportam comandos livres nem segredos. PRs devem explicar comportamento, validação e limitações; inclua capturas para alterações de interface.
 
-O código usa GPL-3.0-only. Contribuições ao código devem ser compatíveis; assets e dependências mantêm os seus avisos. O repositório público e os canais de contribuição ainda serão anunciados.
+O código usa GPL-3.0-only. Contribuições ao código devem ser compatíveis; assets e dependências mantêm os seus avisos. Use o [repositório público](https://github.com/mercynet/my-ubuntu) para PRs e issues; vulnerabilidades seguem o canal privado de SECURITY.md. A pasta `private/` presente no histórico é pública: o nome e o `.gitignore` não restringem acesso. Nunca coloque aí segredos ou novos materiais internos.
+
+## Organização e versões
+
+Use development para trabalho integrado e subjects de commit curtos no imperativo.
+Adicione uma entrada ao changelog para alterações visíveis. Tags e publicação
+seguem [RELEASING.md](RELEASING.md); VERSION e manifests precisam corresponder.
+Binários, frontend compilado e caches são gerados, não versionados. Preserve
+relatórios/capturas revistos em dogfood-output; deixe estados XDG e credenciais locais.
+O [exemplo OfficeGest](examples/integrations/officegest/README.md) é declarativo
+público e sanitizado. Não inclua o checkout do produto, dumps ou configurações privadas.

@@ -32,14 +32,15 @@ type Guide struct {
 	Command string `json:"command,omitempty"`
 }
 type Package struct {
-	Format      int     `json:"format"`
-	ID          string  `json:"id"`
-	Name        string  `json:"name"`
-	Version     string  `json:"version"`
-	Description string  `json:"description"`
-	Publisher   string  `json:"publisher"`
-	Checks      []Check `json:"checks"`
-	Guide       []Guide `json:"guide"`
+	Format      int           `json:"format"`
+	ID          string        `json:"id"`
+	Name        string        `json:"name"`
+	Version     string        `json:"version"`
+	Description string        `json:"description"`
+	Publisher   string        `json:"publisher"`
+	Checks      []Check       `json:"checks"`
+	Guide       []Guide       `json:"guide"`
+	Setup       *ComposeSetup `json:"setup,omitempty"`
 }
 type View struct {
 	Package
@@ -72,8 +73,16 @@ func Decode(data []byte) (Package, error) {
 	if err := d.Decode(&p); err != nil {
 		return p, errors.New("manifesto inválido")
 	}
-	if d.Decode(new(any)) != io.EOF || p.Format != 1 || !validID.MatchString(p.ID) || p.Name == "" || len(p.Name) > 80 || len(p.Description) > 1000 || len(p.Publisher) > 120 || p.Version == "" || len(p.Version) > 40 || len(p.Checks) > 30 || len(p.Guide) > 30 {
+	if d.Decode(new(any)) != io.EOF || (p.Format != 1 && p.Format != 2) || !validID.MatchString(p.ID) || p.Name == "" || len(p.Name) > 80 || len(p.Description) > 1000 || len(p.Publisher) > 120 || p.Version == "" || len(p.Version) > 40 || len(p.Checks) > 30 || len(p.Guide) > 30 {
 		return p, errors.New("formato de pacote inválido")
+	}
+	if (p.Format == 2) != (p.Setup != nil) {
+		return p, errors.New("preparação automática exige formato 2")
+	}
+	if p.Setup != nil {
+		if err := p.Setup.Validate(); err != nil {
+			return p, err
+		}
 	}
 	for _, c := range p.Checks {
 		if len(c.Title) > 120 {

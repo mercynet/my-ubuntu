@@ -255,16 +255,16 @@ func TestFailedRepoSkipsItsInstall(t *testing.T) {
 		return helper.InProcess{Env: &helper.Env{R: f.sim, Cat: f.cat, Root: t.TempDir(), Codename: "resolute", UID: "1000",
 			Fetch: func(string) ([]byte, error) { return nil, os.ErrNotExist }}}
 	}
-	_, run := f.run(t, map[string]catalog.Selection{"vscode": {}, "htop": {}})
+	_, run := f.run(t, map[string]catalog.Selection{"gh": {}, "htop": {}})
 	st := map[string]string{}
 	for _, s := range run.Steps {
 		st[s.Title] = s.Status
 	}
-	if st["Adicionar repositório oficial: Visual Studio Code"] != StFailed || st["Instalar Visual Studio Code"] != StSkipped || st["Instalar htop"] != StDone {
+	if st["Adicionar repositório oficial: GitHub CLI"] != StFailed || st["Instalar GitHub CLI"] != StSkipped || st["Instalar htop"] != StDone {
 		t.Fatalf("%v", st)
 	}
-	if f.sim.Packages["code"] {
-		t.Fatal("code must not be installed when its repo failed")
+	if f.sim.Packages["gh"] {
+		t.Fatal("gh must not be installed when its repo failed")
 	}
 }
 
