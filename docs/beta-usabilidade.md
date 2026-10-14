@@ -1,16 +1,16 @@
-# Testar o Meu Ubuntu 1.0.0-rc.4
+# Testar o Meu Ubuntu 1.0.0
 
 ## Ambiente suportado
 
-Ubuntu **26.04 LTS**, GNOME, computador **amd64/x86_64**. Não há suporte nesta candidata para versões anteriores, outras distribuições ou ARM. Comece pelo modo de simulação; a instalação real precisa de ligação à Internet e autorização administrativa para operações de sistema.
+Ubuntu **26.04 LTS**, GNOME, computador **amd64/x86_64**. Não há suporte nesta versão para versões anteriores, outras distribuições ou ARM. Comece pelo modo de simulação; a instalação real precisa de ligação à Internet e autorização administrativa para operações de sistema.
 
 ## Instalar e abrir
 
-Para teste, envie o ZIP da RC ou estes ficheiros de `dist/`: `meu-ubuntu_1.0.0-rc.4_amd64.deb`, `meu-ubuntu-1.0.0-rc.4-linux-amd64`, `meu-ubuntu-1.0.0-rc.4-source.tar.gz` e `SHA256SUMS`. Na pasta recebida:
+Para teste, envie o ZIP ou estes ficheiros de `dist/`: `meu-ubuntu_1.0.0_amd64.deb`, `meu-ubuntu-1.0.0-linux-amd64`, `meu-ubuntu-1.0.0-source.tar.gz` e `SHA256SUMS`. Na pasta recebida:
 
 ```bash
 sha256sum -c SHA256SUMS
-sudo apt install ./meu-ubuntu_1.0.0-rc.4_amd64.deb
+sudo apt install ./meu-ubuntu_1.0.0_amd64.deb
 meu-ubuntu --simular
 ```
 
@@ -43,8 +43,8 @@ Opcionalmente, num Ubuntu 26.04 de teste, repita uma instalação real pequena, 
 
 Para cada dificuldade, envie: versão do Meu Ubuntu; versão do Ubuntu e sessão Wayland/X11; resolução; tarefa; passos; resultado esperado; resultado observado; captura ou gravação, se possível. Remova credenciais e dados pessoais. Diga também se concluiu sem ajuda e avalie a facilidade da tarefa de 1 (muito difícil) a 5 (muito fácil).
 
-## Limites da candidata
+## Limites da versão
 
-É uma candidata para recolher feedback antes da 1.0 estável. A avaliação automatizada e especializada não substitui sessões com pessoas: instalações administrativas, GNOME/Wayland, polkit e autenticação dos agentes precisam de confirmação em computadores reais. PDF/CSV/XLSX já estão disponíveis: carregue o diagnóstico, exporte cada formato, retire uma secção e confirme que o conteúdo respeita a escolha. Cancelar a janela de gravação não deve criar um ficheiro. Outras distribuições, Windows/macOS, gestão remota e novos perfis profissionais ficam para depois da 1.0.
+A avaliação automatizada e especializada não substitui sessões com pessoas. PDF/CSV/XLSX estão disponíveis: carregue o diagnóstico, exporte cada formato, retire uma secção e confirme que o conteúdo respeita a escolha. Outras distribuições, Windows/macOS, gestão remota e novos perfis profissionais ficam fora do escopo desta versão.
 
 A [revisão final Astra/high](../dogfood-output/rc.1/review-astra-high.md) conferiu as correções e regressões, sem bloqueadores de código remanescentes nos cenários revistos. Isso não substitui a matriz desktop: registe testes de atualização, autenticação/cancelamento polkit e alterações reais numa máquina ou VM com backup.

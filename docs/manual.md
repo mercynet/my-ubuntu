@@ -2,7 +2,7 @@
 
 # Manual do Meu Ubuntu
 
-Guia da versão 1.0.0-rc.4. O Meu Ubuntu ajuda a escolher aplicações e ajustes, rever as alterações, executá-las e conferir o resultado. O catálogo, este manual e os logos estão incluídos na aplicação; a instalação de software pode precisar de internet.
+Guia da versão 1.0.0. O Meu Ubuntu ajuda a escolher aplicações e ajustes, rever as alterações, executá-las e conferir o resultado. O catálogo, este manual e os logos estão incluídos na aplicação; a instalação de software pode precisar de internet.
 
 ## Índice
 
@@ -63,7 +63,7 @@ O .deb instala o executável, o atalho no menu, o ícone e a documentação. O A
 
 ```sh
 sha256sum -c SHA256SUMS --ignore-missing
-sudo apt install ./meu-ubuntu_1.0.0-rc.4_amd64.deb
+sudo apt install ./meu-ubuntu_1.0.0_amd64.deb
 meu-ubuntu --version
 meu-ubuntu
 ```
@@ -71,7 +71,7 @@ meu-ubuntu
 O checksum confirma que o ficheiro corresponde à lista recebida; a confiança também depende de obter o pacote e a lista de uma origem de confiança. Para atualizar, instale o novo .deb pelo mesmo comando. Não existe atualizador automático integrado.
 
 ```sh
-cp meu-ubuntu-1.0.0-rc.4-linux-amd64 ~/meu-ubuntu
+cp meu-ubuntu-1.0.0-linux-amd64 ~/meu-ubuntu
 chmod +x ~/meu-ubuntu
 ~/meu-ubuntu --simular
 ```

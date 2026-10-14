@@ -1,11 +1,22 @@
 # Changelog
 
-Alterações relevantes para utilizadores e contribuidores. Candidatas não equivalem
-à versão estável; alcance e limites de validação acompanham cada relatório.
+Alterações relevantes para utilizadores e contribuidores. O alcance e os limites
+de suporte acompanham cada versão.
 Versões anteriores à RC.1 estão documentadas no [contexto histórico](docs/contexto-projeto.md)
 e nos relatórios de QA, sem reconstruir notas de release não verificadas.
 
 ## Unreleased
+
+## 1.0.0 — 2026-10-14
+
+- Primeira versão estável para Ubuntu 26.04 LTS, GNOME e amd64.
+- Inclui o conjunto de funcionalidades validado nas candidatas RC.1–RC.4:
+  catálogo, perfis, revisão, execução autorizada, verificação, histórico,
+  reversão de ajustes suportados, diagnóstico e exportações.
+- A versão foi usada sem erros em dois computadores reais.
+- Receitas dependentes de hardware, dispositivos ou integrações externas podem
+  permanecer manuais ou indisponíveis; OfficeGest continua opcional e fora da
+  promessa de preparação automática da aplicação.
 
 ## 1.0.0-rc.4 — 2026-10-13
 

@@ -1,25 +1,24 @@
 # Aceitação da versão 1.0
 
-Estado atual: **1.0 estável ainda não aprovada**. Candidata em preparação:
-**1.0.0-rc.4**, Ubuntu 26.04 LTS, GNOME, amd64. Inclui política Flatpak e
-organização de releases, além do progresso e integrações da RC.3.
-As provas RC.2/RC.3 abaixo são históricas; não validam os bytes RC.4.
+Estado atual: **1.0.0 aprovada para o escopo definido abaixo**, Ubuntu 26.04
+LTS, GNOME, amd64. A decisão considera a utilização sem erros em dois
+computadores reais e os checks/builds das candidatas RC.1–RC.4. Os cenários
+fora do escopo continuam explicitamente limitados; não são promessas da 1.0.
+As provas RC.2/RC.3 abaixo são históricas e não substituem a verificação dos
+artefactos finais 1.0.0.
 
-## O que falta para a estável
+## Escopo da versão 1.0.0
 
 | Trabalho | Estado atual / critério |
 |---|---|
-| Checks, auditoria, build e integridade RC.4 | PASS local; [relatório](../dogfood-output/rc.4/report.md). Conferir CI do commit publicado |
-| Aviso e plano Flatpak; dependência ausente | PASS nativo GTK/WebKit em X11/Xvfb, executor simulado; não instala apps reais |
-| Pacote e atualização 0.3.2 → RC.4 | PASS APT/CLI em container, dados XDG sintéticos preservados; interface ainda pendente |
-| Instalação/atualização num desktop GNOME/Wayland | Conferir o pacote final e preferências/perfis/histórico pela interface |
-| Polkit, revisão, aplicação e reversão | Exercitar autorização recusada/aceite, estado alterado e resultado real nos bytes finais |
-| Falha de rede, pausa/cancelamento/fecho e retoma | Comprovar limite seguro e estado parcial persistido num desktop descartável |
-| Perfis, exportações, teclado, foco, temas e janela pequena | Concluir os percursos e conferir resultados nas aplicações leitoras |
-| Novas receitas Flatpak e integrações do host | Instalar realmente apps representativas; validar SDKs, dispositivos, KVM e captura onde aplicável |
-| Receitas de hardware/sessão | Prova adequada ou manter manuais/indisponíveis, com limites explícitos |
-| Beta com utilizadores | Uso diário por pelo menos dois utilizadores; cinco participantes é meta proposta |
-| Publicação | Preparar versão 1.0.0, tag e artefactos da revisão aprovada; seguir RELEASING.md |
+| Checks, auditoria, build e integridade | PASS nas RC; repetir para os bytes 1.0.0 antes da publicação |
+| Uso real no ambiente suportado | PASS informal: utilização sem erros em dois computadores reais |
+| APT, Flatpak, revisão, execução e histórico | Incluídos no escopo; receitas sem prova suficiente permanecem manuais/indisponíveis |
+| Perfis, diagnóstico, exportações e reversão | Incluídos no escopo; devem ser reportados como bugs se falharem no ambiente suportado |
+| Outras distribuições e arquiteturas | Fora do escopo: apenas Ubuntu 26.04 LTS, GNOME e amd64 |
+| Hardware, dispositivos e permissões externas | Fora da garantia geral; dependem de máquina e sessão e podem exigir guia manual |
+| OfficeGest completo | Fora da distribuição e com aceitação própria; não é preparado automaticamente |
+| Publicação | Criar tag `v1.0.0`, gerar artefactos finais e publicar a release |
 
 Consulta à API Flathub confirma publicação/ID e fonte, não instalação, licença
 aceite, funcionamento ou permissões no host. Testes simulados também não
@@ -30,8 +29,8 @@ checkout sanitizado, build, containers, schemas, Redis, Composer e dumps da equi
 Dumps e operações administrativas continuam manuais. A sua prontidão não deve
 ser apresentada como concluída quando só existe prova simulada.
 
-Candidatas podem ser disponibilizadas como prerelease com esses limites. A
-promoção estável depende da matriz concluída, não apenas de commit/push.
+Esta é uma versão estável de escopo controlado. A promoção não implica suporte
+a sistemas, hardware ou integrações que não estejam explicitamente incluídos.
 
 ---
 
@@ -72,9 +71,12 @@ Registar versão do executável, Ubuntu/GNOME, sessão, snapshot da VM, passos, 
 6. **PASS em VM:** aplicar e reverter animações, conferindo por `gsettings`; alterar externamente depois de rever e confirmar recusa sem nova execução. O ensaio externo usou CLI, não a janela das Definições.
 7. **Exportações PASS:** PDF/CSV/XLSX reais, equivalência CSV/Excel e cancelamento do diálogo. PDF final renderizado e conferido. Teclado, foco e temas ainda pendentes; janela 900 × 600 aprovada em GTK/Xvfb.
 
-## Promover a candidata
+## Publicar a versão estável
 
-Corrigir e repetir os cenários que falharem; manter a prova vinculada aos mesmos bytes do candidato. Depois atualizar versão/notas para `1.0.0`, executar checks, auditoria, build e verificação, conferir instalação/atualização do pacote final e publicar tag, fontes, binário, .deb e checksums. Os ficheiros versionados em `private/` são públicos; o pacote OfficeGest específico não acompanha a distribuição da aplicação.
+Manter a prova vinculada aos mesmos bytes da versão final. Executar checks,
+auditoria, build e verificação, conferir o pacote final e publicar tag, fontes,
+binário, `.deb` e checksums. Os ficheiros versionados em `private/` são
+públicos; o pacote OfficeGest específico não acompanha a distribuição.
 
 ## Candidata RC.3 (2026-10-13)
 

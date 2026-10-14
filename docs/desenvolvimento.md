@@ -186,7 +186,7 @@ Operações reais precisam de VM ou máquina autorizada com backup e estado inic
 
 O [roteiro da 1.0 open source](../README.md#preparação-da-100-open-source) define escopo, correções e critérios de aceitação. A revisão [Astra/high de 2026-10-12](../dogfood-output/review-astra-high-2026-10-12.md) registou sete achados por inspeção; testes existentes aprovados não substituem reproduções dirigidas de falhas parciais e reversões. As regressões e a revisão final estão em dogfood-output/rc.1/. Validar também o fecho durante execução numa sessão GNOME descartável.
 
-A versão Debian da candidata é `1.0.0~rc4`, inferior a `1.0.0`; a verificação do pacote comprova essa ordem. O build inclui GPLv3, avisos de terceiros e um arquivo de código-fonte da mesma árvore. Registe o commit e o estado da árvore usados no build; o checksum do arquivo identifica os bytes das fontes entregues. Não inclua estado local, segredos ou integrações privadas no arquivo.
+A versão Debian candidata `1.0.0~rc4` é inferior à versão estável `1.0.0`; a verificação do pacote comprova essa ordem. O build inclui GPLv3, avisos de terceiros e um arquivo de código-fonte da mesma árvore. Registe o commit e o estado da árvore usados no build; o checksum do arquivo identifica os bytes das fontes entregues. Não inclua estado local, segredos ou integrações privadas no arquivo.
 
 O diagnóstico é recolhido e guardado como uma fotografia identificada. A exportação usa os mesmos registos normalizados em PDF/CSV/XLSX, sem recolher novamente. CSV protege células interpretáveis como fórmulas; XLSX usa texto; PDF embute DejaVu Sans e representa Unicode suplementar pelo código. Limites de tamanho são explícitos; gravação é atómica e requer a extensão escolhida.
 
@@ -200,7 +200,7 @@ O código do projeto usa GPL-3.0-only; leia LICENSE, NOTICE.md, CONTRIBUTING.md 
 
 ## Beta de usabilidade
 
-A candidata 1.0.0-rc.4 visa Ubuntu 26.04 LTS, GNOME e amd64. Veja o [roteiro do beta](beta-usabilidade.md) e a [avaliação da v0.5.0](../dogfood-output/v0.5.0/report.md). As versões anteriores permanecem em dist/. O pacote Debian usa 1.0.0~rc4, anterior à versão estável 1.0.0.
+A versão 1.0.0 visa Ubuntu 26.04 LTS, GNOME e amd64. Veja o [roteiro de teste](beta-usabilidade.md) e a [avaliação da v0.5.0](../dogfood-output/v0.5.0/report.md). As versões anteriores permanecem em dist/. O pacote Debian estável usa 1.0.0; a candidata usava 1.0.0~rc4.
 
 Receitas npm usam metadados fixos do catálogo; perfis só podem escolher IDs. Não aceite URLs, nomes de comandos ou versões livres através de perfis. A instalação preserva um agente já encontrado, não recolhe credenciais e não configura subscrições. Ao atualizar uma receita, confirme a documentação oficial, a versão npm, os requisitos de Node e uma instalação sem root.
 

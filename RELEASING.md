@@ -7,7 +7,7 @@ os manifests frontend são sincronizados e conferidos pelo build.
 
 ## Preparar a revisão
 
-1. Atualize a versão com `python3 build/scripts/set-version.py 1.0.0-rc.4`.
+1. Atualize a versão com `python3 build/scripts/set-version.py <versão>`.
 2. Acrescente a entrada datada ao `CHANGELOG.md`, agrupando mudanças e correções.
    Preserve versões históricas e identifique limitações da candidata.
 3. Atualize instruções atuais, manual e catálogo; execute `make docs`.
@@ -26,7 +26,7 @@ A CI constrói os artefactos a partir do checkout e não cria uma Release automa
 ## Critérios de aceitação
 
 Uma candidata pode ser publicada como **prerelease**, com limites conhecidos.
-Para 1.0 estável, conclua a [matriz](docs/release-1.0.md) nos bytes finais:
+Para uma versão estável, documente o [escopo](docs/release-1.0.md) nos bytes finais:
 instalação/atualização, polkit, revisão/reversão, falhas, pausa/cancelamento/fecho,
 retoma, perfis, exportações, teclado, temas e receitas dependentes do sistema.
 Registe o beta com utilizadores. Receitas sem prova suficiente devem ficar

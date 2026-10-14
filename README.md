@@ -7,8 +7,9 @@ Aplicação desktop para preparar um Ubuntu pessoal: escolher ferramentas e ajus
 rever um plano, aplicar com autorização do sistema, verificar o resultado e guardar
 perfis reutilizáveis. Interface Go/Wails + React/TypeScript, recursos e ajuda offline.
 
-**Alvo:** Ubuntu 26.04 LTS, GNOME, amd64. **Candidata:** 1.0.0-rc.4.
-A 1.0 estável aguarda [validação desktop e beta](docs/release-1.0.md).
+**Versão:** 1.0.0. **Escopo suportado:** Ubuntu 26.04 LTS, GNOME, amd64.
+Outras distribuições, arquiteturas e ambientes de hardware específicos não são
+promessas desta versão.
 
 ![Revisão do plano](docs/screenshots/plano.png)
 
@@ -38,7 +39,7 @@ Extraia o ZIP, abra um terminal nessa pasta e execute:
 
 ```sh
 sha256sum -c SHA256SUMS
-sudo apt install ./meu-ubuntu_1.0.0-rc.4_amd64.deb
+sudo apt install ./meu-ubuntu_1.0.0_amd64.deb
 meu-ubuntu --simular
 ```
 
@@ -82,13 +83,16 @@ Reporte bugs nos [issues](https://github.com/mercynet/my-ubuntu/issues), com ver
 ambiente, passos e resultado observado. Vulnerabilidades seguem o
 [canal privado](SECURITY.md); remova dados pessoais de anexos e logs.
 
-## Preparação da 1.0.0 open source
+## Escopo e limites da 1.0.0
 
-Checks, auditoria e build não substituem testes reais de polkit, GNOME/Wayland,
-interrupção/retoma e atualização pela interface. A candidata precisa de provas
-vinculadas aos bytes finais e feedback de utilizadores antes da promoção.
-O addon OfficeGest tem aceitação própria; o seu arranque completo ainda exige
-um checkout sanitizado, acessos e dumps da equipa.
+Esta versão cobre o uso normal da aplicação no ambiente suportado: seleção,
+revisão, execução autorizada, verificação, histórico, perfis, diagnóstico e
+reversão dos ajustes suportados. Foi exercitada em dois computadores reais.
+
+Receitas que dependem de hardware, dispositivos, sessão ou permissões externas
+podem permanecer manuais ou indisponíveis. O addon OfficeGest é opcional e não
+faz parte da promessa de instalação/preparação automática da aplicação; o seu
+ambiente completo exige validação própria.
 
 [Contexto histórico](docs/contexto-projeto.md) e [evidência de QA](dogfood-output/README.md)
 preservam resultados anteriores sem os apresentar como validação da candidata atual.
